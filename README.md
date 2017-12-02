@@ -1,9 +1,9 @@
-# GREENTER SAMPLE
+# Greenter Samples
 Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/giansalex/greenter).
 
 ### Pasos
 
-Clonar el repositorio e instalar los paquetes.
+Clonar el repositorio e instalar las dependencias.
 
 ```bash
 git clone https://github.com/giansalex/greenter-sample.git
@@ -13,7 +13,7 @@ composer install
 
 ### Ejecutar
 
-Ejecutar el siguiente comando.
+Abrir cmd y ejecutar el siguiente comando.
 
 ```bash
 composer run-script start --timeout=0
