@@ -49,22 +49,22 @@
         },
         {
             "name": "greenter/core",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "455ea0abfe2dc605aea40cfcbaaa9bf50b006e2e"
+                "reference": "fcec2dfc4a605323ec07c06b06eedd392204d995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/455ea0abfe2dc605aea40cfcbaaa9bf50b006e2e",
-                "reference": "455ea0abfe2dc605aea40cfcbaaa9bf50b006e2e",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/fcec2dfc4a605323ec07c06b06eedd392204d995",
+                "reference": "fcec2dfc4a605323ec07c06b06eedd392204d995",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
-            "type": "project",
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "Greenter\\": "src/Core/"
@@ -87,7 +87,7 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2017-10-18T23:37:31+00:00"
+            "time": "2017-12-01T22:56:36+00:00"
         },
         {
             "name": "greenter/greenter",
@@ -145,19 +145,20 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "f028c4c707f2a1ac49cc1a6ec6bdc46c7a806b58"
+                "reference": "d2882ad565b6626bb2399203701593d0f8069620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/f028c4c707f2a1ac49cc1a6ec6bdc46c7a806b58",
-                "reference": "f028c4c707f2a1ac49cc1a6ec6bdc46c7a806b58",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/d2882ad565b6626bb2399203701593d0f8069620",
+                "reference": "d2882ad565b6626bb2399203701593d0f8069620",
                 "shasum": ""
             },
             "require": {
+                "ext-zlib": "*",
                 "greenter/core": "^1.0",
                 "php": ">=5.5.9"
             },
@@ -187,20 +188,20 @@
                 "greenter",
                 "ws"
             ],
-            "time": "2017-10-21T19:22:48+00:00"
+            "time": "2017-11-14T16:08:56+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v1.0.1",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "27a5a6154b084127b6ddb25bddc93dbf9935371c"
+                "reference": "2980d5aa350a9e0af4eeebf65c10ec32d2e7bc9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/27a5a6154b084127b6ddb25bddc93dbf9935371c",
-                "reference": "27a5a6154b084127b6ddb25bddc93dbf9935371c",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/2980d5aa350a9e0af4eeebf65c10ec32d2e7bc9b",
+                "reference": "2980d5aa350a9e0af4eeebf65c10ec32d2e7bc9b",
                 "shasum": ""
             },
             "require": {
@@ -209,11 +210,10 @@
                 "twig/twig": "~1.0"
             },
             "require-dev": {
-                "greenter/validator": "^1.0",
-                "phpunit/phpunit": "4.8.36",
+                "phpunit/phpunit": ">=4.8 < 6.0",
                 "symfony/stopwatch": "^3.3"
             },
-            "type": "project",
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "Greenter\\": "src/"
@@ -236,7 +236,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2017-10-16T17:44:17+00:00"
+            "time": "2017-12-02T00:04:10+00:00"
         },
         {
             "name": "twig/twig",
