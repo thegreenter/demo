@@ -145,27 +145,28 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "d2882ad565b6626bb2399203701593d0f8069620"
+                "reference": "a19d7dd4e94ec465eb6eb5806caef1bff8926814"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/d2882ad565b6626bb2399203701593d0f8069620",
-                "reference": "d2882ad565b6626bb2399203701593d0f8069620",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/a19d7dd4e94ec465eb6eb5806caef1bff8926814",
+                "reference": "a19d7dd4e94ec465eb6eb5806caef1bff8926814",
                 "shasum": ""
             },
             "require": {
+                "ext-soap": "*",
                 "ext-zlib": "*",
                 "greenter/core": "^1.0",
                 "php": ">=5.5.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.8.36"
+                "phpunit/phpunit": ">=4.8 < 6.0"
             },
-            "type": "project",
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "Greenter\\": "src/"
@@ -188,7 +189,7 @@
                 "greenter",
                 "ws"
             ],
-            "time": "2017-11-14T16:08:56+00:00"
+            "time": "2017-11-21T14:59:05+00:00"
         },
         {
             "name": "greenter/xml",
