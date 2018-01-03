@@ -30,9 +30,9 @@ $detial1->setTipoDoc('01')
     ->setDesMotivoBaja('ERROR DE SISTEMA');
 
 $detial2 = new VoidedDetail();
-$detial2->setTipoDoc('03')
-    ->setSerie('B001')
-    ->setCorrelativo('123')
+$detial2->setTipoDoc('07')
+    ->setSerie('FC01')
+    ->setCorrelativo('222')
     ->setDesMotivoBaja('ERROR DE RUC');
 
 $voided = new Voided();
