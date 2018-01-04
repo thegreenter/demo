@@ -1,2 +1,4 @@
 /.idea/
 /vendor/
+/data/*
+!/data/README.md

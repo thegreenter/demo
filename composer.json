@@ -1,6 +1,9 @@
 {
     "optimize-autoloader": true,
     "classmap-authoritative": true,
+    "autoload": {
+        "files": ["Util.php"]
+    },
     "require": {
         "greenter/greenter": "^2.0"
     },
