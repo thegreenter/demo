@@ -1,7 +1,5 @@
 <?php
 
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Voided\Reversion;
 use Greenter\Model\Voided\VoidedDetail;
 use Greenter\Ws\Services\SunatEndpoints;

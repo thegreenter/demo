@@ -1,7 +1,5 @@
 <?php
 
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
 use Greenter\Ws\Services\SunatEndpoints;

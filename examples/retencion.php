@@ -2,8 +2,6 @@
 
 
 use Greenter\Model\Client\Client;
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Retention\Exchange;
 use Greenter\Model\Retention\Payment;
 use Greenter\Model\Retention\Retention;

@@ -1,8 +1,6 @@
 <?php
 
 use Greenter\Model\Client\Client;
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Despatch\Despatch;
 use Greenter\Model\Despatch\DespatchDetail;
 use Greenter\Model\Despatch\Direction;

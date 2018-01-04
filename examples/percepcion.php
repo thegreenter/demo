@@ -1,8 +1,6 @@
 <?php
 
 use Greenter\Model\Client\Client;
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Perception\Perception;
 use Greenter\Model\Perception\PerceptionDetail;
 use Greenter\Model\Retention\Exchange;
