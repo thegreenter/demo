@@ -13,21 +13,6 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Emisor
-$address = new Address();
-$address->setUbigueo('150101')
-    ->setDepartamento('LIMA')
-    ->setProvincia('LIMA')
-    ->setDistrito('LIMA')
-    ->setUrbanizacion('NONE')
-    ->setDireccion('AV LS');
-
-$company = new Company();
-$company->setRuc('20000000001')
-    ->setRazonSocial('EMPRESA SAC')
-    ->setNombreComercial('EMPRESA')
-    ->setAddress($address);
-
 $baja = new Document();
 $baja->setTipoDoc('09')
     ->setNroDoc('T001-00001');
@@ -64,7 +49,7 @@ $despatch->setTipoDoc('09')
     ->setSerie('T001')
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
-    ->setCompany($company)
+    ->setCompany(Util::getCompany())
     ->setDestinatario((new Client())
         ->setTipoDoc('6')
         ->setNumDoc('20000000002')
@@ -93,19 +78,17 @@ $see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
 $see->setCredentials('20000000001MODDATOS', 'moddatos');
 
 $res = $see->send($despatch);
+Util::writeXml($despatch, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
+    Util::writeCdr($despatch, $res->getCdrZip());
 
     echo '<h2>Respuesta SUNAT:</h2><br>';
     echo '<b>ID:</b> ' . $cdr->getId().'<br>';
     echo '<b>CODE:</b> ' . $cdr->getCode().'<br>';
     echo '<b>DESCRIPTION:</b> ' . $cdr->getDescription().'<br>';
-
-    // Descomentar para guardar el xml firmado y el CDR de respuesta.
-    //    file_put_contents('xml-signed.xml', $see->getFactory()->getLastXml());
-    //    file_put_contents('cdr.zip', $res->getCdrZip());
 } else {
     var_dump($res->getError());
 }

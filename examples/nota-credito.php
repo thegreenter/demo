@@ -16,21 +16,6 @@ $client->setTipoDoc('6')
     ->setNumDoc('20000000001')
     ->setRznSocial('EMPRESA 1');
 
-// Emisor
-$address = new Address();
-$address->setUbigueo('150101')
-    ->setDepartamento('LIMA')
-    ->setProvincia('LIMA')
-    ->setDistrito('LIMA')
-    ->setUrbanizacion('NONE')
-    ->setDireccion('AV LS');
-
-$company = new Company();
-$company->setRuc('20000000001')
-    ->setRazonSocial('EMPRESA SAC')
-    ->setNombreComercial('EMPRESA')
-    ->setAddress($address);
-
 $note = new Note();
 $note
     ->setTipDocAfectado('01')
@@ -48,7 +33,7 @@ $note
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(236)
-    ->setCompany($company);
+    ->setCompany(Util::getCompany());
 
 $detail1 = new SaleDetail();
 $detail1->setCodProducto('C023')
@@ -86,10 +71,12 @@ $see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
 $see->setCredentials('20000000001MODDATOS', 'moddatos');
 
 $res = $see->send($note);
+Util::writeXml($note, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
+    Util::writeCdr($note, $res->getCdrZip());
 
     echo '<h2>Respuesta SUNAT:</h2><br>';
     echo '<b>ID:</b> ' . $cdr->getId().'<br>';

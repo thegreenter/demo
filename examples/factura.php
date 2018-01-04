@@ -16,21 +16,6 @@ $client->setTipoDoc('6')
     ->setNumDoc('20000000001')
     ->setRznSocial('EMPRESA 1');
 
-// Emisor
-$address = new Address();
-$address->setUbigueo('150101')
-    ->setDepartamento('LIMA')
-    ->setProvincia('LIMA')
-    ->setDistrito('LIMA')
-    ->setUrbanizacion('NONE')
-    ->setDireccion('AV LS');
-
-$company = new Company();
-$company->setRuc('20000000001')
-    ->setRazonSocial('EMPRESA SAC')
-    ->setNombreComercial('EMPRESA')
-    ->setAddress($address);
-
 // Venta
 $invoice = new Invoice();
 $invoice->setTipoDoc('01')
@@ -44,7 +29,7 @@ $invoice->setTipoDoc('01')
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(2236.43)
-    ->setCompany($company);
+    ->setCompany(Util::getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')
@@ -82,19 +67,17 @@ $see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
 $see->setCredentials('20000000001MODDATOS', 'moddatos');
 
 $res = $see->send($invoice);
+Util::writeXml($invoice, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
+    Util::writeCdr($invoice, $res->getCdrZip());
 
     echo '<h2>Respuesta SUNAT:</h2><br>';
     echo '<b>ID:</b> ' . $cdr->getId().'<br>';
     echo '<b>CODE:</b> ' . $cdr->getCode().'<br>';
     echo '<b>DESCRIPTION:</b> ' . $cdr->getDescription().'<br>';
-
-    // Descomentar para guardar el xml firmado y el CDR de respuesta.
-    //    file_put_contents('xml-signed.xml', $see->getFactory()->getLastXml());
-    //    file_put_contents('cdr.zip', $res->getCdrZip());
 } else {
     var_dump($res->getError());
 }

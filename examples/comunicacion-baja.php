@@ -8,21 +8,6 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Emisor
-$address = new Address();
-$address->setUbigueo('150101')
-    ->setDepartamento('LIMA')
-    ->setProvincia('LIMA')
-    ->setDistrito('LIMA')
-    ->setUrbanizacion('NONE')
-    ->setDireccion('AV LS');
-
-$company = new Company();
-$company->setRuc('20000000001')
-    ->setRazonSocial('EMPRESA SAC')
-    ->setNombreComercial('EMPRESA')
-    ->setAddress($address);
-
 $detial1 = new VoidedDetail();
 $detial1->setTipoDoc('01')
     ->setSerie('F001')
@@ -39,7 +24,7 @@ $voided = new Voided();
 $voided->setCorrelativo('00111')
     ->setFecComunicacion(new DateTime())
     ->setFecGeneracion(new DateTime())
-    ->setCompany($company)
+    ->setCompany(Util::getCompany())
     ->setDetails([$detial1, $detial2]);
 
 // Envio a SUNAT.
@@ -49,6 +34,7 @@ $see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
 $see->setCredentials('20000000001MODDATOS', 'moddatos');
 
 $res = $see->send($voided);
+Util::writeXml($voided, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\SummaryResult*/
@@ -62,6 +48,7 @@ if ($res->isSuccess()) {
     $result = $status->getStatus($ticket);
     if ($result->isSuccess()) {
         $cdr = $result->getCdrResponse();
+        Util::writeCdr($voided, $result->getCdrZip());
 
         echo '<h2>Respuesta SUNAT:</h2><br>';
         echo '<b>ID:</b> ' . $cdr->getId().'<br>';
