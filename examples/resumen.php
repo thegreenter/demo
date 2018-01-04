@@ -1,16 +1,18 @@
 <?php
 
-use Greenter\Model\Summary\Summary;
-use Greenter\Model\Summary\SummaryDetail;
+use Greenter\Model\Sale\Document;
+use Greenter\Model\Summary\SummaryDetailV2;
+use Greenter\Model\Summary\SummaryV2;
 use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$detiail1 = new SummaryDetail();
+$detiail1 = new SummaryDetailV2();
 $detiail1->setTipoDoc('03')
-    ->setSerie('B001')
-    ->setDocInicio('1')
-    ->setDocFin('4')
+    ->setSerieNro('B001-1')
+    ->setEstado('3')
+    ->setClienteTipo('1')
+    ->setClienteNro('00000000')
     ->setTotal(100)
     ->setMtoOperGravadas(20.555)
     ->setMtoOperInafectas(24.4)
@@ -18,11 +20,15 @@ $detiail1->setTipoDoc('03')
     ->setMtoOtrosCargos(21)
     ->setMtoIGV(3.6);
 
-$detiail2 = new SummaryDetail();
+$detiail2 = new SummaryDetailV2();
 $detiail2->setTipoDoc('07')
-    ->setSerie('BB01')
-    ->setDocInicio('4')
-    ->setDocFin('8')
+    ->setSerieNro('B001-4')
+    ->setDocReferencia((new Document())
+        ->setTipoDoc('03')
+        ->setNroDoc('0001-122'))
+    ->setEstado('1')
+    ->setClienteTipo('1')
+    ->setClienteNro('00000000')
     ->setTotal(200)
     ->setMtoOperGravadas(40)
     ->setMtoOperExoneradas(30)
@@ -30,7 +36,7 @@ $detiail2->setTipoDoc('07')
     ->setMtoIGV(7.2)
     ->setMtoISC(2.8);
 
-$sum = new Summary();
+$sum = new SummaryV2();
 $sum->setFecGeneracion(new DateTime())
     ->setFecResumen(new DateTime())
     ->setCorrelativo('001')
