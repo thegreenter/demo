@@ -44,10 +44,7 @@ $sum->setFecGeneracion(new DateTime())
     ->setDetails([$detiail1, $detiail2]);
 
 // Envio a SUNAT.
-$see = new \Greenter\See();
-$see->setService(SunatEndpoints::FE_BETA);
-$see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
-$see->setCredentials('20000000001MODDATOS', 'moddatos');
+$see = Util::getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($sum);
 Util::writeXml($sum, $see->getFactory()->getLastXml());

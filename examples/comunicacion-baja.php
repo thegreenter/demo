@@ -26,10 +26,7 @@ $voided->setCorrelativo('00111')
     ->setDetails([$detial1, $detial2]);
 
 // Envio a SUNAT.
-$see = new \Greenter\See();
-$see->setService(SunatEndpoints::FE_BETA);
-$see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
-$see->setCredentials('20000000001MODDATOS', 'moddatos');
+$see = Util::getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($voided);
 Util::writeXml($voided, $see->getFactory()->getLastXml());

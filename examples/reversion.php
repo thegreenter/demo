@@ -27,10 +27,7 @@ $reversion->setCorrelativo('001')
 
 
 // Envio a SUNAT.
-$see = new \Greenter\See();
-$see->setService(SunatEndpoints::RETENCION_BETA);
-$see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
-$see->setCredentials('20000000001MODDATOS', 'moddatos');
+$see = Util::getSee(SunatEndpoints::RETENCION_BETA);
 
 $res = $see->send($reversion);
 Util::writeXml($reversion, $see->getFactory()->getLastXml());

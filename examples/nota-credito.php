@@ -63,10 +63,7 @@ $note->setDetails([$detail1, $detail2])
     ->setLegends([$legend]);
 
 // Envio a SUNAT.
-$see = new \Greenter\See();
-$see->setService(SunatEndpoints::FE_BETA);
-$see->setCertificate(file_get_contents(__DIR__.'/../resources/cert.pem'));
-$see->setCredentials('20000000001MODDATOS', 'moddatos');
+$see = Util::getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($note);
 Util::writeXml($note, $see->getFactory()->getLastXml());

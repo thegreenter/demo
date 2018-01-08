@@ -3,6 +3,7 @@
 use Greenter\Model\Company\Address;
 use Greenter\Model\Company\Company;
 use Greenter\Model\DocumentInterface;
+use Greenter\See;
 
 final class Util
 {
@@ -25,13 +26,28 @@ final class Util
         return $company;
     }
 
+    /**
+     * @param string $endpoint
+     * @return See
+     */
+    public static function getSee($endpoint)
+    {
+        $see = new See();
+        $see->setService($endpoint);
+        $see->setCertificate(file_get_contents(__DIR__.'/resources/cert.pem'));
+        $see->setCredentials('20000000001MODDATOS', 'moddatos');
+        $see->setCachePath(__DIR__.'/cache');
+
+        return $see;
+    }
+
     public static function writeXml(DocumentInterface $document, $xml)
     {
-        file_put_contents(__DIR__.'/data/'.$document->getName().'.xml', $xml);
+        file_put_contents(__DIR__ . '/files/' .$document->getName().'.xml', $xml);
     }
 
     public static function writeCdr(DocumentInterface $document, $zip)
     {
-        file_put_contents(__DIR__.'/data/R-'.$document->getName().'.zip', $zip);
+        file_put_contents(__DIR__ . '/files/R-' .$document->getName().'.zip', $zip);
     }
 }
