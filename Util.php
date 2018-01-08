@@ -43,11 +43,17 @@ final class Util
 
     public static function writeXml(DocumentInterface $document, $xml)
     {
+        if (getenv('NO_FILES')) {
+            return;
+        }
         file_put_contents(__DIR__ . '/files/' .$document->getName().'.xml', $xml);
     }
 
     public static function writeCdr(DocumentInterface $document, $zip)
     {
+        if (getenv('NO_FILES')) {
+            return;
+        }
         file_put_contents(__DIR__ . '/files/R-' .$document->getName().'.zip', $zip);
     }
 }
