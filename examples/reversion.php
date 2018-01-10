@@ -36,12 +36,7 @@ if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\SummaryResult*/
     $ticket = $res->getTicket();
 
-    $status = new \Greenter\Ws\Services\ExtService();
-    $client = new Greenter\Ws\Services\SoapClient();
-    $client->setCredentials('20000000001MODDATOS', 'moddatos');
-    $client->setService(SunatEndpoints::RETENCION_BETA);
-    $status->setClient($client);
-    $result = $status->getStatus($ticket);
+    $result = $see->getStatus($ticket);
     if ($result->isSuccess()) {
         $cdr = $result->getCdrResponse();
         Util::writeCdr($reversion, $result->getCdrZip());
