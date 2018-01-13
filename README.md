@@ -21,7 +21,7 @@ composer run-script start --timeout=0
 ```
 
 Finalmente navegar a http://localhost:8080
-> Los xml y cdr (archivos zip) seran guardados en la carptea `data`.
+> Los xml y cdr (archivos zip) seran guardados en la carptea `data`, sino quiere que los archivos se almacenen defina la variable de entorno `GREENTER_NO_FILES`
 
 ### Heroku
 Disponible en este [link](https://greenter-sample.herokuapp.com).

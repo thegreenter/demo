@@ -41,10 +41,7 @@ if ($res->isSuccess()) {
         $cdr = $result->getCdrResponse();
         Util::writeCdr($reversion, $result->getCdrZip());
 
-        echo '<h2>Respuesta SUNAT:</h2><br>';
-        echo '<b>ID:</b> ' . $cdr->getId().'<br>';
-        echo '<b>CODE:</b> ' . $cdr->getCode().'<br>';
-        echo '<b>DESCRIPTION:</b> ' . $cdr->getDescription().'<br>';
+        echo Util::getResponseFromCdr($cdr);
     } else {
         var_dump($result->getError());
     }

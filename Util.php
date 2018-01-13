@@ -3,6 +3,7 @@
 use Greenter\Model\Company\Address;
 use Greenter\Model\Company\Company;
 use Greenter\Model\DocumentInterface;
+use Greenter\Model\Response\CdrResponse;
 use Greenter\See;
 
 final class Util
@@ -41,9 +42,21 @@ final class Util
         return $see;
     }
 
+    public static function getResponseFromCdr(CdrResponse $cdr)
+    {
+        $result = <<<HTML
+        <h2>Respuesta SUNAT:</h2><br>
+        <b>ID:</b> {$cdr->getId()}<br>
+        <b>CODE:</b>{$cdr->getCode()}<br>
+        <b>DESCRIPTION:</b>{$cdr->getDescription()}<br>
+HTML;
+
+        return $result;
+    }
+
     public static function writeXml(DocumentInterface $document, $xml)
     {
-        if (getenv('NO_FILES')) {
+        if (getenv('GREENTER_NO_FILES')) {
             return;
         }
         file_put_contents(__DIR__ . '/files/' .$document->getName().'.xml', $xml);
@@ -51,7 +64,7 @@ final class Util
 
     public static function writeCdr(DocumentInterface $document, $zip)
     {
-        if (getenv('NO_FILES')) {
+        if (getenv('GREENTER_NO_FILES')) {
             return;
         }
         file_put_contents(__DIR__ . '/files/R-' .$document->getName().'.zip', $zip);

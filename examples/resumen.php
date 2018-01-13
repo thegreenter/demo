@@ -2,6 +2,7 @@
 
 use Greenter\Model\Sale\Document;
 use Greenter\Model\Summary\SummaryDetailV2;
+use Greenter\Model\Summary\SummaryPerception;
 use Greenter\Model\Summary\SummaryV2;
 use Greenter\Ws\Services\SunatEndpoints;
 
@@ -36,12 +37,31 @@ $detiail2->setTipoDoc('07')
     ->setMtoIGV(7.2)
     ->setMtoISC(2.8);
 
+$detiail3 = new SummaryDetailV2();
+$detiail3->setTipoDoc('03')
+    ->setSerieNro('B001-2')
+    ->setEstado('1')
+    ->setClienteTipo('1')
+    ->setClienteNro('00000000')
+    ->setPercepcion((new SummaryPerception())
+       ->setCodReg('01')
+        ->setTasa(2.00)
+        ->setMtoBase(100.00)
+       ->setMto(2.00)
+       ->setMtoTotal(102.00))
+    ->setTotal(100)
+    ->setMtoOperGravadas(20.555)
+    ->setMtoOperInafectas(24.4)
+    ->setMtoOperExoneradas(50)
+    ->setMtoOtrosCargos(21)
+    ->setMtoIGV(3.6);
+
 $sum = new SummaryV2();
-$sum->setFecGeneracion(new DateTime())
-    ->setFecResumen(new DateTime())
+$sum->setFecGeneracion(new DateTime('-1days'))
+    ->setFecResumen(new DateTime('-1days'))
     ->setCorrelativo('001')
     ->setCompany(Util::getCompany())
-    ->setDetails([$detiail1, $detiail2]);
+    ->setDetails([$detiail1, $detiail2, $detiail3]);
 
 // Envio a SUNAT.
 $see = Util::getSee(SunatEndpoints::FE_BETA);
@@ -58,10 +78,7 @@ if ($res->isSuccess()) {
         $cdr = $result->getCdrResponse();
         Util::writeCdr($sum, $result->getCdrZip());
 
-        echo '<h2>Respuesta SUNAT:</h2><br>';
-        echo '<b>ID:</b> ' . $cdr->getId().'<br>';
-        echo '<b>CODE:</b> ' . $cdr->getCode().'<br>';
-        echo '<b>DESCRIPTION:</b> ' . $cdr->getDescription().'<br>';
+        echo Util::getResponseFromCdr($cdr);
     } else {
         var_dump($result->getError());
     }

@@ -56,10 +56,7 @@ if ($res->isSuccess()) {
     $cdr = $res->getCdrResponse();
     Util::writeCdr($invoice, $res->getCdrZip());
 
-    echo '<h2>Respuesta SUNAT:</h2><br>';
-    echo '<b>ID:</b> ' . $cdr->getId().'<br>';
-    echo '<b>CODE:</b> ' . $cdr->getCode().'<br>';
-    echo '<b>DESCRIPTION:</b> ' . $cdr->getDescription().'<br>';
+    echo Util::getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }
