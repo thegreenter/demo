@@ -65,7 +65,8 @@ $detail = new DespatchDetail();
 $detail->setCantidad(2)
     ->setUnidad('ZZ')
     ->setDescripcion('PROD 1')
-    ->setCodigo('PROD1');
+    ->setCodigo('PROD1')
+    ->setCodProdSunat('P001');
 
 $despatch->setDetails([$detail]);
 

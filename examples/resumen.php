@@ -1,14 +1,14 @@
 <?php
 
 use Greenter\Model\Sale\Document;
-use Greenter\Model\Summary\SummaryDetailV2;
+use Greenter\Model\Summary\SummaryDetail;
 use Greenter\Model\Summary\SummaryPerception;
-use Greenter\Model\Summary\SummaryV2;
+use Greenter\Model\Summary\Summary;
 use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$detiail1 = new SummaryDetailV2();
+$detiail1 = new SummaryDetail();
 $detiail1->setTipoDoc('03')
     ->setSerieNro('B001-1')
     ->setEstado('3')
@@ -21,7 +21,7 @@ $detiail1->setTipoDoc('03')
     ->setMtoOtrosCargos(21)
     ->setMtoIGV(3.6);
 
-$detiail2 = new SummaryDetailV2();
+$detiail2 = new SummaryDetail();
 $detiail2->setTipoDoc('07')
     ->setSerieNro('B001-4')
     ->setDocReferencia((new Document())
@@ -37,7 +37,7 @@ $detiail2->setTipoDoc('07')
     ->setMtoIGV(7.2)
     ->setMtoISC(2.8);
 
-$detiail3 = new SummaryDetailV2();
+$detiail3 = new SummaryDetail();
 $detiail3->setTipoDoc('03')
     ->setSerieNro('B001-2')
     ->setEstado('1')
@@ -56,7 +56,7 @@ $detiail3->setTipoDoc('03')
     ->setMtoOtrosCargos(21)
     ->setMtoIGV(3.6);
 
-$sum = new SummaryV2();
+$sum = new Summary();
 $sum->setFecGeneracion(new DateTime('-1days'))
     ->setFecResumen(new DateTime('-1days'))
     ->setCorrelativo('001')

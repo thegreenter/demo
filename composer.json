@@ -5,7 +5,7 @@
         "files": ["Util.php"]
     },
     "require": {
-        "greenter/greenter": "^2.0"
+        "greenter/greenter": "^2.1"
     },
     "scripts": {
         "start": "php -S 0.0.0.0:8080"
