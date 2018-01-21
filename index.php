@@ -8,6 +8,14 @@ $files = array_map(function ($file) {
 
     return ['name' => $name, 'path' => $path];
 }, $files);
+
+$pdfPaths = glob(__DIR__.'/examples/report/*.php');
+$pdfPaths = array_map(function ($file) {
+    $name = basename($file);
+    $path = 'examples/report/' . $name;
+
+    return ['name' => $name, 'path' => $path];
+}, $pdfPaths);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,6 +42,9 @@ $files = array_map(function ($file) {
     <div class="row">
         <div class="col-md-4">
             <ul class="list-group">
+                <?php foreach ($pdfPaths as $file): ?>
+                    <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="glyphicon glyphicon-file"></span>&nbsp;<?=$file['name']?></a></li>
+                <?php endforeach; ?>
                 <?php foreach ($files as $file): ?>
                     <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>&nbsp;<?=$file['name']?></li>
                 <?php endforeach; ?>
