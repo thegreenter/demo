@@ -13,33 +13,24 @@ use Composer\Script\Event;
  */
 class BinDownloader
 {
-    const CONFIG_PATH = __DIR__.'/../.wkhtmltopdf.dist';
-
     public static function postInstall(Event $event)
     {
-        if (file_exists(self::CONFIG_PATH)) {
+        $pathBin = Util::getPathBin();
+        echo $pathBin . PHP_EOL;
+        if (file_exists($pathBin)) {
             return;
         }
 
-        $url = self::getUrlDownload(self::isWindows(), self::is64Bit());
-        $localPath = __DIR__.'/../vendor/bin/'.basename($url);
+        $url = self::getUrlDownload(Util::isWindows(), self::is64Bit());
 
-        if (!file_exists($localPath)) {
+        if (!file_exists($pathBin)) {
             if (!is_dir( __DIR__.'/../vendor/bin')) {
                 $oldmask = umask(0);
                 mkdir(__DIR__.'/../vendor/bin', 0777, true);
                 umask($oldmask);
             }
-            self::downloadBin($url, $localPath);
+            self::downloadBin($url, $pathBin);
         }
-
-        echo 'Store config';
-        file_put_contents(self::CONFIG_PATH, $localPath);
-    }
-
-    private static function isWindows()
-    {
-        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
     private static function is64Bit()
@@ -67,10 +58,10 @@ class BinDownloader
 
     private static function downloadBin($url, $localPath)
     {
-        echo 'Downloading... ' . $url . PHP_EOL;
+        echo 'Downloading... '.$url.PHP_EOL;
         $bin = file_get_contents($url);
 
-        echo 'Writing in ' . $localPath;
+        echo 'Writing in '.$localPath.PHP_EOL;
         file_put_contents($localPath, $bin);
     }
 }

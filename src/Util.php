@@ -81,8 +81,8 @@ HTML;
         $html->setTemplate('invoice2.html.twig');
 
         $render = new PdfReport($html);
-        $binPath = self::tryGetBin();
-        if (!empty($binPath)) {
+        $binPath = self::getPathBin();
+        if (file_exists($binPath)) {
             $render->setBinPath($binPath);
         }
 
@@ -139,13 +139,18 @@ HTML;
         ];
     }
 
-    private static function tryGetBin()
+    public static function getPathBin()
     {
-        $path = __DIR__.'/../.wkhtmltopdf.dist';
-        if (!file_exists($path)) {
-            return '';
+        $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
+        if (self::isWindows()) {
+            $path .= '.exe';
         }
 
-        return file_get_contents($path);
+        return $path;
+    }
+
+    public static function isWindows()
+    {
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 }

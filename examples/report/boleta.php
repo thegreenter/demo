@@ -46,6 +46,9 @@ $legend->setCode('1000')
 $invoice->setDetails($items)
     ->setLegends([$legend]);
 
-$pdf = Util::getPdf($invoice);
-
-Util::showPdf($pdf, 'boleta.pdf');
+try {
+    $pdf = Util::getPdf($invoice);
+    Util::showPdf($pdf, 'boleta.pdf');
+} catch (Exception $e) {
+    var_dump($e);
+}

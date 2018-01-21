@@ -51,6 +51,9 @@ $legend->setCode('1000')
 $note->setDetails($items)
     ->setLegends([$legend]);
 
-$pdf = Util::getPdf($note);
-
-Util::showPdf($pdf, 'nota-debito.pdf');
+try {
+    $pdf = Util::getPdf($note);
+    Util::showPdf($pdf, 'nota-debito.pdf');
+} catch (Exception $e) {
+    var_dump($e);
+}
