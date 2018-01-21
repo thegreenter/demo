@@ -145,16 +145,16 @@
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-htmltopdf.git",
-                "reference": "e341ab0dcd6fadd0777e87747ac2d89217d5b933"
+                "reference": "e0183c77ef1e9a59c48ad8c704c82afc85f11e7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/e341ab0dcd6fadd0777e87747ac2d89217d5b933",
-                "reference": "e341ab0dcd6fadd0777e87747ac2d89217d5b933",
+                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/e0183c77ef1e9a59c48ad8c704c82afc85f11e7b",
+                "reference": "e0183c77ef1e9a59c48ad8c704c82afc85f11e7b",
                 "shasum": ""
             },
             "require": {
@@ -164,6 +164,9 @@
             },
             "require-dev": {
                 "phpunit/phpunit": ">=4.8 < 6.0"
+            },
+            "suggest": {
+                "greenter/report": "Html Reporter"
             },
             "type": "library",
             "autoload": {
@@ -189,7 +192,7 @@
                 "representacion-impresa",
                 "wkhtmltodf"
             ],
-            "time": "2018-01-21T00:48:52+00:00"
+            "time": "2018-01-21T21:19:39+00:00"
         },
         {
             "name": "greenter/report",

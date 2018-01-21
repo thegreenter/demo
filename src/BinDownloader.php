@@ -11,7 +11,7 @@ use Composer\Script\Event;
 /**
  * Class BinDownloader
  */
-class BinDownloader
+final class BinDownloader
 {
     public static function postInstall(Event $event)
     {
@@ -63,5 +63,7 @@ class BinDownloader
 
         echo 'Writing in '.$localPath.PHP_EOL;
         file_put_contents($localPath, $bin);
+
+        echo 'FILE SIZE: '. number_format(filesize($localPath)/1048576, 2).' MB'.PHP_EOL;
     }
 }

@@ -27,10 +27,10 @@ Finalmente navegar a http://localhost:8080
 Disponible en este [link](https://greenter-sample.herokuapp.com).
 
 ### Lista de Ejemplos
-:ballot_box_with_check: Factura  
-:ballot_box_with_check: Boleta  
-:ballot_box_with_check: Nota de Crédito  
-:ballot_box_with_check: Nota de Débito  
+:ballot_box_with_check: Factura (PDF)
+:ballot_box_with_check: Boleta  (PDF)
+:ballot_box_with_check: Nota de Crédito (PDF)  
+:ballot_box_with_check: Nota de Débito  (PDF)
 :ballot_box_with_check: Resumen Diario de Boletas (v2)  
 :ballot_box_with_check: Comunicación de Baja  
 :ballot_box_with_check: Guia de Remisión  
