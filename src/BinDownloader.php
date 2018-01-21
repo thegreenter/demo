@@ -63,6 +63,8 @@ final class BinDownloader
 
         echo 'Writing in '.$localPath.PHP_EOL;
         file_put_contents($localPath, $bin);
+        chmod($localPath, 0777);
+        echo exec("$localPath --version").PHP_EOL;
 
         echo 'FILE SIZE: '. number_format(filesize($localPath)/1048576, 2).' MB'.PHP_EOL;
     }
