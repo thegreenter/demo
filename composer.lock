@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d41e230e8d3f93472421a6d57497ed1",
+    "content-hash": "84a519db6cfdcc5bd9a2bd3b38eda38e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -144,7 +144,7 @@
             "time": "2018-01-20T05:23:50+00:00"
         },
         {
-            "name": "greenter/htmtopdf",
+            "name": "greenter/htmltopdf",
             "version": "v1.0.0",
             "source": {
                 "type": "git",

@@ -25,6 +25,11 @@ class BinDownloader
         $localPath = __DIR__.'/../vendor/bin/'.basename($url);
 
         if (!file_exists($localPath)) {
+            if (!is_dir( __DIR__.'/../vendor/bin')) {
+                $oldmask = umask(0);
+                mkdir(__DIR__.'/../vendor/bin', 0777, true);
+                umask($oldmask);
+            }
             self::downloadBin($url, $localPath);
         }
 
