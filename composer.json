@@ -2,12 +2,17 @@
     "optimize-autoloader": true,
     "classmap-authoritative": true,
     "autoload": {
-        "files": ["Util.php"]
+        "psr-4": {
+            "": "src/"
+        }
     },
     "require": {
-        "greenter/greenter": "^2.1"
+        "greenter/greenter": "^2.1",
+        "greenter/report": "^1.1",
+        "greenter/htmtopdf": "^1.0"
     },
     "scripts": {
-        "start": "php -S 0.0.0.0:8080"
+        "start": "php -S 0.0.0.0:8080",
+        "post-install-cmd": "BinDownloader::postInstall"
     }
 }

@@ -1,31 +1,34 @@
 <?php
 use Greenter\Model\Client\Client;
-use Greenter\Model\Sale\Invoice;
+use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
-use Greenter\Ws\Services\SunatEndpoints;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 // Cliente
 $client = new Client();
-$client->setTipoDoc('1')
-    ->setNumDoc('20203030')
-    ->setRznSocial('PERSON 1');
+$client->setTipoDoc('6')
+    ->setNumDoc('20000000001')
+    ->setRznSocial('EMPRESA 1');
 
-// Venta
-$invoice = new Invoice();
-$invoice->setTipoDoc('03')
-    ->setSerie('B001')
-    ->setCorrelativo('1')
+$note = new Note();
+$note
+    ->setTipDocAfectado('01')
+    ->setNumDocfectado('F001-111')
+    ->setCodMotivo('02')
+    ->setDesMotivo('AUMENTO EN EL VALOR')
+    ->setTipoDoc('08')
+    ->setSerie('FF01')
     ->setFechaEmision(new DateTime())
+    ->setCorrelativo('123')
     ->setTipoMoneda('PEN')
     ->setClient($client)
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
-    ->setMtoImpVenta(100)
+    ->setMtoImpVenta(236)
     ->setCompany(Util::getCompany());
 
 $item1 = new SaleDetail();
@@ -45,21 +48,9 @@ $legend = new Legend();
 $legend->setCode('1000')
     ->setValue('SON CIEN CON 00/100 SOLES');
 
-$invoice->setDetails($items)
+$note->setDetails($items)
     ->setLegends([$legend]);
 
-// Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::FE_BETA);
-$res = $see->send($invoice);
-Util::writeXml($invoice, $see->getFactory()->getLastXml());
+$pdf = Util::getPdf($note);
 
-if ($res->isSuccess()) {
-    /**@var $res \Greenter\Model\Response\BillResult*/
-    $cdr = $res->getCdrResponse();
-    Util::writeCdr($invoice, $res->getCdrZip());
-
-    echo Util::getResponseFromCdr($cdr);
-} else {
-    var_dump($res->getError());
-}
-
+Util::showPdf($pdf, 'nota-debito.pdf');

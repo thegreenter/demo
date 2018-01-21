@@ -4,3 +4,4 @@
 !/files/README.md
 /cache/*
 !/cache/README.md
+.wkhtmltopdf.dist

@@ -3,9 +3,7 @@ use Greenter\Model\Client\Client;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
-use Greenter\Ws\Services\SunatEndpoints;
-
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 // Cliente
 $client = new Client();
@@ -48,18 +46,6 @@ $legend->setCode('1000')
 $invoice->setDetails($items)
     ->setLegends([$legend]);
 
-// Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::FE_BETA);
-$res = $see->send($invoice);
-Util::writeXml($invoice, $see->getFactory()->getLastXml());
+$pdf = Util::getPdf($invoice);
 
-if ($res->isSuccess()) {
-    /**@var $res \Greenter\Model\Response\BillResult*/
-    $cdr = $res->getCdrResponse();
-    Util::writeCdr($invoice, $res->getCdrZip());
-
-    echo Util::getResponseFromCdr($cdr);
-} else {
-    var_dump($res->getError());
-}
-
+Util::showPdf($pdf, 'boleta.pdf');
