@@ -37,7 +37,7 @@ $item1->setCodProducto('C023')
     ->setMtoValorUnitario(50)
     ->setMtoPrecioUnitario(56);
 
-$items = Util::generator($item1, 14);
+$items = Util::generator($item1, 10);
 
 $legend = new Legend();
 $legend->setCode('1000')

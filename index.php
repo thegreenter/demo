@@ -41,18 +41,35 @@ $pdfPaths = array_map(function ($file) {
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <ul class="list-group">
-                <?php foreach ($pdfPaths as $file): ?>
-                    <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="glyphicon glyphicon-file"></span>&nbsp;<?=$file['name']?></a></li>
-                <?php endforeach; ?>
-                <?php foreach ($files as $file): ?>
-                    <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>&nbsp;<?=$file['name']?></li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Comprobantes <span class="badge"><?php echo count($files); ?></span></div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <?php foreach ($files as $file): ?>
+                            <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>&nbsp;<?=$file['name']?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-md-8">
-            <div id="result" class="well">De click en algun elemento de la lista.</div>
-            <div>Time: <span id="time"></span></div>
+            <div class="panel panel-success">
+                <div class="panel-heading">Resultado</div>
+                <div class="panel-body">
+                    <div id="result" class="well">De click en algun elemento de la lista.</div>
+                    <div>Time: <span id="time"></span></div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">PDF <span class="badge"><?php echo count($pdfPaths); ?></span></div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <?php foreach ($pdfPaths as $file): ?>
+                            <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="glyphicon glyphicon-file"></span>&nbsp;<?=$file['name']?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ Clonar el repositorio e instalar las dependencias.
 ```bash
 git clone https://github.com/giansalex/greenter-sample.git
 cd greenter-sample
-composer install
+composer install --no-dev
 ```
 
 ### Ejecutar
@@ -21,10 +21,10 @@ composer run-script start --timeout=0
 ```
 
 Finalmente navegar a http://localhost:8080
-> Los xml y cdr (archivos zip) seran guardados en la carptea `data`, sino quiere que los archivos se almacenen defina la variable de entorno `GREENTER_NO_FILES`
+> Los xml, pdf y cdr (archivos zip) seran guardados en la carptea `data`, sino quiere que los archivos se almacenen definir la variable de entorno `GREENTER_NO_FILES`
 
 ### Heroku
-Disponible en este [link](https://greenter-sample.herokuapp.com).
+Disponible en este https://greenter-sample.herokuapp.com.
 
 ### Lista de Ejemplos
 :ballot_box_with_check: Factura (PDF)  

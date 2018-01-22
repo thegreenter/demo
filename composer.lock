@@ -145,16 +145,16 @@
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-htmltopdf.git",
-                "reference": "e0183c77ef1e9a59c48ad8c704c82afc85f11e7b"
+                "reference": "8c925144d7a6fe594def2c69e4dfc59ae651447f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/e0183c77ef1e9a59c48ad8c704c82afc85f11e7b",
-                "reference": "e0183c77ef1e9a59c48ad8c704c82afc85f11e7b",
+                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/8c925144d7a6fe594def2c69e4dfc59ae651447f",
+                "reference": "8c925144d7a6fe594def2c69e4dfc59ae651447f",
                 "shasum": ""
             },
             "require": {
@@ -192,20 +192,20 @@
                 "representacion-impresa",
                 "wkhtmltodf"
             ],
-            "time": "2018-01-21T21:19:39+00:00"
+            "time": "2018-01-22T17:37:11+00:00"
         },
         {
             "name": "greenter/report",
-            "version": "v1.1.1",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "c092e1a0ac32d5bc0457743edd4c51b53f8025d6"
+                "reference": "f7ac381b9b69e9c809178b8605a14dd9da7f3f85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/c092e1a0ac32d5bc0457743edd4c51b53f8025d6",
-                "reference": "c092e1a0ac32d5bc0457743edd4c51b53f8025d6",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/f7ac381b9b69e9c809178b8605a14dd9da7f3f85",
+                "reference": "f7ac381b9b69e9c809178b8605a14dd9da7f3f85",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-20T23:20:20+00:00"
+            "time": "2018-01-22T17:15:39+00:00"
         },
         {
             "name": "greenter/ws",
@@ -341,16 +341,16 @@
         },
         {
             "name": "greenter/xmldsig",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/xmldsig.git",
-                "reference": "ead016d871a931a0fe815854043267bc9a2bb1ed"
+                "reference": "a772bac3d78d78aa006e90c6815eb485efa46330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/ead016d871a931a0fe815854043267bc9a2bb1ed",
-                "reference": "ead016d871a931a0fe815854043267bc9a2bb1ed",
+                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/a772bac3d78d78aa006e90c6815eb485efa46330",
+                "reference": "a772bac3d78d78aa006e90c6815eb485efa46330",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +378,7 @@
                 "xml",
                 "xmldsig"
             ],
-            "time": "2018-01-03T15:45:17+00:00"
+            "time": "2018-01-22T16:08:43+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
