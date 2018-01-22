@@ -15,6 +15,10 @@ final class BinDownloader
 {
     public static function postInstall(Event $event)
     {
+        if (getenv('NOT_INSTALL')) {
+            return;
+        }
+
         $pathBin = Util::getPathBin();
         echo $pathBin . PHP_EOL;
         if (file_exists($pathBin)) {

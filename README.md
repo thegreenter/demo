@@ -31,9 +31,9 @@ Disponible en este [link](https://greenter-sample.herokuapp.com).
 :ballot_box_with_check: Boleta  (PDF)  
 :ballot_box_with_check: Nota de Crédito (PDF)  
 :ballot_box_with_check: Nota de Débito  (PDF)  
-:ballot_box_with_check: Resumen Diario de Boletas (v2)  
+:ballot_box_with_check: Resumen Diario de Boletas (v2.1)  
 :ballot_box_with_check: Comunicación de Baja  
-:ballot_box_with_check: Guia de Remisión  
+:ballot_box_with_check: Guia de Remisión  (v2.1)  
 :ballot_box_with_check: Retención  
 :ballot_box_with_check: Perecepción  
 :ballot_box_with_check: Comunicación de Reversión  

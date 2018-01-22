@@ -8,6 +8,8 @@ RUN apt-get update && \
     apt-get clean && \
     curl --silent --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+ENV NOT_INSTALL 1
+
 COPY . /var/www/html/
 
 RUN cd /var/www/html && \
