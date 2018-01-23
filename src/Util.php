@@ -61,7 +61,7 @@ HTML;
         if (getenv('GREENTER_NO_FILES')) {
             return;
         }
-        file_put_contents(__DIR__ . '/../files/' .$document->getName().'.xml', $xml);
+        file_put_contents(__DIR__ . '/../files/' . $document->getName() . '.xml', $xml);
     }
 
     public static function writeCdr(DocumentInterface $document, $zip)
@@ -69,7 +69,7 @@ HTML;
         if (getenv('GREENTER_NO_FILES')) {
             return;
         }
-        file_put_contents(__DIR__ . '/../files/R-' .$document->getName().'.zip', $zip);
+        file_put_contents(__DIR__ . '/../files/R-' . $document->getName() . '.zip', $zip);
     }
 
     public static function getPdf(DocumentInterface $document)
@@ -84,8 +84,11 @@ HTML;
         if (file_exists($binPath)) {
             $render->setBinPath($binPath);
         }
+        $hash = self::getHash($document);
+        $params = self::getParametersPdf();
+        $params['user']['footer'] = '<p style="font-size:7pt">Codigo Hash: '.$hash.'</p>';
 
-        return $render->render($document, self::getParametersPdf());
+        return $render->render($document, $params);
     }
 
     public static function generator($item, $count)
@@ -103,11 +106,21 @@ HTML;
     {
         self::writePdf($filename, $content);
         header('Content-type: application/pdf');
-        header('Content-Disposition: inline; filename="'.$filename.'"');
+        header('Content-Disposition: inline; filename="' . $filename . '"');
         header('Content-Transfer-Encoding: binary');
         header('Content-Length: ' . strlen($content));
 
         echo $content;
+    }
+
+    private static function getHash(DocumentInterface $document)
+    {
+        $see = Util::getSee('');
+        $xml = $see->getXmlSigned($document);
+
+        $hash = (new \Greenter\Report\XmlUtils())->getHashSign($xml);
+
+        return $hash;
     }
 
     private static function writePdf($filename, $content)
@@ -132,7 +145,7 @@ HTML;
                 'extras' => [
                     ['name' => 'CONDICION DE PAGO', 'value' => 'Efectivo'],
                     ['name' => 'VENDEDOR', 'value' => 'GITHUB SELLER'],
-                ]
+                ],
             ]
         ];
     }

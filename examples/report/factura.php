@@ -44,7 +44,7 @@ $items = Util::generator($item1, 10);
 
 $legend = new Legend();
 $legend->setCode('1000')
-    ->setValue('SON MIL TRESCIENTOS CON 43/100');
+    ->setValue('SON MIL TRESCIENTOS CON 43/100 SOLES');
 
 $invoice->setDetails($items)
     ->setLegends([$legend]);
