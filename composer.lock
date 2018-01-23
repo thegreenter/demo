@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f46ee0270b05be48cda37beaca6df72",
+    "content-hash": "ca6e5dd6febf244f3bcc674791bf30ca",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -145,16 +145,16 @@
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-htmltopdf.git",
-                "reference": "8c925144d7a6fe594def2c69e4dfc59ae651447f"
+                "reference": "e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/8c925144d7a6fe594def2c69e4dfc59ae651447f",
-                "reference": "8c925144d7a6fe594def2c69e4dfc59ae651447f",
+                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932",
+                "reference": "e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932",
                 "shasum": ""
             },
             "require": {
@@ -192,20 +192,20 @@
                 "representacion-impresa",
                 "wkhtmltodf"
             ],
-            "time": "2018-01-22T17:37:11+00:00"
+            "time": "2018-01-23T04:05:52+00:00"
         },
         {
             "name": "greenter/report",
-            "version": "v1.1.3",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "f7ac381b9b69e9c809178b8605a14dd9da7f3f85"
+                "reference": "13ceb620a0921c966be4bb97d72ecfed1081bbc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/f7ac381b9b69e9c809178b8605a14dd9da7f3f85",
-                "reference": "f7ac381b9b69e9c809178b8605a14dd9da7f3f85",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/13ceb620a0921c966be4bb97d72ecfed1081bbc6",
+                "reference": "13ceb620a0921c966be4bb97d72ecfed1081bbc6",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-22T17:15:39+00:00"
+            "time": "2018-01-23T03:55:07+00:00"
         },
         {
             "name": "greenter/ws",

@@ -78,7 +78,6 @@ HTML;
             'cache' => __DIR__ . '/../cache',
             'strict_variables' => true,
         ]);
-        $html->setTemplate('invoice2.html.twig');
 
         $render = new PdfReport($html);
         $binPath = self::getPathBin();
@@ -130,7 +129,6 @@ HTML;
             'user' => [
                 'resolucion' => '212321',
                 'header' => 'Telf: <b>(056) 123375</b>',
-                'dir_client' => 'AV ITALIA 23423',
                 'extras' => [
                     ['name' => 'CONDICION DE PAGO', 'value' => 'Efectivo'],
                     ['name' => 'VENDEDOR', 'value' => 'GITHUB SELLER'],
