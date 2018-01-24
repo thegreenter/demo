@@ -48,7 +48,7 @@ $invoice->setDetails($items)
 
 try {
     $pdf = Util::getPdf($invoice);
-    Util::showPdf($pdf, 'boleta.pdf');
+    Util::showPdf($pdf, $invoice->getName().'.pdf');
 } catch (Exception $e) {
     var_dump($e);
 }

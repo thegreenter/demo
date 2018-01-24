@@ -80,6 +80,13 @@ HTML;
         ]);
 
         $render = new PdfReport($html);
+        $render->setOptions( [
+            'no-outline',
+            'viewport-size' => '1280x1024',
+            'page-width' => '21cm',
+            'page-height' => '29.7cm',
+            'footer-html' => __DIR__.'/../resources/footer.html',
+        ]);
         $binPath = self::getPathBin();
         if (file_exists($binPath)) {
             $render->setBinPath($binPath);

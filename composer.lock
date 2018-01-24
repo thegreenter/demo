@@ -196,16 +196,16 @@
         },
         {
             "name": "greenter/report",
-            "version": "1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "13ceb620a0921c966be4bb97d72ecfed1081bbc6"
+                "reference": "c962a4c07fd15b996471a66ed9da51abf41bb61e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/13ceb620a0921c966be4bb97d72ecfed1081bbc6",
-                "reference": "13ceb620a0921c966be4bb97d72ecfed1081bbc6",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/c962a4c07fd15b996471a66ed9da51abf41bb61e",
+                "reference": "c962a4c07fd15b996471a66ed9da51abf41bb61e",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-23T03:55:07+00:00"
+            "time": "2018-01-24T18:25:21+00:00"
         },
         {
             "name": "greenter/ws",

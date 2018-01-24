@@ -53,7 +53,7 @@ $note->setDetails($items)
 
 try {
     $pdf = Util::getPdf($note);
-    Util::showPdf($pdf, 'nota-debito.pdf');
+    Util::showPdf($pdf, $note->getName().'.pdf');
 } catch (Exception $e) {
     var_dump($e);
 }
