@@ -1,6 +1,7 @@
 <?php
 
 use Greenter\Model\Client\Client;
+use Greenter\Model\Sale\Document;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -16,11 +17,18 @@ $client->setTipoDoc('6')
 
 // Venta
 $invoice = new Invoice();
-$invoice->setTipoDoc('01')
+$invoice
+    ->setFecVencimiento(new DateTime())
+    ->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('123')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
+    ->setGuias([
+        (new Document())
+        ->setTipoDoc('09')
+        ->setNroDoc('001-213')
+    ])
     ->setClient($client)
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)

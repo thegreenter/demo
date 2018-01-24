@@ -1,6 +1,7 @@
 <?php
 
 use Greenter\Model\Client\Client;
+use Greenter\Model\Sale\Document;
 use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -25,6 +26,11 @@ $note
     ->setFechaEmision(new DateTime())
     ->setCorrelativo('123')
     ->setTipoMoneda('PEN')
+    ->setGuias([
+        (new Document())
+        ->setTipoDoc('09')
+        ->setNroDoc('001-213')
+    ])
     ->setClient($client)
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)

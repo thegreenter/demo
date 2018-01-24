@@ -1,4 +1,16 @@
 {
+    "name": "greenter/sample",
+    "description": "Greenter Samples",
+    "keywords": ["samples", "greenter", "facturacion electronica", "sunat"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giancarlos Salas",
+            "email": "giansalex@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/giansalex/greenter-sample",
+    "type": "project",
     "optimize-autoloader": true,
     "classmap-authoritative": true,
     "autoload": {
