@@ -7,6 +7,7 @@ use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
 use Greenter\Report\PdfReport;
 use Greenter\See;
+use Greenter\Validator\XmlErrorCodeProvider;
 
 final class Util
 {
@@ -37,6 +38,7 @@ final class Util
     {
         $see = new See();
         $see->setService($endpoint);
+        $see->setCodeProvider(new XmlErrorCodeProvider());
         $see->setCertificate(file_get_contents(__DIR__ . '/../resources/cert.pem'));
         $see->setCredentials('20000000001MODDATOS', 'moddatos');
         $see->setCachePath(__DIR__ . '/../cache');

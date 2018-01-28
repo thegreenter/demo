@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f619b0a893b471567ab2bfcb8a643665",
+    "content-hash": "d218f424318aaeab371480a145d7d157",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v1.2.1",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "a557e2e844491fb788e13e4d7c2d1c220ba148c9"
+                "reference": "3e07b9d876e5752f0cc284c9a7152bceadad388b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/a557e2e844491fb788e13e4d7c2d1c220ba148c9",
-                "reference": "a557e2e844491fb788e13e4d7c2d1c220ba148c9",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/3e07b9d876e5752f0cc284c9a7152bceadad388b",
+                "reference": "3e07b9d876e5752f0cc284c9a7152bceadad388b",
                 "shasum": ""
             },
             "require": {
@@ -92,25 +92,25 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-01-23T22:17:51+00:00"
+            "time": "2018-01-28T01:42:54+00:00"
         },
         {
             "name": "greenter/greenter",
-            "version": "v2.1.0",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter.git",
-                "reference": "3333650abb5622e09eeb16aa8a5c88ac79eb7c19"
+                "reference": "2f562525f68ce04f85f9efb4106b57afbea15c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter/zipball/3333650abb5622e09eeb16aa8a5c88ac79eb7c19",
-                "reference": "3333650abb5622e09eeb16aa8a5c88ac79eb7c19",
+                "url": "https://api.github.com/repos/giansalex/greenter/zipball/2f562525f68ce04f85f9efb4106b57afbea15c2e",
+                "reference": "2f562525f68ce04f85f9efb4106b57afbea15c2e",
                 "shasum": ""
             },
             "require": {
                 "greenter/core": "^1.2",
-                "greenter/ws": "^1.1",
+                "greenter/ws": "^1.2",
                 "greenter/xml": "^1.2",
                 "greenter/xmldsig": "^1.0",
                 "php": ">=5.5.9"
@@ -141,7 +141,7 @@
                 "sunat",
                 "xml"
             ],
-            "time": "2018-01-20T05:23:50+00:00"
+            "time": "2018-01-28T04:08:35+00:00"
         },
         {
             "name": "greenter/htmltopdf",
@@ -196,16 +196,16 @@
         },
         {
             "name": "greenter/report",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "c962a4c07fd15b996471a66ed9da51abf41bb61e"
+                "reference": "aa471d22b4b7e2906925efcd21f85e46bb8a7b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/c962a4c07fd15b996471a66ed9da51abf41bb61e",
-                "reference": "c962a4c07fd15b996471a66ed9da51abf41bb61e",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/aa471d22b4b7e2906925efcd21f85e46bb8a7b75",
+                "reference": "aa471d22b4b7e2906925efcd21f85e46bb8a7b75",
                 "shasum": ""
             },
             "require": {
@@ -241,20 +241,20 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-24T18:25:21+00:00"
+            "time": "2018-01-25T22:13:19+00:00"
         },
         {
             "name": "greenter/ws",
-            "version": "v1.1.1",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "365f1504d93185a8e8dd6b191816125eeb7b429a"
+                "reference": "0e06fc4613f4aab7e434f2b8193159d3f5b6e907"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/365f1504d93185a8e8dd6b191816125eeb7b429a",
-                "reference": "365f1504d93185a8e8dd6b191816125eeb7b429a",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/0e06fc4613f4aab7e434f2b8193159d3f5b6e907",
+                "reference": "0e06fc4613f4aab7e434f2b8193159d3f5b6e907",
                 "shasum": ""
             },
             "require": {
@@ -282,27 +282,76 @@
                     "email": "giansalex@gmail.com"
                 }
             ],
-            "description": "WS Facturacion Electrónica SUNAT - Perú",
+            "description": "WebServices Sunat Facturación Electrónica - Perú",
             "homepage": "https://github.com/giansalex/greenter-ws",
             "keywords": [
                 "facturación electrónica",
                 "greenter",
-                "ws"
+                "soap",
+                "sunat",
+                "webservices"
             ],
-            "time": "2018-01-20T04:32:15+00:00"
+            "time": "2018-01-28T02:41:02+00:00"
         },
         {
-            "name": "greenter/xml",
-            "version": "v1.2.1",
+            "name": "greenter/xcodes",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "6e9ba8a568e3ed10168c5de9c1ba3af318cea353"
+                "url": "https://github.com/giansalex/greenter-xcodes.git",
+                "reference": "a44f1320a869ce67c62fc51bbbbd84376041e96b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/6e9ba8a568e3ed10168c5de9c1ba3af318cea353",
-                "reference": "6e9ba8a568e3ed10168c5de9c1ba3af318cea353",
+                "url": "https://api.github.com/repos/giansalex/greenter-xcodes/zipball/a44f1320a869ce67c62fc51bbbbd84376041e96b",
+                "reference": "a44f1320a869ce67c62fc51bbbbd84376041e96b",
+                "shasum": ""
+            },
+            "require": {
+                "greenter/core": "^1.2",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.8 < 6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Greenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giancarlos Salas",
+                    "email": "giansalex@gmail.com"
+                }
+            ],
+            "description": "Códigos de Error en Facturación Electrónica SUNAT - Perú",
+            "homepage": "https://github.com/giansalex/greenter-xcodes",
+            "keywords": [
+                "error-codes",
+                "facturación electrónica",
+                "greenter",
+                "sunat"
+            ],
+            "time": "2018-01-28T02:19:54+00:00"
+        },
+        {
+            "name": "greenter/xml",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giansalex/greenter-xml.git",
+                "reference": "c6f936d3851adadc41f05fbda0a7e6d357a9de7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/c6f936d3851adadc41f05fbda0a7e6d357a9de7d",
+                "reference": "c6f936d3851adadc41f05fbda0a7e6d357a9de7d",
                 "shasum": ""
             },
             "require": {
@@ -311,6 +360,7 @@
                 "twig/twig": "~1.0"
             },
             "require-dev": {
+                "greenter/ubl-validator": "^1.0",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
             "type": "library",
@@ -336,7 +386,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-01-23T23:28:21+00:00"
+            "time": "2018-01-26T19:12:59+00:00"
         },
         {
             "name": "greenter/xmldsig",

@@ -22,7 +22,8 @@
         "greenter/greenter": "^2.1",
         "greenter/report": "^1.2",
         "greenter/htmltopdf": "^1.0",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "greenter/xcodes": "^1.0"
     },
     "scripts": {
         "start": "php -S 0.0.0.0:8080",
