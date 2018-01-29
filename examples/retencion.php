@@ -1,7 +1,6 @@
 <?php
 
 
-use Greenter\Model\Client\Client;
 use Greenter\Model\Retention\Exchange;
 use Greenter\Model\Retention\Payment;
 use Greenter\Model\Retention\Retention;
@@ -10,18 +9,15 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$client = new Client();
-$client->setTipoDoc('6')
-    ->setNumDoc('20000000001')
-    ->setRznSocial('EMPRESA 1');
+$util = Util::getInstance();
 
 $retention = new Retention();
 $retention
     ->setSerie('R001')
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
-    ->setCompany(Util::getCompany())
-    ->setProveedor($client)
+    ->setCompany($util->getCompany())
+    ->setProveedor($util->getClient())
     ->setObservacion('NOTA /><!-- HI -->')
     ->setImpRetenido(10)
     ->setImpPagado(210)
@@ -54,17 +50,17 @@ $detail->setTipoDoc('01')
 $retention->setDetails([$detail]);
 
 // Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::RETENCION_BETA);
+$see = $util->getSee(SunatEndpoints::RETENCION_BETA);
 
 $res = $see->send($retention);
-Util::writeXml($retention, $see->getFactory()->getLastXml());
+$util->writeXml($retention, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
-    Util::writeCdr($retention, $res->getCdrZip());
+    $util->writeCdr($retention, $res->getCdrZip());
 
-    echo Util::getResponseFromCdr($cdr);
+    echo $util->getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }

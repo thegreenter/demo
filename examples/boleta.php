@@ -1,4 +1,5 @@
 <?php
+
 use Greenter\Model\Client\Client;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
@@ -7,6 +8,7 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$util = Util::getInstance();
 // Cliente
 $client = new Client();
 $client->setTipoDoc('1')
@@ -26,7 +28,7 @@ $invoice->setTipoDoc('03')
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(100)
-    ->setCompany(Util::getCompany());
+    ->setCompany($util->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')
@@ -49,7 +51,7 @@ $invoice->setDetails($items)
     ->setLegends([$legend]);
 
 // Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::FE_BETA);
+$see = $util->getSee(SunatEndpoints::FE_BETA);
 $res = $see->send($invoice);
 Util::writeXml($invoice, $see->getFactory()->getLastXml());
 
@@ -58,7 +60,7 @@ if ($res->isSuccess()) {
     $cdr = $res->getCdrResponse();
     Util::writeCdr($invoice, $res->getCdrZip());
 
-    echo Util::getResponseFromCdr($cdr);
+    echo $util->getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }

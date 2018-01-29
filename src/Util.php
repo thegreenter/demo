@@ -1,7 +1,6 @@
 <?php
 
-use Greenter\Model\Company\Address;
-use Greenter\Model\Company\Company;
+use Greenter\Data\StoreTrait;
 use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
@@ -11,30 +10,28 @@ use Greenter\Validator\XmlErrorCodeProvider;
 
 final class Util
 {
-    public static function getCompany()
+    use StoreTrait;
+
+    private static $current;
+
+    private function __construct()
     {
-        $address = new Address();
-        $address->setUbigueo('150101')
-            ->setDepartamento('LIMA')
-            ->setProvincia('LIMA')
-            ->setDistrito('LIMA')
-            ->setUrbanizacion('-')
-            ->setDireccion('AV NUEVA LUZ');
+    }
 
-        $company = new Company();
-        $company->setRuc('20000000001')
-            ->setRazonSocial('GREENTER S.A.C.')
-            ->setNombreComercial('IMM CORP')
-            ->setAddress($address);
+    public static function getInstance()
+    {
+        if (!self::$current instanceof self) {
+            self::$current = new self();
+        }
 
-        return $company;
+        return self::$current;
     }
 
     /**
      * @param string $endpoint
      * @return See
      */
-    public static function getSee($endpoint)
+    public function getSee($endpoint)
     {
         $see = new See();
         $see->setService($endpoint);
@@ -46,7 +43,7 @@ final class Util
         return $see;
     }
 
-    public static function getResponseFromCdr(CdrResponse $cdr)
+    public function getResponseFromCdr(CdrResponse $cdr)
     {
         $result = <<<HTML
         <h2>Respuesta SUNAT:</h2><br>
@@ -74,12 +71,16 @@ HTML;
         file_put_contents(__DIR__ . '/../files/R-' . $document->getName() . '.zip', $zip);
     }
 
-    public static function getPdf(DocumentInterface $document)
+    public function getPdf(DocumentInterface $document)
     {
         $html = new HtmlReport('', [
             'cache' => __DIR__ . '/../cache',
             'strict_variables' => true,
         ]);
+        $template = $this->getTemplate($document);
+        if ($template) {
+            $html->setTemplate($template);
+        }
 
         $render = new PdfReport($html);
         $render->setOptions( [
@@ -93,8 +94,9 @@ HTML;
         if (file_exists($binPath)) {
             $render->setBinPath($binPath);
         }
-        $hash = self::getHash($document);
+        $hash = $this->getHash($document);
         $params = self::getParametersPdf();
+        $params['system']['hash'] = $hash;
         $params['user']['footer'] = '<p style="font-size:7pt">Codigo Hash: '.$hash.'</p>';
 
         return $render->render($document, $params);
@@ -122,9 +124,52 @@ HTML;
         echo $content;
     }
 
-    private static function getHash(DocumentInterface $document)
+    public static function getPathBin()
     {
-        $see = Util::getSee('');
+        $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
+        if (self::isWindows()) {
+            $path .= '.exe';
+        }
+
+        return $path;
+    }
+
+    public static function isWindows()
+    {
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+    }
+
+    private function getTemplate($document)
+    {
+        $className = get_class($document);
+
+        switch ($className) {
+            case \Greenter\Model\Retention\Retention::class:
+                $name = 'retention';
+                break;
+            case \Greenter\Model\Perception\Perception::class:
+                $name = 'perception';
+                break;
+            case \Greenter\Model\Despatch\Despatch::class:
+                $name = 'despatch';
+                break;
+            case \Greenter\Model\Summary\Summary::class:
+                $name = 'summary';
+                break;
+            case \Greenter\Model\Voided\Voided::class:
+            case \Greenter\Model\Voided\Reversion::class:
+                $name = 'voided';
+                break;
+            default:
+                return '';
+        }
+
+        return $name.'.html.twig';
+    }
+
+    private function getHash(DocumentInterface $document)
+    {
+        $see = $this->getSee('');
         $xml = $see->getXmlSigned($document);
 
         $hash = (new \Greenter\Report\XmlUtils())->getHashSign($xml);
@@ -147,6 +192,7 @@ HTML;
         return [
             'system' => [
                 'logo' => $logo,
+                'hash' => '3df'
             ],
             'user' => [
                 'resolucion' => '212321',
@@ -157,20 +203,5 @@ HTML;
                 ],
             ]
         ];
-    }
-
-    public static function getPathBin()
-    {
-        $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
-        if (self::isWindows()) {
-            $path .= '.exe';
-        }
-
-        return $path;
-    }
-
-    public static function isWindows()
-    {
-        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 }

@@ -4,11 +4,11 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$note = $util->getNote();
+$document = $util->getRetention();
 
 try {
-    $pdf = $util->getPdf($note);
-    $util->showPdf($pdf, $note->getName().'.pdf');
+    $pdf = $util->getPdf($document);
+    $util->showPdf($pdf, $document->getName().'.pdf');
 } catch (Exception $e) {
     var_dump($e);
 }

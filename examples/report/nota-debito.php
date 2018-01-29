@@ -6,6 +6,7 @@ use Greenter\Model\Sale\Legend;
 
 require __DIR__ . '/../../vendor/autoload.php';
 
+$util = Util::getInstance();
 // Cliente
 $client = new Client();
 $client->setTipoDoc('6')
@@ -29,7 +30,7 @@ $note
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(236)
-    ->setCompany(Util::getCompany());
+    ->setCompany($util->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')
@@ -42,7 +43,7 @@ $item1->setCodProducto('C023')
     ->setMtoValorUnitario(50)
     ->setMtoPrecioUnitario(56);
 
-$items = Util::generator($item1, 6);
+$items = $util->generator($item1, 6);
 
 $legend = new Legend();
 $legend->setCode('1000')
@@ -52,8 +53,8 @@ $note->setDetails($items)
     ->setLegends([$legend]);
 
 try {
-    $pdf = Util::getPdf($note);
-    Util::showPdf($pdf, $note->getName().'.pdf');
+    $pdf = $util->getPdf($note);
+    $util->showPdf($pdf, $note->getName().'.pdf');
 } catch (Exception $e) {
     var_dump($e);
 }

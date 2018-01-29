@@ -11,6 +11,8 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$util = Util::getInstance();
+
 $baja = new Document();
 $baja->setTipoDoc('09')
     ->setNroDoc('T001-00001');
@@ -47,7 +49,7 @@ $despatch->setTipoDoc('09')
     ->setSerie('T001')
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
-    ->setCompany(Util::getCompany())
+    ->setCompany($util->getCompany())
     ->setDestinatario((new Client())
         ->setTipoDoc('6')
         ->setNumDoc('20000000002')
@@ -71,7 +73,7 @@ $detail->setCantidad(2)
 $despatch->setDetails([$detail]);
 
 // Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::GUIA_BETA);
+$see = $util->getSee(SunatEndpoints::GUIA_BETA);
 
 $res = $see->send($despatch);
 Util::writeXml($despatch, $see->getFactory()->getLastXml());
@@ -81,7 +83,7 @@ if ($res->isSuccess()) {
     $cdr = $res->getCdrResponse();
     Util::writeCdr($despatch, $res->getCdrZip());
 
-    echo Util::getResponseFromCdr($cdr);
+    echo $util->getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }

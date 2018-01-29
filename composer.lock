@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d218f424318aaeab371480a145d7d157",
+    "content-hash": "572742f0a13afee703d23db6c92f68fa",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -93,6 +93,46 @@
                 "sunat"
             ],
             "time": "2018-01-28T01:42:54+00:00"
+        },
+        {
+            "name": "greenter/data",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giansalex/greenter-data.git",
+                "reference": "c20e14b7e7f56d827964b565c770bd98ff4d4bfa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/c20e14b7e7f56d827964b565c770bd98ff4d4bfa",
+                "reference": "c20e14b7e7f56d827964b565c770bd98ff4d4bfa",
+                "shasum": ""
+            },
+            "require": {
+                "greenter/core": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Greenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giancarlos Salas",
+                    "email": "giansalex@gmail.com"
+                }
+            ],
+            "description": "Data Document for Greenter",
+            "homepage": "https://github.com/giansalex/greenter-data",
+            "keywords": [
+                "greenter"
+            ],
+            "time": "2018-01-29T00:29:48+00:00"
         },
         {
             "name": "greenter/greenter",
@@ -196,16 +236,16 @@
         },
         {
             "name": "greenter/report",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "aa471d22b4b7e2906925efcd21f85e46bb8a7b75"
+                "reference": "acebfca27203d32718d966530e701ee592e3deb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/aa471d22b4b7e2906925efcd21f85e46bb8a7b75",
-                "reference": "aa471d22b4b7e2906925efcd21f85e46bb8a7b75",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/acebfca27203d32718d966530e701ee592e3deb2",
+                "reference": "acebfca27203d32718d966530e701ee592e3deb2",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +281,7 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-25T22:13:19+00:00"
+            "time": "2018-01-28T23:42:28+00:00"
         },
         {
             "name": "greenter/ws",

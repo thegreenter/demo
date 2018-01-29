@@ -1,6 +1,5 @@
 <?php
 
-use Greenter\Model\Client\Client;
 use Greenter\Model\Perception\Perception;
 use Greenter\Model\Perception\PerceptionDetail;
 use Greenter\Model\Retention\Exchange;
@@ -9,10 +8,7 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$client = new Client();
-$client->setTipoDoc('6')
-    ->setNumDoc('20000000001')
-    ->setRznSocial('EMPRESA 1');
+$util = Util::getInstance();
 
 $perception = new Perception();
 $perception
@@ -20,8 +16,8 @@ $perception
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
     ->setObservacion('NOTA PRUEBA />')
-    ->setCompany(Util::getCompany())
-    ->setProveedor($client)
+    ->setCompany($util->getCompany())
+    ->setProveedor($util->getClient())
     ->setImpPercibido(10)
     ->setImpCobrado(210)
     ->setRegimen('01')
@@ -53,17 +49,17 @@ $detail->setTipoDoc('01')
 $perception->setDetails([$detail]);
 
 // Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::RETENCION_BETA);
+$see = $util->getSee(SunatEndpoints::RETENCION_BETA);
 
 $res = $see->send($perception);
-Util::writeXml($perception, $see->getFactory()->getLastXml());
+$util->writeXml($perception, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
-    Util::writeCdr($perception, $res->getCdrZip());
+    $util->writeCdr($perception, $res->getCdrZip());
 
-    echo Util::getResponseFromCdr($cdr);
+    echo $util->getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }

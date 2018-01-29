@@ -1,6 +1,5 @@
 <?php
 
-use Greenter\Model\Client\Client;
 use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -8,11 +7,7 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Cliente
-$client = new Client();
-$client->setTipoDoc('6')
-    ->setNumDoc('20000000001')
-    ->setRznSocial('EMPRESA 1');
+$util = Util::getInstance();
 
 $note = new Note();
 $note
@@ -25,13 +20,13 @@ $note
     ->setFechaEmision(new DateTime())
     ->setCorrelativo('123')
     ->setTipoMoneda('PEN')
-    ->setClient($client)
+    ->setClient($util->getClient())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(236)
-    ->setCompany(Util::getCompany());
+    ->setCompany($util->getCompany());
 
 $detail1 = new SaleDetail();
 $detail1->setCodProducto('C023')
@@ -63,17 +58,17 @@ $note->setDetails([$detail1, $detail2])
     ->setLegends([$legend]);
 
 // Envio a SUNAT.
-$see = Util::getSee(SunatEndpoints::FE_BETA);
+$see = $util->getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($note);
-Util::writeXml($note, $see->getFactory()->getLastXml());
+$util->writeXml($note, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
-    Util::writeCdr($note, $res->getCdrZip());
+    $util->writeCdr($note, $res->getCdrZip());
 
-    echo Util::getResponseFromCdr($cdr);
+    echo $util->getResponseFromCdr($cdr);
 } else {
     var_dump($res->getError());
 }
