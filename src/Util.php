@@ -97,7 +97,7 @@ HTML;
         $hash = $this->getHash($document);
         $params = self::getParametersPdf();
         $params['system']['hash'] = $hash;
-        $params['user']['footer'] = '<p style="font-size:7pt">Codigo Hash: '.$hash.'</p>';
+        $params['user']['footer'] = '<div>consulte en <a href="https://github.com/giansalex/sufel">sufel.com</a></div>';
 
         return $render->render($document, $params);
     }
@@ -192,7 +192,7 @@ HTML;
         return [
             'system' => [
                 'logo' => $logo,
-                'hash' => '3df'
+                'hash' => ''
             ],
             'user' => [
                 'resolucion' => '212321',
