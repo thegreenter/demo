@@ -9,7 +9,7 @@ Clonar el repositorio e instalar las dependencias.
 ```bash
 git clone https://github.com/giansalex/greenter-sample.git
 cd greenter-sample
-composer install --no-dev
+composer install --no-dev -o
 ```
 
 ### Ejecutar
@@ -31,9 +31,9 @@ Disponible en este https://greenter-sample.herokuapp.com.
 :ballot_box_with_check: Boleta  (PDF)  
 :ballot_box_with_check: Nota de Crédito (PDF)  
 :ballot_box_with_check: Nota de Débito  (PDF)  
-:ballot_box_with_check: Resumen Diario de Boletas (v2.1) (PDF)  
+:ballot_box_with_check: Resumen Diario de Boletas (PDF)  (v2.1)  
 :ballot_box_with_check: Comunicación de Baja (PDF)  
-:ballot_box_with_check: Guia de Remisión  (v2.1) (PDF)  
+:ballot_box_with_check: Guia de Remisión  (PDF) (v2.1)    
 :ballot_box_with_check: Retención (PDF)  
 :ballot_box_with_check: Perecepción (PDF)  
-:ballot_box_with_check: Comunicación de Reversión (PDF)  
+:ballot_box_with_check: Resumen de Reversión (PDF)  
