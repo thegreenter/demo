@@ -336,16 +336,16 @@
         },
         {
             "name": "greenter/xcodes",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xcodes.git",
-                "reference": "a44f1320a869ce67c62fc51bbbbd84376041e96b"
+                "reference": "02a18f8e835e5f24ad1813d3de01b436bf8cc373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xcodes/zipball/a44f1320a869ce67c62fc51bbbbd84376041e96b",
-                "reference": "a44f1320a869ce67c62fc51bbbbd84376041e96b",
+                "url": "https://api.github.com/repos/giansalex/greenter-xcodes/zipball/02a18f8e835e5f24ad1813d3de01b436bf8cc373",
+                "reference": "02a18f8e835e5f24ad1813d3de01b436bf8cc373",
                 "shasum": ""
             },
             "require": {
@@ -379,20 +379,20 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-01-28T02:19:54+00:00"
+            "time": "2018-01-30T01:58:03+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "c6f936d3851adadc41f05fbda0a7e6d357a9de7d"
+                "reference": "18c7ed47f3081719b1a370ab1f8b05acda9737dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/c6f936d3851adadc41f05fbda0a7e6d357a9de7d",
-                "reference": "c6f936d3851adadc41f05fbda0a7e6d357a9de7d",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/18c7ed47f3081719b1a370ab1f8b05acda9737dd",
+                "reference": "18c7ed47f3081719b1a370ab1f8b05acda9737dd",
                 "shasum": ""
             },
             "require": {
@@ -401,6 +401,7 @@
                 "twig/twig": "~1.0"
             },
             "require-dev": {
+                "greenter/data": "^1.1",
                 "greenter/ubl-validator": "^1.0",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
@@ -427,7 +428,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-01-26T19:12:59+00:00"
+            "time": "2018-02-02T02:21:33+00:00"
         },
         {
             "name": "greenter/xmldsig",

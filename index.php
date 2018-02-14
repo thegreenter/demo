@@ -23,7 +23,8 @@ $pdfPaths = array_map(function ($file) {
     <title>Greenter Examples</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         ul.list-group li {
@@ -41,9 +42,9 @@ $pdfPaths = array_map(function ($file) {
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Comprobantes <span class="badge"><?php echo count($files); ?></span></div>
-                <div class="panel-body">
+            <div class="card bg-primary">
+                <div class="card-header text-white">Comprobantes <span class="badge badge-secondary"><?php echo count($files); ?></span></div>
+                <div class="card-block">
                     <ul class="list-group">
                         <?php foreach ($files as $file): ?>
                             <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>&nbsp;<?=$file['name']?></li>
@@ -53,16 +54,21 @@ $pdfPaths = array_map(function ($file) {
             </div>
         </div>
         <div class="col-md-8">
-            <div class="panel panel-success">
-                <div class="panel-heading">Resultado</div>
-                <div class="panel-body">
-                    <div id="result" class="well">De click en algun elemento de la lista.</div>
-                    <div>Time: <span id="time"></span></div>
+            <div class="card">
+                <div class="card-header bg-success text-white">Resultado</div>
+                <div class="card-block">
+                    <div class="card bg-light text-dark">
+                        <div class="card-body">
+                            <div id="result">De click en algun elemento de la lista.</div>
+                            <div>Time: <span id="time"></span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">PDF <span class="badge"><?php echo count($pdfPaths); ?></span></div>
-                <div class="panel-body">
+            <br>
+            <div class="card bg-primary">
+                <div class="card-header text-white">PDF <span class="badge badge-secondary"><?php echo count($pdfPaths); ?></span></div>
+                <div class="card-block">
                     <ul class="list-group">
                         <?php foreach ($pdfPaths as $file): ?>
                             <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="glyphicon glyphicon-file"></span>&nbsp;<?=$file['name']?></a></li>
@@ -73,8 +79,9 @@ $pdfPaths = array_map(function ($file) {
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
     var	clsStopwatch = function() {
         // Private vars
