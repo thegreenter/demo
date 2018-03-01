@@ -2,6 +2,15 @@
 [![greenter-sample.herokuapp.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=greenter-sample.herokuapp.com&style=flat-square)](https://greenter-sample.herokuapp.com) [![GitHub last commit](https://img.shields.io/github/last-commit/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample) [![GitHub issues](https://img.shields.io/github/issues/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample/issues)  
 Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/giansalex/greenter).
 
+### Topics
+- Generación de XML
+- Firma del XML
+- Compresión del XML
+- Envio a servicio de sunat
+- Procesamiento de la respuesta (CDR)
+- Extraccion del Hash de la Firma Digital
+- Creación de Representacion Impresa - PDF
+
 ### Pasos
 
 Clonar el repositorio e instalar las dependencias.
