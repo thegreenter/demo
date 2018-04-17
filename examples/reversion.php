@@ -12,7 +12,7 @@ $reversion = $util->getReversion();
 $see = $util->getSee(SunatEndpoints::RETENCION_BETA);
 
 $res = $see->send($reversion);
-Util::writeXml($reversion, $see->getFactory()->getLastXml());
+$util->writeXml($reversion, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\SummaryResult*/
@@ -21,7 +21,7 @@ if ($res->isSuccess()) {
     $result = $see->getStatus($ticket);
     if ($result->isSuccess()) {
         $cdr = $result->getCdrResponse();
-        Util::writeCdr($reversion, $result->getCdrZip());
+        $util->writeCdr($reversion, $result->getCdrZip());
 
         echo $util->getResponseFromCdr($cdr);
     } else {

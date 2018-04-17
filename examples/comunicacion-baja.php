@@ -12,7 +12,7 @@ $voided = $util->getVoided();
 $see = $util->getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($voided);
-Util::writeXml($voided, $see->getFactory()->getLastXml());
+$util->writeXml($voided, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\SummaryResult*/
@@ -21,7 +21,7 @@ if ($res->isSuccess()) {
     $result = $see->getStatus($ticket);
     if ($result->isSuccess()) {
         $cdr = $result->getCdrResponse();
-        Util::writeCdr($voided, $result->getCdrZip());
+        $util->writeCdr($voided, $result->getCdrZip());
 
         echo $util->getResponseFromCdr($cdr);
     } else {

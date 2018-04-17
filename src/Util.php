@@ -55,7 +55,7 @@ HTML;
         return $result;
     }
 
-    public static function writeXml(DocumentInterface $document, $xml)
+    public function writeXml(DocumentInterface $document, $xml)
     {
         if (getenv('GREENTER_NO_FILES')) {
             return;
@@ -63,7 +63,7 @@ HTML;
         file_put_contents(__DIR__ . '/../files/' . $document->getName() . '.xml', $xml);
     }
 
-    public static function writeCdr(DocumentInterface $document, $zip)
+    public function writeCdr(DocumentInterface $document, $zip)
     {
         if (getenv('GREENTER_NO_FILES')) {
             return;
@@ -113,9 +113,9 @@ HTML;
         return $items;
     }
 
-    public static function showPdf($content, $filename)
+    public function showPdf($content, $filename)
     {
-        self::writePdf($filename, $content);
+        $this->writePdf($filename, $content);
         header('Content-type: application/pdf');
         header('Content-Disposition: inline; filename="' . $filename . '"');
         header('Content-Transfer-Encoding: binary');
@@ -177,7 +177,7 @@ HTML;
         return $hash;
     }
 
-    private static function writePdf($filename, $content)
+    private function writePdf($filename, $content)
     {
         if (getenv('GREENTER_NO_FILES')) {
             return;

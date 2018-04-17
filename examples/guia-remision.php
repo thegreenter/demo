@@ -76,12 +76,12 @@ $despatch->setDetails([$detail]);
 $see = $util->getSee(SunatEndpoints::GUIA_BETA);
 
 $res = $see->send($despatch);
-Util::writeXml($despatch, $see->getFactory()->getLastXml());
+$util->writeXml($despatch, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
-    Util::writeCdr($despatch, $res->getCdrZip());
+    $util->writeCdr($despatch, $res->getCdrZip());
 
     echo $util->getResponseFromCdr($cdr);
 } else {

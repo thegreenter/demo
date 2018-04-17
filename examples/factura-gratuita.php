@@ -50,12 +50,12 @@ $invoice->setDetails([$item])
 $see =$util->getSee(SunatEndpoints::FE_BETA);
 
 $res = $see->send($invoice);
-Util::writeXml($invoice, $see->getFactory()->getLastXml());
+$util->writeXml($invoice, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\BillResult*/
     $cdr = $res->getCdrResponse();
-    Util::writeCdr($invoice, $res->getCdrZip());
+    $util->writeCdr($invoice, $res->getCdrZip());
 
     echo $util->getResponseFromCdr($cdr);
 } else {
