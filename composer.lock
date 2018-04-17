@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "f265aa0cfbedd82c58835dc0dd21def618b20549"
+                "reference": "21b00efc6d6d640c0f90868b1d655ad9c18b8de1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/f265aa0cfbedd82c58835dc0dd21def618b20549",
-                "reference": "f265aa0cfbedd82c58835dc0dd21def618b20549",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/21b00efc6d6d640c0f90868b1d655ad9c18b8de1",
+                "reference": "21b00efc6d6d640c0f90868b1d655ad9c18b8de1",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-02-18T23:56:43+00:00"
+            "time": "2018-03-27T14:22:32+00:00"
         },
         {
             "name": "greenter/data",
@@ -185,16 +185,16 @@
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-htmltopdf.git",
-                "reference": "e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932"
+                "reference": "1ec7ecf91d1cc22390816714d098bf2390975219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932",
-                "reference": "e9bf3918f1a7c7f2b05c1affe79d7e1bf23da932",
+                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/1ec7ecf91d1cc22390816714d098bf2390975219",
+                "reference": "1ec7ecf91d1cc22390816714d098bf2390975219",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
                 "representacion-impresa",
                 "wkhtmltodf"
             ],
-            "time": "2018-01-23T04:05:52+00:00"
+            "time": "2018-04-16T23:02:48+00:00"
         },
         {
             "name": "greenter/report",
@@ -286,16 +286,16 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v1.2.1",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "0e06fc4613f4aab7e434f2b8193159d3f5b6e907"
+                "reference": "55c0bee71cd504eea6912be2a18273348ba51386"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/0e06fc4613f4aab7e434f2b8193159d3f5b6e907",
-                "reference": "0e06fc4613f4aab7e434f2b8193159d3f5b6e907",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/55c0bee71cd504eea6912be2a18273348ba51386",
+                "reference": "55c0bee71cd504eea6912be2a18273348ba51386",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-01-28T02:41:02+00:00"
+            "time": "2018-04-03T17:38:05+00:00"
         },
         {
             "name": "greenter/xcodes",
@@ -383,16 +383,16 @@
         },
         {
             "name": "greenter/xml",
-            "version": "v1.2.5",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "d42b4fffc2b01fdf314ee127c7cb1c1e7a40b0c1"
+                "reference": "86893ac9ad71c925d7a8326daad510fa1fe4c81c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/d42b4fffc2b01fdf314ee127c7cb1c1e7a40b0c1",
-                "reference": "d42b4fffc2b01fdf314ee127c7cb1c1e7a40b0c1",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/86893ac9ad71c925d7a8326daad510fa1fe4c81c",
+                "reference": "86893ac9ad71c925d7a8326daad510fa1fe4c81c",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +428,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-02-19T22:19:45+00:00"
+            "time": "2018-03-27T15:03:05+00:00"
         },
         {
             "name": "greenter/xmldsig",
@@ -594,16 +594,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.35.0",
+            "version": "v1.35.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f"
+                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/daa657073e55b0a78cce8fdd22682fddecc6385f",
-                "reference": "daa657073e55b0a78cce8fdd22682fddecc6385f",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
+                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
                 "shasum": ""
             },
             "require": {
@@ -611,8 +611,8 @@
             },
             "require-dev": {
                 "psr/container": "^1.0",
-                "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.3@dev"
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.3"
             },
             "type": "library",
             "extra": {
@@ -655,7 +655,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-09-27T18:06:46+00:00"
+            "time": "2018-03-20T04:25:58+00:00"
         }
     ],
     "packages-dev": [],
