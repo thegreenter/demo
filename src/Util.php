@@ -57,18 +57,21 @@ HTML;
 
     public function writeXml(DocumentInterface $document, $xml)
     {
-        if (getenv('GREENTER_NO_FILES')) {
-            return;
-        }
-        file_put_contents(__DIR__ . '/../files/' . $document->getName() . '.xml', $xml);
+        $this->writeFile($document->getName().'.xml', $xml);
     }
 
     public function writeCdr(DocumentInterface $document, $zip)
     {
+        $this->writeFile('R-'.$document->getName().'.zip', $zip);
+    }
+
+    public function writeFile($filenam, $content)
+    {
         if (getenv('GREENTER_NO_FILES')) {
             return;
         }
-        file_put_contents(__DIR__ . '/../files/R-' . $document->getName() . '.zip', $zip);
+
+        file_put_contents(__DIR__ . '/../files/'.$filenam, $content);
     }
 
     public function getPdf(DocumentInterface $document)
@@ -99,7 +102,11 @@ HTML;
         $params['system']['hash'] = $hash;
         $params['user']['footer'] = '<div>consulte en <a href="https://github.com/giansalex/sufel">sufel.com</a></div>';
 
-        return $render->render($document, $params);
+        $pdf = $render->render($document, $params);
+        // Write html
+        $this->writeFile($document->getName().'.html', $render->getHtml());
+
+        return $pdf;
     }
 
     public static function generator($item, $count)
@@ -115,7 +122,7 @@ HTML;
 
     public function showPdf($content, $filename)
     {
-        $this->writePdf($filename, $content);
+        $this->writeFile($filename, $content);
         header('Content-type: application/pdf');
         header('Content-Disposition: inline; filename="' . $filename . '"');
         header('Content-Transfer-Encoding: binary');
@@ -175,14 +182,6 @@ HTML;
         $hash = (new \Greenter\Report\XmlUtils())->getHashSign($xml);
 
         return $hash;
-    }
-
-    private function writePdf($filename, $content)
-    {
-        if (getenv('GREENTER_NO_FILES')) {
-            return;
-        }
-        file_put_contents(__DIR__ . '/../files/'.$filename, $content);
     }
 
     private static function getParametersPdf()
