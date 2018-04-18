@@ -183,6 +183,9 @@ $pdfPaths = array_map(function ($file) {
         iconLoad();
         $.get(url, function(data) {
             $("#result").html(data);
+        }).fail(function () {
+            $("#result").html('<span class="text-danger">Ocurrío un error invocando el script</span>');
+        }).always(function () {
             stop();
         });
     }
