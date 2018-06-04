@@ -103,6 +103,13 @@ HTML;
         $params['user']['footer'] = '<div>consulte en <a href="https://github.com/giansalex/sufel">sufel.com</a></div>';
 
         $pdf = $render->render($document, $params);
+
+        if ($pdf === false) {
+            $error = $render->getExporter()->getError();
+            echo 'Error: '.$error;
+            exit();
+        }
+
         // Write html
         $this->writeFile($document->getName().'.html', $render->getHtml());
 
