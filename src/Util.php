@@ -153,6 +153,31 @@ HTML;
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
+    public static function inPath($command) {
+        $whereIsCommand = self::isWindows() ? 'where' : 'which';
+
+        $process = proc_open(
+            "$whereIsCommand $command",
+            array(
+                0 => array("pipe", "r"), //STDIN
+                1 => array("pipe", "w"), //STDOUT
+                2 => array("pipe", "w"), //STDERR
+            ),
+            $pipes
+        );
+        if ($process !== false) {
+            $stdout = stream_get_contents($pipes[1]);
+            $stderr = stream_get_contents($pipes[2]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            proc_close($process);
+
+            return $stdout != '';
+        }
+
+        return false;
+    }
+
     private function getTemplate($document)
     {
         $className = get_class($document);

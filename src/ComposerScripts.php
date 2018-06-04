@@ -19,22 +19,24 @@ final class ComposerScripts
             return;
         }
 
+        if (Util::inPath('wkhtmltopdf')) {
+            return;
+        }
+
         $pathBin = Util::getPathBin();
-        echo $pathBin . PHP_EOL;
         if (file_exists($pathBin)) {
+            echo $pathBin . PHP_EOL;
             return;
         }
 
         $url = self::getUrlDownload(Util::isWindows(), self::is64Bit());
 
-        if (!file_exists($pathBin)) {
-            if (!is_dir( __DIR__.'/../vendor/bin')) {
-                $oldmask = umask(0);
-                mkdir(__DIR__.'/../vendor/bin', 0777, true);
-                umask($oldmask);
-            }
-            self::downloadBin($url, $pathBin);
+        if (!is_dir( __DIR__.'/../vendor/bin')) {
+            $oldmask = umask(0);
+            mkdir(__DIR__.'/../vendor/bin', 0777, true);
+            umask($oldmask);
         }
+        self::downloadBin($url, $pathBin);
     }
 
     public static function clearCache()
