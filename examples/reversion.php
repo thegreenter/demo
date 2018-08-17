@@ -17,9 +17,10 @@ $util->writeXml($reversion, $see->getFactory()->getLastXml());
 if ($res->isSuccess()) {
     /**@var $res \Greenter\Model\Response\SummaryResult*/
     $ticket = $res->getTicket();
+    echo 'Ticket :<strong>' . $ticket .'</strong>';
 
     $result = $see->getStatus($ticket);
-    if ($result->isSuccess()) {
+    if ($result->isSuccess() && in_array($result->getCode(), ['0', '99'])) {
         $cdr = $result->getCdrResponse();
         $util->writeCdr($reversion, $result->getCdrZip());
 
