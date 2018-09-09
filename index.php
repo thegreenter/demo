@@ -20,12 +20,7 @@ $pdfPaths = array_map(function ($file) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Greenter Examples</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php include 'views/head.php'; ?>
     <style>
         ul.list-group li {
             cursor: pointer;
@@ -33,12 +28,7 @@ $pdfPaths = array_map(function ($file) {
     </style>
 </head>
 <body>
-
-<div class="jumbotron text-center">
-    <h1>Greenter Samples</h1>
-    <p>Ejemplos de envio de comprobantes electronicos a SUNAT</p>
-</div>
-
+<?php include 'views/top.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -49,6 +39,9 @@ $pdfPaths = array_map(function ($file) {
                         <?php foreach ($files as $file): ?>
                             <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><i class="fa fa-angle-right"></i>&nbsp;<?=$file['name']?></li>
                         <?php endforeach; ?>
+                        <li class="list-group-item">
+                            <a href="/examples/pages/status-cdr.php">Consulta CDR <i class="fa fa-external-link"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -79,9 +72,7 @@ $pdfPaths = array_map(function ($file) {
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<?php include 'views/footer.php'; ?>
 <script>
     var	clsStopwatch = function() {
         // Private vars
