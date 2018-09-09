@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v1.3.1",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "21b00efc6d6d640c0f90868b1d655ad9c18b8de1"
+                "reference": "8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/21b00efc6d6d640c0f90868b1d655ad9c18b8de1",
-                "reference": "21b00efc6d6d640c0f90868b1d655ad9c18b8de1",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb",
+                "reference": "8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-03-27T14:22:32+00:00"
+            "time": "2018-08-04T16:53:00+00:00"
         },
         {
             "name": "greenter/data",
@@ -286,16 +286,16 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "55c0bee71cd504eea6912be2a18273348ba51386"
+                "reference": "2cb596e75ae35e30fa1a8032e24070b536a7fc83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/55c0bee71cd504eea6912be2a18273348ba51386",
-                "reference": "55c0bee71cd504eea6912be2a18273348ba51386",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/2cb596e75ae35e30fa1a8032e24070b536a7fc83",
+                "reference": "2cb596e75ae35e30fa1a8032e24070b536a7fc83",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-04-03T17:38:05+00:00"
+            "time": "2018-08-29T23:09:56+00:00"
         },
         {
             "name": "greenter/xcodes",
@@ -383,16 +383,16 @@
         },
         {
             "name": "greenter/xml",
-            "version": "v1.2.6",
+            "version": "v1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "86893ac9ad71c925d7a8326daad510fa1fe4c81c"
+                "reference": "b38833ef9336631487840afd2b8b975cf9fb5b44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/86893ac9ad71c925d7a8326daad510fa1fe4c81c",
-                "reference": "86893ac9ad71c925d7a8326daad510fa1fe4c81c",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/b38833ef9336631487840afd2b8b975cf9fb5b44",
+                "reference": "b38833ef9336631487840afd2b8b975cf9fb5b44",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +428,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-03-27T15:03:05+00:00"
+            "time": "2018-09-09T16:27:55+00:00"
         },
         {
             "name": "greenter/xmldsig",
@@ -473,17 +473,20 @@
         },
         {
             "name": "mikehaertl/php-shellcommand",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikehaertl/php-shellcommand.git",
-                "reference": "727e2143578796c714a50c0a350459758ff16c43"
+                "reference": "903ee95d3ee8f65ebbe4c6e17705d1d91760521a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/727e2143578796c714a50c0a350459758ff16c43",
-                "reference": "727e2143578796c714a50c0a350459758ff16c43",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/903ee95d3ee8f65ebbe4c6e17705d1d91760521a",
+                "reference": "903ee95d3ee8f65ebbe4c6e17705d1d91760521a",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.4.0"
             },
             "type": "library",
             "autoload": {
@@ -505,7 +508,7 @@
             "keywords": [
                 "shell"
             ],
-            "time": "2018-02-16T07:02:50+00:00"
+            "time": "2018-07-07T07:35:36+00:00"
         },
         {
             "name": "mikehaertl/php-tmpfile",
@@ -593,21 +596,80 @@
             "time": "2018-02-18T10:54:00+00:00"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.35.3",
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f"
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
-                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2018-08-06T14:22:27+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.35.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "7e081e98378a1e78c29cc9eba4aefa5d78a05d2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7e081e98378a1e78c29cc9eba4aefa5d78a05d2a",
+                "reference": "7e081e98378a1e78c29cc9eba4aefa5d78a05d2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/polyfill-ctype": "^1.8"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -646,16 +708,16 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
+            "homepage": "https://twig.symfony.com",
             "keywords": [
                 "templating"
             ],
-            "time": "2018-03-20T04:25:58+00:00"
+            "time": "2018-07-13T07:12:17+00:00"
         }
     ],
     "packages-dev": [],
