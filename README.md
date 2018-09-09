@@ -46,3 +46,4 @@ Disponible en este https://greenter-sample.herokuapp.com.
 :ballot_box_with_check: Retención (PDF)  
 :ballot_box_with_check: Perecepción (PDF)  
 :ballot_box_with_check: Resumen de Reversión (PDF)  
+:ballot_box_with_check: Consultar estado del CDR  
