@@ -47,7 +47,7 @@ $pdfPaths = array_map(function ($file) {
                 <div class="card-block">
                     <ul class="list-group">
                         <?php foreach ($files as $file): ?>
-                            <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>&nbsp;<?=$file['name']?></li>
+                            <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><i class="fa fa-angle-right"></i>&nbsp;<?=$file['name']?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -71,7 +71,7 @@ $pdfPaths = array_map(function ($file) {
                 <div class="card-block">
                     <ul class="list-group">
                         <?php foreach ($pdfPaths as $file): ?>
-                            <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="glyphicon glyphicon-file"></span>&nbsp;<?=$file['name']?></a></li>
+                            <li class="list-group-item"><a href="<?= $file['path']?>" target="_blank"><span class="fa fa-external-link"></span>&nbsp;<?=$file['name']?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
