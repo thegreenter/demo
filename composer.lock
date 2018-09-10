@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "572742f0a13afee703d23db6c92f68fa",
@@ -286,16 +286,16 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v1.2.4",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "2cb596e75ae35e30fa1a8032e24070b536a7fc83"
+                "reference": "dcbaf7e8d69c87b06d0b6b17adb76ee58071caca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/2cb596e75ae35e30fa1a8032e24070b536a7fc83",
-                "reference": "2cb596e75ae35e30fa1a8032e24070b536a7fc83",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/dcbaf7e8d69c87b06d0b6b17adb76ee58071caca",
+                "reference": "dcbaf7e8d69c87b06d0b6b17adb76ee58071caca",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-08-29T23:09:56+00:00"
+            "time": "2018-09-10T16:48:51+00:00"
         },
         {
             "name": "greenter/xcodes",
