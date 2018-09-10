@@ -13,6 +13,7 @@ use Greenter\Ws\Services\SunatEndpoints;
 require __DIR__ . '/../../vendor/autoload.php';
 
 $errorMsg = null;
+$filename = null;
 
 function validateFields(array $items)
 {
@@ -39,8 +40,18 @@ function getCdrStatusService($user, $password)
     return $service;
 }
 
+function savedFile($filename, $content)
+{
+    $pathZip = __DIR__.'/../../files/'.$filename;
+    file_put_contents($pathZip, $content);
+
+    return '/files/'.$filename;
+}
+
 function process($fields)
 {
+    global $filename;
+
     if (!isset($fields['rucSol'])) {
         return null;
     }
@@ -58,7 +69,12 @@ function process($fields)
         intval($fields['numero'])
     ];
     if (isset($fields['cdr'])) {
-        return $service->getStatusCdr(...$arguments);
+        $result = $service->getStatusCdr(...$arguments);
+        if ($result->getCdrZip()) {
+            $filename = savedFile(implode('-', $arguments).'.zip', $result->getCdrZip());
+        }
+
+        return $result;
     }
 
     return $service->getStatus(...$arguments);
@@ -94,10 +110,14 @@ $result = process($_POST);
                                     <strong>Codigo: </strong> <?=$result->getCode()?> <br>
                                     <strong>Mensaje: </strong> <?=$result->getMessage()?> <br>
                                     <?php if (!is_null($result->getCdrResponse())):?>
-                                        <strong>CDR Mensaje: </strong> <?=$result->getCdrResponse()->getDescription()?>
+                                        <strong>Estado Comprobante: </strong> <?=$result->getCdrResponse()->getDescription()?>
                                         <br>
                                         <strong>Observaciones: </strong> <?=implode('<br>', $result->getCdrResponse()->getNotes())?>
                                         <br>
+                                        <?php if (!is_null($filename)): ?>
+                                            <strong>CDR: </strong><br>
+                                            <a href="<?=$filename?>"><i class="fa fa-file-archive-o"></i></a>
+                                        <?php endif; ?>
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <div class="alert alert-danger">
