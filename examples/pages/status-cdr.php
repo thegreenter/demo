@@ -44,8 +44,6 @@ function savedFile($filename, $content)
 {
     $pathZip = __DIR__.'/../../files/'.$filename;
     file_put_contents($pathZip, $content);
-
-    return '/files/'.$filename;
 }
 
 function process($fields)
@@ -71,7 +69,8 @@ function process($fields)
     if (isset($fields['cdr'])) {
         $result = $service->getStatusCdr(...$arguments);
         if ($result->getCdrZip()) {
-            $filename = savedFile(implode('-', $arguments).'.zip', $result->getCdrZip());
+            $filename = implode('-', $arguments).'.zip';
+            savedFile($filename, $result->getCdrZip());
         }
 
         return $result;
@@ -116,7 +115,7 @@ $result = process($_POST);
                                         <br>
                                         <?php if (!is_null($filename)): ?>
                                             <strong>CDR: </strong><br>
-                                            <a href="<?=$filename?>"><i class="fa fa-file-archive-o"></i></a>
+                                            <a href="/examples/pages/file-download.php?name=<?=$filename?>"><i class="fa fa-file-archive-o"></i></a>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 <?php else: ?>
