@@ -50,11 +50,18 @@ function process($fields)
     }
 
     $service = getCdrStatusService($fields['rucSol'].$fields['userSol'], $fields['passSol']);
-    $method = 'getStatus';
+
+    $arguments = [
+        $fields['ruc'],
+        $fields['tipo'],
+        $fields['serie'],
+        intval($fields['numero'])
+    ];
     if (isset($fields['cdr'])) {
-        $method = 'getStatusCdr';
+        return $service->getStatusCdr(...$arguments);
     }
-    return $service->{$method}($fields['ruc'], $fields['tipo'], $fields['serie'], intval($fields['numero']));
+
+    return $service->getStatus(...$arguments);
 }
 
 $result = process($_POST);
