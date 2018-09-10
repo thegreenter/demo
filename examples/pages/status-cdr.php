@@ -6,7 +6,7 @@
  * Time: 12:48
  */
 
-use Greenter\Ws\Services\ExtService;
+use Greenter\Ws\Services\ConsultCdrService;
 use Greenter\Ws\Services\SoapClient;
 use Greenter\Ws\Services\SunatEndpoints;
 
@@ -17,8 +17,9 @@ $errorMsg = null;
 function validateFields(array $items)
 {
     global $errorMsg;
+    $validateFiels = ['rucSol', 'userSol', 'passSol', 'ruc', 'tipo', 'serie', 'numero'];
     foreach ($items as $key => $value) {
-        if (empty($value)) {
+        if (in_array($key, $validateFiels) && empty($value)) {
             $errorMsg = 'El campo '.$key.', es requerido';
             return false;
         }
@@ -32,7 +33,7 @@ function getCdrStatusService($user, $password)
     $ws = new SoapClient(SunatEndpoints::FE_CONSULTA_CDR.'?wsdl');
     $ws->setCredentials($user, $password);
 
-    $service = new ExtService();
+    $service = new ConsultCdrService();
     $service->setClient($ws);
 
     return $service;
@@ -49,7 +50,11 @@ function process($fields)
     }
 
     $service = getCdrStatusService($fields['rucSol'].$fields['userSol'], $fields['passSol']);
-    return $service->getCdrStatus($fields['ruc'], $fields['tipo'], $fields['serie'], intval($fields['numero']));
+    $method = 'getStatus';
+    if (isset($fields['cdr'])) {
+        $method = 'getStatusCdr';
+    }
+    return $service->{$method}($fields['ruc'], $fields['tipo'], $fields['serie'], intval($fields['numero']));
 }
 
 $result = process($_POST);
@@ -62,6 +67,9 @@ $result = process($_POST);
         .mb-100 {
             margin-bottom: 100px;
         }
+        .mb-20 {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +78,7 @@ $result = process($_POST);
     <div class="row">
         <?php if (isset($result)): ?>
             <div class="col-md-12">
-                <div class="card">
+                <div class="card mb-20">
                     <div class="card-header bg-success text-white">Resultado</div>
                     <div class="card-block">
                         <div class="card bg-light text-dark">
@@ -145,7 +153,8 @@ $result = process($_POST);
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-success">Consultar CDR</button>
+                                <button class="btn btn-primary">Consultar Estado</button>
+                                <button class="btn btn-primary" name="cdr">Consultar CDR</button>
                             </form>
                         </div>
                     </div>
