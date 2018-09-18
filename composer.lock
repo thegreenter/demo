@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "572742f0a13afee703d23db6c92f68fa",
+    "content-hash": "34833f124624db79534e59e11e1bbcd3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -96,16 +96,16 @@
         },
         {
             "name": "greenter/data",
-            "version": "v1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-data.git",
-                "reference": "c20e14b7e7f56d827964b565c770bd98ff4d4bfa"
+                "reference": "c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/c20e14b7e7f56d827964b565c770bd98ff4d4bfa",
-                "reference": "c20e14b7e7f56d827964b565c770bd98ff4d4bfa",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21",
+                "reference": "c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
             "keywords": [
                 "greenter"
             ],
-            "time": "2018-01-29T00:29:48+00:00"
+            "time": "2018-09-18T20:38:19+00:00"
         },
         {
             "name": "greenter/greenter",
@@ -723,7 +723,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "greenter/data": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

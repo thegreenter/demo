@@ -24,7 +24,7 @@
         "greenter/htmltopdf": "^1.0",
         "ext-gd": "*",
         "greenter/xcodes": "^1.0",
-        "greenter/data": "^1.1"
+        "greenter/data": "dev-master"
     },
     "scripts": {
         "start": "php -S 0.0.0.0:8080",
