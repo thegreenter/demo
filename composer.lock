@@ -136,23 +136,23 @@
         },
         {
             "name": "greenter/greenter",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter.git",
-                "reference": "2f562525f68ce04f85f9efb4106b57afbea15c2e"
+                "reference": "b65f6635afafdf4d05e977232525465e065cef8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter/zipball/2f562525f68ce04f85f9efb4106b57afbea15c2e",
-                "reference": "2f562525f68ce04f85f9efb4106b57afbea15c2e",
+                "url": "https://api.github.com/repos/giansalex/greenter/zipball/b65f6635afafdf4d05e977232525465e065cef8f",
+                "reference": "b65f6635afafdf4d05e977232525465e065cef8f",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^1.2",
+                "greenter/core": "^1.3",
                 "greenter/ws": "^1.2",
                 "greenter/xml": "^1.2",
-                "greenter/xmldsig": "^1.0",
+                "greenter/xmldsig": "^5.0",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -181,7 +181,7 @@
                 "sunat",
                 "xml"
             ],
-            "time": "2018-01-28T04:08:35+00:00"
+            "time": "2018-09-18T21:48:36+00:00"
         },
         {
             "name": "greenter/htmltopdf",
@@ -432,16 +432,16 @@
         },
         {
             "name": "greenter/xmldsig",
-            "version": "1.0.2",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/xmldsig.git",
-                "reference": "a772bac3d78d78aa006e90c6815eb485efa46330"
+                "reference": "b44e9dd38128209b12647bc4f973d360887f9a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/a772bac3d78d78aa006e90c6815eb485efa46330",
-                "reference": "a772bac3d78d78aa006e90c6815eb485efa46330",
+                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/b44e9dd38128209b12647bc4f973d360887f9a3e",
+                "reference": "b44e9dd38128209b12647bc4f973d360887f9a3e",
                 "shasum": ""
             },
             "require": {
@@ -469,7 +469,7 @@
                 "xml",
                 "xmldsig"
             ],
-            "time": "2018-01-22T16:08:43+00:00"
+            "time": "2018-03-11T18:10:47+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
