@@ -66,21 +66,8 @@ $invoice->setDetails([$item1, $item2])
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);
 
-/** Si solo desea enviar un XML ya generado utilice esta función
-$res = $see->sendForce($invoice, file_get_contents($ruta_XML));
-
-Y a la vez si solo desea generar el XML y/o PDF (sin solicitar el CDR, útil para boletas) ejecute esta función
-El hash del XML firmado siempre será el mismo si es que no modifican el documento.
-
-try {
-    $pdf = $util->getPdf($invoice);
-    $util->writePdf($pdf, $tmp_invoice.'.pdf');
-    $res = $see->genXML($invoice);
-    $util->writeXml($invoice, $see->getFactory()->getLastXml());
-} catch (Exception $e) {
-    @$response_sunat['MESSAGE']	.= $e;
-}
-**/
+/** Si solo desea enviar un XML ya generado utilice esta función**/
+//$res = $see->sendXml(get_class($invoice), $invoice->getName(), file_get_contents($ruta_XML));
 
 $res = $see->send($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());
