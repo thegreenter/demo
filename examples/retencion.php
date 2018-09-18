@@ -20,7 +20,7 @@ $retention
     ->setProveedor($util->getClient())
     ->setObservacion('NOTA /><!-- HI -->')
     ->setImpRetenido(10)
-    ->setImpPagado(210)
+    ->setImpPagado(200)
     ->setRegimen('01')
     ->setTasa(3);
 
@@ -41,9 +41,9 @@ $detail->setTipoDoc('01')
     ->setFechaEmision(new \DateTime())
     ->setFechaRetencion(new \DateTime())
     ->setMoneda('PEN')
-    ->setImpTotal(200)
+    ->setImpTotal(210)
     ->setImpPagar(200)
-    ->setImpRetenido(5)
+    ->setImpRetenido(10)
     ->setPagos([$pay])
     ->setTipoCambio($cambio);
 
