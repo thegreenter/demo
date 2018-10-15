@@ -7,6 +7,8 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $voided = $util->getVoided();
+$voided->setFecGeneracion(new \DateTime('-3days'));
+$voided->setFecComunicacion(new \DateTime('-1days'));
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);

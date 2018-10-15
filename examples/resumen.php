@@ -7,6 +7,8 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $sum = $util->getSummary();
+$sum->setFecGeneracion(new \DateTime('-3days'));
+$sum->setFecResumen(new \DateTime('-1days'));
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);

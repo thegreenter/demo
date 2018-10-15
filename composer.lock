@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "34833f124624db79534e59e11e1bbcd3",
+    "content-hash": "b71c75bf2f68f9c80a15dab786d477c1",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v1.3.2",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb"
+                "reference": "536ba0c824f654edc46385cc3b2ce369bc44d165"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb",
-                "reference": "8d6ff9b6ad81ab1d7ceb0ce27a4f7f6dd13d5bdb",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/536ba0c824f654edc46385cc3b2ce369bc44d165",
+                "reference": "536ba0c824f654edc46385cc3b2ce369bc44d165",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-08-04T16:53:00+00:00"
+            "time": "2018-10-14T19:09:59+00:00"
         },
         {
             "name": "greenter/data",
@@ -100,16 +100,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-data.git",
-                "reference": "c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21"
+                "reference": "2be33c17a855220e36b888c5c7408875a13ea495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21",
-                "reference": "c25a8bb7c8bb6f7b2b4dfbc1ae41e7433d4e8e21",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/2be33c17a855220e36b888c5c7408875a13ea495",
+                "reference": "2be33c17a855220e36b888c5c7408875a13ea495",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^1.2"
+                "greenter/core": "^2.1"
             },
             "type": "library",
             "autoload": {
@@ -132,26 +132,26 @@
             "keywords": [
                 "greenter"
             ],
-            "time": "2018-09-18T20:38:19+00:00"
+            "time": "2018-10-14T20:32:16+00:00"
         },
         {
             "name": "greenter/greenter",
-            "version": "v2.1.3",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter.git",
-                "reference": "b65f6635afafdf4d05e977232525465e065cef8f"
+                "reference": "a63147b2176e773147485e60db9fb745a377f5bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter/zipball/b65f6635afafdf4d05e977232525465e065cef8f",
-                "reference": "b65f6635afafdf4d05e977232525465e065cef8f",
+                "url": "https://api.github.com/repos/giansalex/greenter/zipball/a63147b2176e773147485e60db9fb745a377f5bd",
+                "reference": "a63147b2176e773147485e60db9fb745a377f5bd",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^1.3",
-                "greenter/ws": "^1.2",
-                "greenter/xml": "^1.2",
+                "greenter/core": "^2.1",
+                "greenter/ws": "^2.1",
+                "greenter/xml": "^2.1",
                 "greenter/xmldsig": "^5.0",
                 "php": ">=5.5.9"
             },
@@ -179,26 +179,28 @@
             "keywords": [
                 "facturación electrónica",
                 "sunat",
+                "ubl20",
+                "ubl21",
                 "xml"
             ],
-            "time": "2018-09-18T21:48:36+00:00"
+            "time": "2018-10-14T23:23:45+00:00"
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v1.0.4",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-htmltopdf.git",
-                "reference": "1ec7ecf91d1cc22390816714d098bf2390975219"
+                "reference": "1f7d09a35d7babcc8a2e2b437623b0e483eb1cd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/1ec7ecf91d1cc22390816714d098bf2390975219",
-                "reference": "1ec7ecf91d1cc22390816714d098bf2390975219",
+                "url": "https://api.github.com/repos/giansalex/greenter-htmltopdf/zipball/1f7d09a35d7babcc8a2e2b437623b0e483eb1cd3",
+                "reference": "1f7d09a35d7babcc8a2e2b437623b0e483eb1cd3",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^1.2",
+                "greenter/core": "^2.1",
                 "mikehaertl/phpwkhtmltopdf": "^2.3",
                 "php": ">=5.5.9"
             },
@@ -232,36 +234,36 @@
                 "representacion-impresa",
                 "wkhtmltodf"
             ],
-            "time": "2018-04-16T23:02:48+00:00"
+            "time": "2018-10-14T20:22:29+00:00"
         },
         {
             "name": "greenter/report",
-            "version": "v1.3.1",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "43979f9dfd1ff297f7f6a184125265973a91388a"
+                "reference": "f7f0c9ca30be5d55a44370de4715256db8426e6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/43979f9dfd1ff297f7f6a184125265973a91388a",
-                "reference": "43979f9dfd1ff297f7f6a184125265973a91388a",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/f7f0c9ca30be5d55a44370de4715256db8426e6d",
+                "reference": "f7f0c9ca30be5d55a44370de4715256db8426e6d",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^1.0",
-                "greenter/core": "^1.2",
+                "greenter/core": "^2.1",
                 "php": ">=5.5.9",
                 "twig/twig": "~1.0"
             },
             "require-dev": {
-                "greenter/data": "^1.1",
+                "greenter/data": "dev-master",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Greenter\\Report\\": "src/Report/"
+                    "Greenter\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -282,26 +284,26 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-01-29T16:07:27+00:00"
+            "time": "2018-10-14T20:35:47+00:00"
         },
         {
             "name": "greenter/ws",
-            "version": "v1.2.6",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "dcbaf7e8d69c87b06d0b6b17adb76ee58071caca"
+                "reference": "d986f95d7bf595db2957ba57dc14b30c0fe28a9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/dcbaf7e8d69c87b06d0b6b17adb76ee58071caca",
-                "reference": "dcbaf7e8d69c87b06d0b6b17adb76ee58071caca",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/d986f95d7bf595db2957ba57dc14b30c0fe28a9c",
+                "reference": "d986f95d7bf595db2957ba57dc14b30c0fe28a9c",
                 "shasum": ""
             },
             "require": {
                 "ext-soap": "*",
-                "ext-zlib": "*",
-                "greenter/core": "^1.2",
+                "ext-zip": "*",
+                "greenter/core": "^2.1",
                 "php": ">=5.5.9"
             },
             "require-dev": {
@@ -332,76 +334,29 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-09-10T16:48:51+00:00"
-        },
-        {
-            "name": "greenter/xcodes",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/giansalex/greenter-xcodes.git",
-                "reference": "02a18f8e835e5f24ad1813d3de01b436bf8cc373"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xcodes/zipball/02a18f8e835e5f24ad1813d3de01b436bf8cc373",
-                "reference": "02a18f8e835e5f24ad1813d3de01b436bf8cc373",
-                "shasum": ""
-            },
-            "require": {
-                "greenter/core": "^1.2",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=4.8 < 6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Greenter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Giancarlos Salas",
-                    "email": "giansalex@gmail.com"
-                }
-            ],
-            "description": "Códigos de Error en Facturación Electrónica SUNAT - Perú",
-            "homepage": "https://github.com/giansalex/greenter-xcodes",
-            "keywords": [
-                "error-codes",
-                "facturación electrónica",
-                "greenter",
-                "sunat"
-            ],
-            "time": "2018-01-30T01:58:03+00:00"
+            "time": "2018-10-14T21:46:17+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v1.2.8",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "b38833ef9336631487840afd2b8b975cf9fb5b44"
+                "reference": "9744b8951f276ea6d10b9c8cfe8293f0c703a1f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/b38833ef9336631487840afd2b8b975cf9fb5b44",
-                "reference": "b38833ef9336631487840afd2b8b975cf9fb5b44",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/9744b8951f276ea6d10b9c8cfe8293f0c703a1f0",
+                "reference": "9744b8951f276ea6d10b9c8cfe8293f0c703a1f0",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^1.3",
+                "greenter/core": "^2.1",
                 "php": ">=5.5.9",
                 "twig/twig": "~1.0"
             },
             "require-dev": {
-                "greenter/data": "^1.1",
+                "greenter/data": "dev-master",
                 "greenter/ubl-validator": "^1.0",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
@@ -428,7 +383,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-09-09T16:27:55+00:00"
+            "time": "2018-10-14T21:41:11+00:00"
         },
         {
             "name": "greenter/xmldsig",

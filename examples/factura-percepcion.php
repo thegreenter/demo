@@ -12,59 +12,51 @@ $util = Util::getInstance();
 
 // Venta
 $invoice = new Invoice();
-$invoice->setTipoDoc('01')
+$invoice
+    ->setUblVersion('2.1')
+    ->setTipoOperacion('2001') // Percepciones
+    ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('125')
-    ->setFechaEmision(new DateTime())
+    ->setCorrelativo('123')
+    ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
     ->setClient($util->getClient())
+    ->setCompany($util->getCompany())
     ->setMtoOperGravadas(200)
-    ->setMtoOperExoneradas(0)
-    ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
-    ->setMtoImpVenta(2000.00)
-    ->setCompany($util->getCompany());
-
-$invoice->setPerception((new SalePerception())
-    ->setMto(40)
-    ->setCodReg('01')
-    ->setMtoBase(2000)
-    ->setMtoTotal(2040)
-);
-
-$item1 = new SaleDetail();
-$item1->setCodProducto('C023')
+    ->setTotalImpuestos(36)
+    ->setValorVenta(200)
+    ->setMtoImpVenta(236)
+    ->setPerception((new SalePerception())
+        ->setCodReg('51')
+        ->setPorcentaje(2.00)
+        ->setMtoBase(200)
+        ->setMto(4.00)
+        ->setMtoTotal(204.00));
+$detail = new SaleDetail();
+$detail->setCodProducto('P001')
     ->setUnidad('NIU')
-    ->setCantidad(2)
     ->setDescripcion('PROD 1')
-    ->setDescuento(1)
-    ->setIgv(18)
-    ->setTipAfeIgv('10')
-    ->setMtoValorVenta(100)
-    ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
-
-$item2 = new SaleDetail();
-$item2->setCodProducto('C02')
-    ->setCodProdSunat('P21')
-    ->setUnidad('NIU')
     ->setCantidad(2)
-    ->setDescripcion('PROD 1')
-    ->setIgv(18)
+    ->setMtoValorUnitario(100)
+    ->setMtoValorVenta(200)
+    ->setMtoBaseIgv(200)
+    ->setPorcentajeIgv(18)
+    ->setIgv(36)
     ->setTipAfeIgv('10')
-    ->setMtoValorVenta(100)
-    ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
+    ->setTotalImpuestos(36)
+    ->setMtoPrecioUnitario(118)
+;
 
-$legend = new Legend();
-$legend->setCode('1000')
-    ->setValue('SON DOS MIL CON 00/100');
-$legend2 = new Legend();
-$legend2->setCode('2000')
-    ->setValue('COMPROBANTE DE PERCEPCIÓN');
-
-$invoice->setDetails([$item1, $item2])
-    ->setLegends([$legend]);
+$invoice->setDetails([$detail])
+    ->setLegends([
+        (new Legend())
+            ->setCode('1000')
+            ->setValue('SON DOSCIENTOS TREINTA Y SEIS CON OO/100 SOLES'),
+        (new Legend())
+            ->setCode('2000')
+            ->setValue('COMPROBANTE DE PERCEPCIÓN')
+    ]);
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);

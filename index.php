@@ -1,13 +1,68 @@
 <?php
 set_time_limit(0);
 
-$files = glob(__DIR__.'/examples/*.php');
-$files = array_map(function ($file) {
-    $name = basename($file);
-    $path = 'examples/' . $name;
-
-    return ['name' => $name, 'path' => $path];
-}, $files);
+$docsList = [
+    [
+        'file' => 'factura.php', 
+        'title' => 'Factura',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'boleta.php',
+        'title' => 'Boleta de Venta',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'factura-gratuita.php',
+        'title' => 'Factura Gratuita',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'factura-percepcion.php',
+        'title' => 'Factura con Percepción',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'nota-credito.php',
+        'title' => 'Nota de Crédito',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'nota-debito.php',
+        'title' => 'Nota de Débito',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'resumen.php',
+        'title' => 'Resumen Diario',
+        'tags' => ['2.0'],
+    ],
+    [
+        'file' => 'comunicacion-baja.php',
+        'title' => 'Comunicación de Baja',
+        'tags' => ['2.0'],
+    ],
+    [
+        'file' => 'guia-remision.php',
+        'title' => 'Guia de Remisión',
+        'tags' => ['2.1'],
+    ],
+    [
+        'file' => 'percepcion.php',
+        'title' => 'C. de Percepción',
+        'tags' => ['2.0'],
+    ],
+    [
+        'file' => 'retencion.php',
+        'title' => 'C. de Retención',
+        'tags' => ['2.0'],
+    ],
+    [
+        'file' => 'reversion.php',
+        'title' => 'Resumen de Reversiones',
+        'tags' => ['2.0'],
+    ],
+];
 
 $pdfPaths = glob(__DIR__.'/examples/report/*.php');
 $pdfPaths = array_map(function ($file) {
@@ -33,11 +88,16 @@ $pdfPaths = array_map(function ($file) {
     <div class="row">
         <div class="col-md-4">
             <div class="card bg-primary">
-                <div class="card-header text-white">Comprobantes <span class="badge badge-secondary"><?php echo count($files); ?></span></div>
+                <div class="card-header text-white">Comprobantes <span class="badge badge-secondary"><?php echo count($docsList); ?></span></div>
                 <div class="card-block">
                     <ul class="list-group">
-                        <?php foreach ($files as $file): ?>
-                            <li onclick="loadUrl(this, '<?= $file['path']?>')" class="list-group-item"><i class="fa fa-angle-right"></i>&nbsp;<?=$file['name']?></li>
+                        <?php foreach ($docsList as $file): ?>
+                            <li onclick="loadUrl(this, 'examples/<?= $file['file']?>')" class="list-group-item">
+                                <i class="fa fa-angle-right"></i>&nbsp;<?=$file['title']?>
+                                <?php foreach ($file['tags'] as $tag): ?>
+                                    <span class="badge badge-secondary"><?=$tag?></span>
+                                <?php endforeach; ?>
+                            </li>
                         <?php endforeach; ?>
                         <li class="list-group-item">
                             <a href="/examples/pages/status-cdr.php">Consulta CDR <i class="fa fa-external-link"></i></a>
@@ -118,7 +178,6 @@ $pdfPaths = array_map(function ($file) {
 
     function formatTime(time) {
         var h = m = s = ms = 0;
-        var newTime = '';
 
         h = Math.floor( time / (60 * 60 * 1000) );
         time = time % (60 * 60 * 1000);
@@ -127,8 +186,7 @@ $pdfPaths = array_map(function ($file) {
         s = Math.floor( time / 1000 );
         ms = time % 1000;
 
-        newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
-        return newTime;
+        return pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
     }
 
     function show() {

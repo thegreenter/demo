@@ -7,6 +7,8 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $reversion = $util->getReversion();
+$reversion->setFecGeneracion(new \DateTime('-3days'));
+$reversion->setFecComunicacion(new \DateTime('-1days'));
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::RETENCION_BETA);
