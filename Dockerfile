@@ -1,19 +1,38 @@
-FROM php:7.0-apache
+FROM php:7.1-alpine
+LABEL owner="Giancarlos Salas"
+LABEL maintainer="giansalex@gmail.com"
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends wkhtmltopdf wget libxml2-dev php-soap zlib1g-dev git zip unzip libfreetype6-dev libjpeg62-turbo-dev && \
-    docker-php-ext-install soap && \
+RUN apk update && apk add --no-cache \
+    openssl \
+    git \
+    unzip \
+    curl \
+    libpng \
+    libxml2-dev \
+    zlib-dev \
+    ca-certificates && \
+    update-ca-certificates
+
+# wkhtmltopdf
+RUN apk add --update --no-cache \
+    libgcc libstdc++ libx11 glib libxrender libxext libintl \
+    libcrypto1.0 libssl1.0 \
+    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family && \
+    wget https://raw.githubusercontent.com/madnight/docker-alpine-wkhtmltopdf/master/wkhtmltopdf --no-check-certificate && \
+    mv wkhtmltopdf /bin && \
+    chmod +x /bin/wkhtmltopdf
+
+RUN apk add --no-cache --virtual .build-gd-deps \
+    libpng-dev libjpeg-turbo-dev freetype-dev libwebp-dev zlib-dev libxpm-dev libwebp-dev zlib-dev libxpm-dev && \
+    docker-php-ext-install gd && \
+    apk del .build-gd-deps && \
+    rm -rf /var/cache/apk/*
+
+RUN docker-php-ext-install soap && \
     docker-php-ext-configure opcache --enable-opcache && \
     docker-php-ext-install opcache && \
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
-    docker-php-ext-install -j$(nproc) gd && \
-    apt-get clean && \
+    docker-php-ext-install zip && \
     curl --silent --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
-    tar xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz && \
-    mv wkhtmltox/bin/wkhtmlto* /usr/bin/ && \
-    ln -nfs /usr/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 
 ENV NOT_INSTALL 1
 
@@ -26,3 +45,7 @@ RUN cd /var/www/html && \
     chmod -R 777 ./files && \
     composer install --no-interaction --no-dev --optimize-autoloader && \
     composer dump-autoload --optimize --no-dev --classmap-authoritative
+
+EXPOSE 8000
+
+ENTRYPOINT ["php", "-S", "0.0.0.0:8000"]
