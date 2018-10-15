@@ -12,39 +12,43 @@ $util = Util::getInstance();
 // Venta
 $invoice = new Invoice();
 $invoice
+    ->setUblVersion('2.1')
+    ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('124')
-    ->setFechaEmision(new DateTime())
+    ->setCorrelativo('123')
+    ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
     ->setClient($util->getClient())
-    ->setMtoOperGravadas(0)
-    ->setMtoOperExoneradas(0)
-    ->setMtoOperInafectas(0)
+    ->setCompany($util->getCompany())
+    ->setMtoOperGratuitas(200)
     ->setMtoIGV(0)
-    ->setMtoImpVenta(0)
-    ->setCompany($util->getCompany());
+    ->setTotalImpuestos(0)
+    ->setValorVenta(0)
+    ->setMtoImpVenta(0);
 
-$item = new SaleDetail();
-$item->setCodProducto('C023')
+$detail = new SaleDetail();
+$detail->setCodProducto('P001')
     ->setUnidad('NIU')
+    ->setDescripcion('PROD 1')
     ->setCantidad(2)
-    ->setDescripcion('PROD REGALO')
-    ->setIgv(0)
-    ->setTipAfeIgv('11')
-    ->setMtoValorVenta(0)
     ->setMtoValorUnitario(0)
-    ->setMtoValorGratuito(20)
-    ->setMtoPrecioUnitario(0);
+    ->setMtoValorGratuito(100)
+    ->setMtoValorVenta(0)
+    ->setMtoBaseIgv(200)
+    ->setPorcentajeIgv(18)
+    ->setIgv(36)
+    ->setTipAfeIgv('11')
+    ->setTotalImpuestos(36)
+    ->setMtoPrecioUnitario(0)
+;
 
-$invoice->setMtoOperGratuitas(40.00);
-
-$legend = new Legend();
-$legend->setCode('1002')
-    ->setValue('TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE');
-
-$invoice->setDetails([$item])
-    ->setLegends([$legend]);
+$invoice->setDetails([$detail])
+    ->setLegends([
+        (new Legend())
+            ->setCode('1002')
+            ->setValue('TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE')
+    ]);
 
 // Envio a SUNAT.
 $see =$util->getSee(SunatEndpoints::FE_BETA);

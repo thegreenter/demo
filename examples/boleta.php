@@ -17,17 +17,20 @@ $client->setTipoDoc('1')
 
 // Venta
 $invoice = new Invoice();
-$invoice->setTipoDoc('03')
+$invoice
+    ->setUblVersion('2.1')
+    ->setTipoOperacion('0101')
+    ->setTipoDoc('03')
     ->setSerie('B001')
     ->setCorrelativo('1')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setClient($client)
-    ->setMtoOperGravadas(200)
-    ->setMtoOperExoneradas(0)
-    ->setMtoOperInafectas(0)
-    ->setMtoIGV(36)
-    ->setMtoImpVenta(100)
+    ->setMtoOperGravadas(100)
+    ->setMtoIGV(18)
+    ->setTotalImpuestos(18)
+    ->setValorVenta(100)
+    ->setMtoImpVenta(118)
     ->setCompany($util->getCompany());
 
 $item1 = new SaleDetail();
@@ -35,19 +38,20 @@ $item1->setCodProducto('C023')
     ->setUnidad('NIU')
     ->setCantidad(2)
     ->setDescripcion('PROD 1')
+    ->setMtoBaseIgv(100)
+    ->setPorcentajeIgv(18)
     ->setIgv(18)
     ->setTipAfeIgv('10')
+    ->setTotalImpuestos(18)
     ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
-
-$items = Util::generator($item1, 14);
+    ->setMtoPrecioUnitario(59);
 
 $legend = new Legend();
 $legend->setCode('1000')
-    ->setValue('SON CIEN CON 00/100 SOLES');
+    ->setValue('SON CIENTO DIECIOCHO CON 00/100 SOLES');
 
-$invoice->setDetails($items)
+$invoice->setDetails([$item1])
     ->setLegends([$legend]);
 
 // Envio a SUNAT.

@@ -6,7 +6,6 @@ use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
 use Greenter\Report\PdfReport;
 use Greenter\See;
-use Greenter\Validator\XmlErrorCodeProvider;
 
 final class Util
 {
@@ -167,7 +166,7 @@ HTML;
         );
         if ($process !== false) {
             $stdout = stream_get_contents($pipes[1]);
-            $stderr = stream_get_contents($pipes[2]);
+            stream_get_contents($pipes[2]);
             fclose($pipes[1]);
             fclose($pipes[2]);
             proc_close($process);

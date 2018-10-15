@@ -1,6 +1,5 @@
 <?php
 
-use Greenter\Model\Sale\Document;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -10,58 +9,61 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-// Venta
 $invoice = new Invoice();
 $invoice
-    ->setFecVencimiento(new DateTime())
+    ->setUblVersion('2.1')
+    ->setFecVencimiento(new \DateTime())
+    ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('123')
-    ->setFechaEmision(new DateTime())
+    ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
-    ->setGuias([
-        (new Document())
-        ->setTipoDoc('09')
-        ->setNroDoc('001-213')
-    ])
     ->setClient($util->getClient())
     ->setMtoOperGravadas(200)
-    ->setMtoOperExoneradas(0)
-    ->setMtoOperInafectas(0)
+    ->setMtoOperExoneradas(100)
     ->setMtoIGV(36)
-    ->setMtoImpVenta(2236.43)
+    ->setTotalImpuestos(36)
+    ->setValorVenta(300)
+    ->setMtoImpVenta(336)
     ->setCompany($util->getCompany());
 
 $item1 = new SaleDetail();
-$item1->setCodProducto('C023')
+$item1->setCodProducto('P001')
     ->setUnidad('NIU')
-    ->setCantidad(2)
     ->setDescripcion('PROD 1')
-    ->setDescuento(1)
-    ->setIgv(18)
+    ->setCantidad(2)
+    ->setMtoValorUnitario(100)
+    ->setMtoValorVenta(200)
+    ->setMtoBaseIgv(200)
+    ->setPorcentajeIgv(18)
+    ->setIgv(36)
     ->setTipAfeIgv('10')
-    ->setMtoValorVenta(100)
-    ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
+    ->setTotalImpuestos(36)
+    ->setMtoPrecioUnitario(118)
+;
 
 $item2 = new SaleDetail();
-$item2->setCodProducto('C02')
-    ->setCodProdSunat('P21')
-    ->setUnidad('NIU')
+$item2->setCodProducto('P002')
+    ->setUnidad('KG')
+    ->setDescripcion('PROD 2')
     ->setCantidad(2)
-    ->setDescripcion('PROD 1')
-    ->setIgv(18)
-    ->setTipAfeIgv('10')
-    ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
-
-$legend = new Legend();
-$legend->setCode('1000')
-    ->setValue('SON CIEN CON 00/100 SOLES');
+    ->setMtoValorVenta(100)
+    ->setMtoBaseIgv(100)
+    ->setPorcentajeIgv(0)
+    ->setIgv(0)
+    ->setTipAfeIgv('20')
+    ->setTotalImpuestos(0)
+    ->setMtoPrecioUnitario(59)
+;
 
 $invoice->setDetails([$item1, $item2])
-    ->setLegends([$legend]);
+    ->setLegends([
+        (new Legend())
+            ->setCode('1000')
+            ->setValue('SON DOSCIENTOS TREINTA Y SEIS CON OO/100 SOLES')
+    ]);
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);

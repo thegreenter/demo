@@ -12,6 +12,7 @@ $util = Util::getInstance();
 
 $note = new Note();
 $note
+    ->setUblVersion('2.1')
     ->setTipDocAfectado('01')
     ->setNumDocfectado('F001-111')
     ->setCodMotivo('07')
@@ -31,6 +32,7 @@ $note
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
+    ->setTotalImpuestos(36)
     ->setMtoImpVenta(236)
     ->setCompany($util->getCompany());
 
@@ -39,8 +41,11 @@ $detail1->setCodProducto('C023')
     ->setUnidad('NIU')
     ->setCantidad(2)
     ->setDescripcion('PROD 1')
+    ->setMtoBaseIgv(100)
+    ->setPorcentajeIgv(18.00)
     ->setIgv(18)
     ->setTipAfeIgv('10')
+    ->setTotalImpuestos(18)
     ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
     ->setMtoPrecioUnitario(56);
@@ -50,15 +55,18 @@ $detail2->setCodProducto('C02')
     ->setUnidad('NIU')
     ->setCantidad(2)
     ->setDescripcion('PROD 1')
+    ->setMtoBaseIgv(100)
+    ->setPorcentajeIgv(18.00)
     ->setIgv(18)
     ->setTipAfeIgv('10')
+    ->setTotalImpuestos(18)
     ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
     ->setMtoPrecioUnitario(56);
 
 $legend = new Legend();
 $legend->setCode('1000')
-    ->setValue('SON CIEN CON 00/100 SOLES');
+    ->setValue('SON DOSCIENTOS TREINTA Y SEIS CON 00/100 SOLES');
 
 $note->setDetails([$detail1, $detail2])
     ->setLegends([$legend]);
