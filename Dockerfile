@@ -46,6 +46,8 @@ RUN cd /var/www/html && \
     composer install --no-interaction --no-dev --optimize-autoloader && \
     composer dump-autoload --optimize --no-dev --classmap-authoritative
 
+WORKDIR /var/www/html
+
 EXPOSE 8000
 
 ENTRYPOINT ["php", "-S", "0.0.0.0:8000"]
