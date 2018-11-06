@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "b71c75bf2f68f9c80a15dab786d477c1",
@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v2.1.0",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-core.git",
-                "reference": "536ba0c824f654edc46385cc3b2ce369bc44d165"
+                "reference": "840ab15c0a947b1b5728017e4429aafe16e1b9c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/536ba0c824f654edc46385cc3b2ce369bc44d165",
-                "reference": "536ba0c824f654edc46385cc3b2ce369bc44d165",
+                "url": "https://api.github.com/repos/giansalex/greenter-core/zipball/840ab15c0a947b1b5728017e4429aafe16e1b9c9",
+                "reference": "840ab15c0a947b1b5728017e4429aafe16e1b9c9",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "greenter",
                 "sunat"
             ],
-            "time": "2018-10-14T19:09:59+00:00"
+            "time": "2018-11-05T23:51:28+00:00"
         },
         {
             "name": "greenter/data",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-data.git",
-                "reference": "2be33c17a855220e36b888c5c7408875a13ea495"
+                "reference": "43ad308265faef963af0c1ac75e5b7d7497ff204"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/2be33c17a855220e36b888c5c7408875a13ea495",
-                "reference": "2be33c17a855220e36b888c5c7408875a13ea495",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/43ad308265faef963af0c1ac75e5b7d7497ff204",
+                "reference": "43ad308265faef963af0c1ac75e5b7d7497ff204",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
             "keywords": [
                 "greenter"
             ],
-            "time": "2018-10-14T20:32:16+00:00"
+            "time": "2018-10-31T17:27:05+00:00"
         },
         {
             "name": "greenter/greenter",
@@ -288,16 +288,16 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "d986f95d7bf595db2957ba57dc14b30c0fe28a9c"
+                "reference": "4cafb9c7c670a0e14e6a802876b1131301dd55a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/d986f95d7bf595db2957ba57dc14b30c0fe28a9c",
-                "reference": "d986f95d7bf595db2957ba57dc14b30c0fe28a9c",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/4cafb9c7c670a0e14e6a802876b1131301dd55a1",
+                "reference": "4cafb9c7c670a0e14e6a802876b1131301dd55a1",
                 "shasum": ""
             },
             "require": {
@@ -334,20 +334,20 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-10-14T21:46:17+00:00"
+            "time": "2018-10-26T20:46:24+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "9744b8951f276ea6d10b9c8cfe8293f0c703a1f0"
+                "reference": "b19f1894c02086a33a50deedfadc727087489ab9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/9744b8951f276ea6d10b9c8cfe8293f0c703a1f0",
-                "reference": "9744b8951f276ea6d10b9c8cfe8293f0c703a1f0",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/b19f1894c02086a33a50deedfadc727087489ab9",
+                "reference": "b19f1894c02086a33a50deedfadc727087489ab9",
                 "shasum": ""
             },
             "require": {
@@ -357,7 +357,7 @@
             },
             "require-dev": {
                 "greenter/data": "dev-master",
-                "greenter/ubl-validator": "^1.0",
+                "greenter/ubl-validator": "^2.0",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
             "type": "library",
@@ -383,7 +383,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2018-10-14T21:41:11+00:00"
+            "time": "2018-11-06T00:07:48+00:00"
         },
         {
             "name": "greenter/xmldsig",
@@ -552,7 +552,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
