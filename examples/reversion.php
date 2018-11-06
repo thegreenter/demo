@@ -22,7 +22,7 @@ if ($res->isSuccess()) {
     echo 'Ticket :<strong>' . $ticket .'</strong>';
 
     $result = $see->getStatus($ticket);
-    if ($result->isSuccess() && in_array($result->getCode(), ['0', '99'])) {
+    if ($result->isSuccess()) {
         $cdr = $result->getCdrResponse();
         $util->writeCdr($reversion, $result->getCdrZip());
 
