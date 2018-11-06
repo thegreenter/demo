@@ -38,6 +38,11 @@ $docsList = [
         'tags' => ['2.0'],
     ],
     [
+        'file' => 'resumen-usd.php',
+        'title' => 'Resumen Diario (en Dólares)',
+        'tags' => ['2.0'],
+    ],
+    [
         'file' => 'comunicacion-baja.php',
         'title' => 'Comunicación de Baja',
         'tags' => ['2.0'],
@@ -100,7 +105,7 @@ $pdfPaths = array_map(function ($file) {
                             </li>
                         <?php endforeach; ?>
                         <li class="list-group-item">
-                            <a href="/examples/pages/status-cdr.php">Consulta CDR <i class="fa fa-external-link"></i></a>
+                            <a href="examples/pages/status-cdr.php">Consulta CDR <i class="fa fa-external-link"></i></a>
                         </li>
                     </ul>
                 </div>
