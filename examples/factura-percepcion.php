@@ -29,7 +29,7 @@ $invoice
     ->setMtoImpVenta(236)
     ->setPerception((new SalePerception())
         ->setCodReg('51')
-        ->setPorcentaje(2.00)
+        ->setPorcentaje(0.02)
         ->setMtoBase(200)
         ->setMto(4.00)
         ->setMtoTotal(204.00));
