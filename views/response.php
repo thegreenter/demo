@@ -31,7 +31,7 @@
     <?php endif;?>
     <b>Adjuntos</b><br>
     <ul class="list-group">
-        <li class="list-group-item"><a href="files/<?=$filename?>.xml"><?=$filename?>.xml</a></li>
-        <li class="list-group-item"><a href="files/R-<?=$filename?>.zip">R-<?=$filename?>.zip</a></li>
+        <li class="list-group-item"><a href="files/<?=$filename?>.xml"><i class="fa fa-file-code"></i>&nbsp;<?=$filename?>.xml</a></li>
+        <li class="list-group-item"><a href="files/R-<?=$filename?>.zip"><i class="fa fa-file-archive"></i>&nbsp;R-<?=$filename?>.zip</a></li>
     </ul>
 </div>
