@@ -36,14 +36,16 @@ Finalmente navegar a http://localhost:8080
 Disponible en este https://greenter-sample.herokuapp.com.
 
 ### Lista de Ejemplos
-:ballot_box_with_check: Factura (PDF) (UBL 2.1)    
-:ballot_box_with_check: Boleta  (PDF) (UBL 2.1)   
-:ballot_box_with_check: Nota de Crédito (PDF) (UBL 2.1)    
-:ballot_box_with_check: Nota de Débito  (PDF) (UBL 2.1)   
-:ballot_box_with_check: Resumen Diario de Boletas (PDF) (v2)    
-:ballot_box_with_check: Comunicación de Baja (PDF)  
-:ballot_box_with_check: Guia de Remisión  (PDF) (UBL 2.1)    
-:ballot_box_with_check: Retención (PDF)  
-:ballot_box_with_check: Perecepción (PDF)  
-:ballot_box_with_check: Resumen de Reversión (PDF)  
-:ballot_box_with_check: Consultar estado del CDR  
+:white_check_mark: Factura (PDF) (UBL 2.1)    
+:white_check_mark: Boleta  (PDF) (UBL 2.1)   
+:white_check_mark: Nota de Crédito (PDF) (UBL 2.1)    
+:white_check_mark: Nota de Débito  (PDF) (UBL 2.1)   
+:white_check_mark: Resumen Diario de Boletas (PDF) (v2)    
+:white_check_mark: Comunicación de Baja (PDF)  
+:white_check_mark: Guia de Remisión  (PDF) (UBL 2.1)    
+:white_check_mark: Retención (PDF)  
+:white_check_mark: Perecepción (PDF)  
+:white_check_mark: Resumen de Reversión (PDF)  
+:white_check_mark: Consultar estado del CDR   
+:ballot_box_with_check: Factura por Contingencia (UBL 2.1)   
+:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)   
