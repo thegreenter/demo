@@ -3,7 +3,7 @@
 
 ?>
 <div class="bs-callout <?php echo $cdr->isAccepted() ? 'bs-callout-success' : 'bs-callout-danger' ?>">
-    <h4>Respuesta:</h4><br>
+    <h4>Respuesta</h4><br>
     <table class="table">
         <tbody>
             <tr>
