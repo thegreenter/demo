@@ -54,3 +54,6 @@
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+
+a { color: inherit; }
+a:hover { color: inherit; }
