@@ -42,18 +42,6 @@ final class Util
         return $see;
     }
 
-    public function getResponseFromCdr(CdrResponse $cdr)
-    {
-        $result = <<<HTML
-        <h2>Respuesta SUNAT:</h2><br>
-        <b>ID:</b> {$cdr->getId()}<br>
-        <b>CODE:</b>{$cdr->getCode()}<br>
-        <b>DESCRIPTION:</b>{$cdr->getDescription()}<br>
-HTML;
-
-        return $result;
-    }
-
     public function showResponse(DocumentInterface $document, CdrResponse $cdr)
     {
         $filename = $document->getName();
