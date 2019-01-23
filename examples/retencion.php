@@ -60,7 +60,7 @@ if ($res->isSuccess()) {
     $cdr = $res->getCdrResponse();
     $util->writeCdr($retention, $res->getCdrZip());
 
-    echo $util->getResponseFromCdr($cdr);
+    $util->showResponse($retention, $cdr);
 } else {
-    var_dump($res->getError());
+    echo $util->getErrorResponse($res->getError());
 }

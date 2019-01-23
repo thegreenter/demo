@@ -26,10 +26,10 @@ if ($res->isSuccess()) {
         $cdr = $result->getCdrResponse();
         $util->writeCdr($reversion, $result->getCdrZip());
 
-        echo $util->getResponseFromCdr($cdr);
+        $util->showResponse($reversion, $cdr);
     } else {
-        var_dump($result->getError());
+        echo $util->getErrorResponse($result->getError());
     }
 } else {
-    var_dump($res->getError());
+    echo $util->getErrorResponse($res->getError());
 }

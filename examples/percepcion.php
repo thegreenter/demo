@@ -59,8 +59,8 @@ if ($res->isSuccess()) {
     $cdr = $res->getCdrResponse();
     $util->writeCdr($perception, $res->getCdrZip());
 
-    echo $util->getResponseFromCdr($cdr);
+    $util->showResponse($perception, $cdr);
 } else {
-    var_dump($res->getError());
+    echo $util->getErrorResponse($res->getError());
 }
 
