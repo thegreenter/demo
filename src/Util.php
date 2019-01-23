@@ -54,6 +54,24 @@ HTML;
         return $result;
     }
 
+    public function showResponse(DocumentInterface $document, CdrResponse $cdr)
+    {
+        $filename = $document->getName();
+
+        require __DIR__.'/../views/response.php';
+    }
+
+    public function getErrorResponse(\Greenter\Model\Response\Error $error)
+    {
+        $result = <<<HTML
+        <h2 class="text-danger">Error:</h2><br>
+        <b>Código:</b>{$error->getCode()}<br>
+        <b>Descripción:</b>{$error->getMessage()}<br>
+HTML;
+
+        return $result;
+    }
+
     public function writeXml(DocumentInterface $document, $xml)
     {
         $this->writeFile($document->getName().'.xml', $xml);
@@ -64,13 +82,13 @@ HTML;
         $this->writeFile('R-'.$document->getName().'.zip', $zip);
     }
 
-    public function writeFile($filenam, $content)
+    public function writeFile($filename, $content)
     {
         if (getenv('GREENTER_NO_FILES')) {
             return;
         }
 
-        file_put_contents(__DIR__ . '/../files/'.$filenam, $content);
+        file_put_contents(__DIR__.'/../files/'.$filename, $content);
     }
 
     public function getPdf(DocumentInterface $document)

@@ -20,6 +20,7 @@ $pdfPaths = array_map(function ($file) {
             cursor: pointer;
         }
     </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <?php include 'views/top.php'; ?>
