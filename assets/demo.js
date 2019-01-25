@@ -79,12 +79,17 @@ function reset() {
 }
 
 var active = null;
+var xhr;
 show();
 function iconLoad() {
     $('#result').html('<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
 }
 
 function loadUrl(element, url) {
+    if(xhr && xhr.readyState != 4){
+        xhr.abort();
+    }
+
     if (active) {
         $(active).removeClass('active');
     }
@@ -94,9 +99,10 @@ function loadUrl(element, url) {
     reset();
     start();
     iconLoad();
-    $.get(url, function(data) {
+
+    xhr = $.get(url, function(data) {
         $("#result").html(data);
-    }).fail(function () {
+    }).fail(function (r) {
         $("#result").html('<span class="text-danger">Ocurrío un error invocando el script</span>');
     }).always(function () {
         stop();
