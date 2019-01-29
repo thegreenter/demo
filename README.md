@@ -23,10 +23,10 @@ composer install --no-dev -o
 
 ### Ejecutar
 
-Abrir cmd y ejecutar el siguiente comando.
+Abrir la consola y ejecutar el siguiente comando.
 
 ```bash
-composer run-script start --timeout=0
+php -S 0.0.0.0:8080
 ```
 
 Finalmente navegar a http://localhost:8080
