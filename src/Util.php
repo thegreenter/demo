@@ -5,6 +5,7 @@ use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
 use Greenter\Report\PdfReport;
+use Greenter\Report\Resolver\DefaultTemplateResolver;
 use Greenter\See;
 
 final class Util
@@ -85,10 +86,9 @@ HTML;
             'cache' => __DIR__ . '/../cache',
             'strict_variables' => true,
         ]);
-        $template = $this->getTemplate($document);
-        if ($template) {
-            $html->setTemplate($template);
-        }
+        $resolver = new DefaultTemplateResolver();
+        $template = $resolver->getTemplate($document);
+        $html->setTemplate($template);
 
         $render = new PdfReport($html);
         $render->setOptions( [
@@ -181,34 +181,6 @@ HTML;
         }
 
         return false;
-    }
-
-    private function getTemplate($document)
-    {
-        $className = get_class($document);
-
-        switch ($className) {
-            case \Greenter\Model\Retention\Retention::class:
-                $name = 'retention';
-                break;
-            case \Greenter\Model\Perception\Perception::class:
-                $name = 'perception';
-                break;
-            case \Greenter\Model\Despatch\Despatch::class:
-                $name = 'despatch';
-                break;
-            case \Greenter\Model\Summary\Summary::class:
-                $name = 'summary';
-                break;
-            case \Greenter\Model\Voided\Voided::class:
-            case \Greenter\Model\Voided\Reversion::class:
-                $name = 'voided';
-                break;
-            default:
-                return '';
-        }
-
-        return $name.'.html.twig';
     }
 
     private function getHash(DocumentInterface $document)
