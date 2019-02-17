@@ -238,16 +238,16 @@
         },
         {
             "name": "greenter/report",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-report.git",
-                "reference": "f7f0c9ca30be5d55a44370de4715256db8426e6d"
+                "reference": "7dafa09852a0f4963b9cd5f3c0c5ae6c727c0841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/f7f0c9ca30be5d55a44370de4715256db8426e6d",
-                "reference": "f7f0c9ca30be5d55a44370de4715256db8426e6d",
+                "url": "https://api.github.com/repos/giansalex/greenter-report/zipball/7dafa09852a0f4963b9cd5f3c0c5ae6c727c0841",
+                "reference": "7dafa09852a0f4963b9cd5f3c0c5ae6c727c0841",
                 "shasum": ""
             },
             "require": {
@@ -284,23 +284,24 @@
                 "pdf",
                 "sunat"
             ],
-            "time": "2018-10-14T20:35:47+00:00"
+            "time": "2019-02-17T02:44:22+00:00"
         },
         {
             "name": "greenter/ws",
-            "version": "v2.1.2",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "e6a9e53294f6d1397ca64ede0d6290b9033ee22a"
+                "reference": "3b1bcdc22e949560146e28e9bed9a9346f04d85c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/e6a9e53294f6d1397ca64ede0d6290b9033ee22a",
-                "reference": "e6a9e53294f6d1397ca64ede0d6290b9033ee22a",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/3b1bcdc22e949560146e28e9bed9a9346f04d85c",
+                "reference": "3b1bcdc22e949560146e28e9bed9a9346f04d85c",
                 "shasum": ""
             },
             "require": {
+                "ext-dom": "*",
                 "ext-soap": "*",
                 "ext-zip": "*",
                 "ext-zlib": "*",
@@ -335,7 +336,7 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2018-11-06T05:46:55+00:00"
+            "time": "2019-01-30T16:40:42+00:00"
         },
         {
             "name": "greenter/xml",
@@ -611,20 +612,20 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.36.0",
+            "version": "v1.37.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15"
+                "reference": "66be9366c76cbf23e82e7171d47cbfa54a057a62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/730c9c4471b5152d23061feb02b03382264c8a15",
-                "reference": "730c9c4471b5152d23061feb02b03382264c8a15",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/66be9366c76cbf23e82e7171d47cbfa54a057a62",
+                "reference": "66be9366c76cbf23e82e7171d47cbfa54a057a62",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
+                "php": ">=5.4.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "require-dev": {
@@ -635,7 +636,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.36-dev"
+                    "dev-master": "1.37-dev"
                 }
             },
             "autoload": {
@@ -673,7 +674,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-12-16T10:34:11+00:00"
+            "time": "2019-01-14T14:59:29+00:00"
         }
     ],
     "packages-dev": [],
