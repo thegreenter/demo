@@ -146,15 +146,18 @@ $result = process($_POST);
                                         <strong>Credenciales</strong>
                                         <div class="form-group">
                                             <label for="rucSol">Ruc:</label>
-                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11">
+                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11"
+                                                <?php if (isset($_POST['rucSol'])) {?> value="<?=$_POST['rucSol']; ?>" <?php }?>>
                                         </div>
                                         <div class="form-group">
                                             <label for="userSol">Usuario:</label>
-                                            <input type="text" class="form-control" name="userSol" id="userSol">
+                                            <input type="text" class="form-control" name="userSol" id="userSol"
+                                                <?php if (isset($_POST['userSol'])) {?> value="<?=$_POST['userSol']; ?>" <?php }?>>
                                         </div>
                                         <div class="form-group">
                                             <label for="passSol">Contraseña:</label>
-                                            <input type="password" class="form-control" name="passSol" id="passSol">
+                                            <input type="password" class="form-control" name="passSol" id="passSol"
+                                                <?php if (isset($_POST['passSol'])) {?> value="<?=$_POST['passSol']; ?>" <?php }?>>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -162,8 +165,12 @@ $result = process($_POST);
                                         <div class="form-group">
                                             <label for="ruc">Ruc Emisor:</label>
                                             <input type="text" class="form-control" name="ruc" id="ruc"
-                                                   value="20000000001"
-                                                   maxlength="11">
+                                                   maxlength="11"
+                                                <?php if (isset($_POST['ruc'])) {?>
+                                                    value="<?=$_POST['ruc']?>"
+                                                <?php } else {?>
+                                                    value="20000000001"
+                                                <?php }?>>
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo">Tipo:</label>

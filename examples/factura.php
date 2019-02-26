@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
@@ -43,10 +43,16 @@ $item1->setCodProducto('P001')
     ->setMtoPrecioUnitario(118)
 ;
 
+$desc = <<<XML
+DES 1
+DES 2
+DES 3
+XML;
+
 $item2 = new SaleDetail();
 $item2->setCodProducto('P002')
     ->setUnidad('KG')
-    ->setDescripcion('PROD 2')
+    ->setDescripcion($desc)
     ->setCantidad(2)
     ->setMtoValorUnitario(50)
     ->setMtoValorVenta(100)
