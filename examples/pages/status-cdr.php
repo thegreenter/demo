@@ -69,7 +69,7 @@ function process($fields)
     if (isset($fields['cdr'])) {
         $result = $service->getStatusCdr(...$arguments);
         if ($result->getCdrZip()) {
-            $filename = implode('-', $arguments).'.zip';
+            $filename = 'R-'.implode('-', $arguments).'.zip';
             savedFile($filename, $result->getCdrZip());
         }
 
@@ -115,7 +115,7 @@ $result = process($_POST);
                                         <br>
                                         <?php if (!is_null($filename)): ?>
                                             <strong>CDR: </strong><br>
-                                            <a href="/examples/pages/file-download.php?name=<?=$filename?>"><i class="fa fa-file-archive-o"></i></a>
+                                            <a href="/examples/pages/file-download.php?name=<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 <?php else: ?>
