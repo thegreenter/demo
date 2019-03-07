@@ -43,16 +43,10 @@ $item1->setCodProducto('P001')
     ->setMtoPrecioUnitario(118)
 ;
 
-$desc = <<<XML
-DES 1
-DES 2
-DES 3
-XML;
-
 $item2 = new SaleDetail();
 $item2->setCodProducto('P002')
     ->setUnidad('KG')
-    ->setDescripcion($desc)
+    ->setDescripcion('PROD 2')
     ->setCantidad(2)
     ->setMtoValorUnitario(50)
     ->setMtoValorVenta(100)
