@@ -19,14 +19,14 @@ $invoice
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
-    ->setClient($util->getClient())
+    ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(100)
     ->setMtoIGV(36)
     ->setTotalImpuestos(36)
     ->setValorVenta(300)
     ->setMtoImpVenta(336)
-    ->setCompany($util->getCompany());
+    ->setCompany($util->shared->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('P001')

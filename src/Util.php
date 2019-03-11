@@ -1,6 +1,6 @@
 <?php
 
-use Greenter\Data\StoreTrait;
+use Greenter\Data\SharedStore;
 use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
@@ -10,12 +10,15 @@ use Greenter\See;
 
 final class Util
 {
-    use StoreTrait;
-
     private static $current;
+    /**
+     * @var SharedStore
+     */
+    public $shared;
 
     private function __construct()
     {
+        $this->shared = new SharedStore();
     }
 
     public static function getInstance()

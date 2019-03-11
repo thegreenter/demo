@@ -22,14 +22,14 @@ $note
     ->setFechaEmision(new DateTime())
     ->setCorrelativo('123')
     ->setTipoMoneda('PEN')
-    ->setClient($util->getClient())
+    ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setTotalImpuestos(36)
     ->setMtoImpVenta(236)
-    ->setCompany($util->getCompany());
+    ->setCompany($util->shared->getCompany());
 
 $detail1 = new SaleDetail();
 $detail1->setCodProducto('C023')

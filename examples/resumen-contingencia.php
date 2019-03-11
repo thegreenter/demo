@@ -12,9 +12,7 @@ $sum = new Summary();
 $sum->setFecGeneracion(new \DateTime('-1days'))
     ->setFecResumen(new \DateTime('-1days'))
     ->setCorrelativo('001')
-    ->setCompany($util->getCompany())
-    ->setFecGeneracion(new \DateTime('-3days'))
-    ->setFecResumen(new \DateTime('-1days'));
+    ->setCompany($util->shared->getCompany());
 
 $detiail = new SummaryDetail();
 $detiail->setTipoDoc('03')

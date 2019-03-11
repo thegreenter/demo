@@ -31,7 +31,7 @@ $invoice
     ->setTotalImpuestos(18)
     ->setValorVenta(100)
     ->setMtoImpVenta(118)
-    ->setCompany($util->getCompany());
+    ->setCompany($util->shared->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')
