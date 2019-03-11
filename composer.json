@@ -11,8 +11,6 @@
     ],
     "homepage": "https://github.com/giansalex/greenter-sample",
     "type": "project",
-    "optimize-autoloader": true,
-    "classmap-authoritative": true,
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -28,5 +26,9 @@
     "scripts": {
         "post-install-cmd": "ComposerScripts::postInstall",
         "reset-cache": "ComposerScripts::clearCache"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
     }
 }
