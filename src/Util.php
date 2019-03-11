@@ -124,6 +124,14 @@ HTML;
         return $pdf;
     }
 
+    public function getGenerator($type)
+    {
+        $factory = new \Greenter\Data\GeneratorFactory();
+        $factory->shared = $this->shared;
+
+        return $factory->create($type);
+    }
+
     public static function generator($item, $count)
     {
         $items = [];

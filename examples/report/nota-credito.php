@@ -4,7 +4,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$note = $util->getNote();
+$note =  $util->getGenerator(\Greenter\Data\Generator\NoteStore::class)->create();
 
 try {
     $pdf = $util->getPdf($note);

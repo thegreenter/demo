@@ -1,17 +1,11 @@
 <?php
-use Greenter\Model\Client\Client;
+
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
 require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
-
-// Cliente
-$client = new Client();
-$client->setTipoDoc('1')
-    ->setNumDoc('20203030')
-    ->setRznSocial('PERSON 1');
 
 // Venta
 $invoice = new Invoice();
@@ -20,13 +14,13 @@ $invoice->setTipoDoc('03')
     ->setCorrelativo('1')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
-    ->setClient($client)
+    ->setClient($util->shared->getClientPerson())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(100)
-    ->setCompany($util->getCompany());
+    ->setCompany($util->shared->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')

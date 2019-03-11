@@ -4,7 +4,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$invoice = $util->getInvoice();
+$invoice =  $util->getGenerator(\Greenter\Data\Generator\InvoiceStore::class)->create();
 
 try {
     $pdf = $util->getPdf($invoice);

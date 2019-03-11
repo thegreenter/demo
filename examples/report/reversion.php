@@ -4,7 +4,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$document = $util->getReversion();
+$document =  $util->getGenerator(\Greenter\Data\Generator\RetentionStore::class)->create();
 
 try {
     $pdf = $util->getPdf($document);

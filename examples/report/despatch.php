@@ -4,7 +4,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$document = $util->getDespatch();
+$document = $util->getGenerator(\Greenter\Data\Generator\DespatchStore::class)->create();
 
 try {
     $pdf = $util->getPdf($document);

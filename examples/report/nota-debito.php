@@ -1,5 +1,5 @@
 <?php
-use Greenter\Model\Client\Client;
+
 use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -7,11 +7,6 @@ use Greenter\Model\Sale\Legend;
 require __DIR__ . '/../../vendor/autoload.php';
 
 $util = Util::getInstance();
-// Cliente
-$client = new Client();
-$client->setTipoDoc('6')
-    ->setNumDoc('20000000001')
-    ->setRznSocial('EMPRESA 1');
 
 $note = new Note();
 $note
@@ -24,13 +19,13 @@ $note
     ->setFechaEmision(new DateTime())
     ->setCorrelativo('123')
     ->setTipoMoneda('PEN')
-    ->setClient($client)
+    ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(0)
     ->setMtoOperInafectas(0)
     ->setMtoIGV(36)
     ->setMtoImpVenta(236)
-    ->setCompany($util->getCompany());
+    ->setCompany($util->shared->getCompany());
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('C023')
