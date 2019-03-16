@@ -57,3 +57,7 @@
 
 a { color: inherit; }
 a:hover { color: inherit; }
+
+.greenter-title {
+    font-size: 4vw;
+}
