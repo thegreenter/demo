@@ -4,12 +4,13 @@ Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://gith
 
 ### Topics
 - Generación de XML UBL 2.0, UBL 2.1
+- Generación comprobantes de contingencia.
 - Firma del XML
 - Compresión del XML en formato zip
 - Envio a servicio de sunat
 - Procesamiento de la respuesta (CDR)
 - Extraccion del Hash de la Firma Digital
-- Creación de Representacion Impresa - PDF
+- Representacion Impresa - PDF
 
 ### Pasos
 
