@@ -32,6 +32,11 @@ return [
         'tags' => ['2.1'],
     ],
     [
+        'file' => 'factura-exportacion.php',
+        'title' => 'Factura Exportación',
+        'tags' => ['2.1'],
+    ],
+    [
         'file' => 'nota-credito.php',
         'title' => 'Nota de Crédito',
         'tags' => ['2.1'],
