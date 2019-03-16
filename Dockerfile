@@ -1,33 +1,24 @@
-FROM php:7.1-alpine
+FROM php:7.3-alpine3.9
 LABEL owner="Giancarlos Salas"
 LABEL maintainer="giansalex@gmail.com"
 
-RUN apk update && apk add --no-cache \
-    libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    libcrypto1.0 libssl1.0 \
-    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family && \
-    apk add --no-cache --virtual .build-green-deps \
-    openssl \
+# Install deps
+RUN apk update && apk add --no-cache wkhtmltopdf ttf-droid libzip
+
+# Install php dev dependencies
+RUN apk add --no-cache --virtual .build-green-deps \
     git \
     unzip \
     curl \
-    libxml2-dev \
-    zlib-dev \
-    ca-certificates \
-    libpng-dev libjpeg-turbo-dev freetype-dev libwebp-dev zlib-dev libxpm-dev && \
-    update-ca-certificates
+    libzip-dev libxml2-dev \
+    libpng-dev libjpeg-turbo-dev freetype-dev libwebp-dev libxpm-dev
 
-# wkhtmltopdf
-RUN wget https://raw.githubusercontent.com/madnight/docker-alpine-wkhtmltopdf/master/wkhtmltopdf --no-check-certificate && \
-    mv wkhtmltopdf /bin && \
-    chmod +x /bin/wkhtmltopdf
-
+# Configure php extensions
 RUN docker-php-ext-install soap && \
     docker-php-ext-configure opcache --enable-opcache && \
     docker-php-ext-install opcache && \
     docker-php-ext-install gd && \
-    docker-php-ext-install zip && \
-    curl --silent --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    docker-php-ext-install zip
 
 ENV NOT_INSTALL 1
 
@@ -35,7 +26,9 @@ COPY docker/config/opcache.ini $PHP_INI_DIR/conf.d/
 
 COPY . /var/www/html/
 
-RUN cd /var/www/html && \
+# Install Packages
+RUN curl --silent --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+    cd /var/www/html && \
     chmod -R 777 ./cache && \
     chmod -R 777 ./files && \
     composer install --no-interaction --no-dev --optimize-autoloader && \
