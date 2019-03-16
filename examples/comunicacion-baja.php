@@ -33,20 +33,22 @@ $see = $util->getSee(SunatEndpoints::FE_BETA);
 $res = $see->send($voided);
 $util->writeXml($voided, $see->getFactory()->getLastXml());
 
-if ($res->isSuccess()) {
-    /**@var $res \Greenter\Model\Response\SummaryResult*/
-    $ticket = $res->getTicket();
-    echo 'Ticket :<strong>' . $ticket .'</strong>';
-
-    $result = $see->getStatus($ticket);
-    if ($result->isSuccess()) {
-        $cdr = $result->getCdrResponse();
-        $util->writeCdr($voided, $result->getCdrZip());
-
-        $util->showResponse($voided, $cdr);
-    } else {
-        echo $util->getErrorResponse($result->getError());
-    }
-} else {
+if (!$res->isSuccess()) {
     echo $util->getErrorResponse($res->getError());
+    return;
 }
+
+/**@var $res \Greenter\Model\Response\SummaryResult*/
+$ticket = $res->getTicket();
+echo 'Ticket :<strong>' . $ticket .'</strong>';
+
+$res = $see->getStatus($ticket);
+if (!$res->isSuccess()) {
+    echo $util->getErrorResponse($res->getError());
+    return;
+}
+
+$cdr = $res->getCdrResponse();
+$util->writeCdr($voided, $res->getCdrZip());
+
+$util->showResponse($voided, $cdr);
