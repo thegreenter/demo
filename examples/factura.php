@@ -55,7 +55,7 @@ $item2->setCodProducto('P002')
     ->setIgv(0)
     ->setTipAfeIgv('20')
     ->setTotalImpuestos(0)
-    ->setMtoPrecioUnitario(59)
+    ->setMtoPrecioUnitario(50)
 ;
 
 $invoice->setDetails([$item1, $item2])

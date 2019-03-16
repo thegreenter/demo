@@ -17,6 +17,11 @@ return [
         'tags' => ['2.1'],
     ],
     [
+        'file' => 'factura-inafecta.php',
+        'title' => 'Factura Inafecta',
+        'tags' => ['2.1'],
+    ],
+    [
         'file' => 'factura-gratuita.php',
         'title' => 'Factura Gratuita',
         'tags' => ['2.1'],
