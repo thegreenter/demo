@@ -52,7 +52,7 @@ $pdfPaths = array_map(function ($file) {
                 <div class="card-block">
                     <div class="card bg-light text-dark">
                         <div class="card-body">
-                            <div id="result">De click en algun elemento de la lista.</div>
+                            <div id="result">De click en algún elemento de la lista.</div>
                             <div>Time: <span id="time"></span></div>
                         </div>
                     </div>
