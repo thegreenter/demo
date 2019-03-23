@@ -68,7 +68,7 @@ return [
     ],
     [
         'file' => 'guia-remision.php',
-        'title' => 'Guia de Remisión',
+        'title' => 'Guía de Remisión',
         'tags' => ['2.1'],
     ],
     [
