@@ -25,7 +25,7 @@ $pdfPaths = array_map(function ($file) {
 <body>
 <?php include 'views/top.php'; ?>
 <div class="container">
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-md-4">
             <div class="card bg-primary">
                 <div class="card-header text-white">Comprobantes <span class="badge badge-secondary"><?php echo count($docsList); ?></span></div>
