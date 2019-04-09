@@ -340,16 +340,16 @@
         },
         {
             "name": "greenter/xml",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "c81bdebdc7c1a5068881ee19b3ab97b6a8118ae3"
+                "reference": "d125084235c1f583f7303ee83d036931e7537332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/c81bdebdc7c1a5068881ee19b3ab97b6a8118ae3",
-                "reference": "c81bdebdc7c1a5068881ee19b3ab97b6a8118ae3",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/d125084235c1f583f7303ee83d036931e7537332",
+                "reference": "d125084235c1f583f7303ee83d036931e7537332",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2019-03-11T04:36:31+00:00"
+            "time": "2019-04-09T22:57:58+00:00"
         },
         {
             "name": "greenter/xmldsig",
