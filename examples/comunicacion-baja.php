@@ -12,7 +12,7 @@ $detial1 = new VoidedDetail();
 $detial1->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('02132132')
-    ->setDesMotivoBaja('ERROR DE SISTEMA');
+    ->setDesMotivoBaja('ERROR EN CÁLCULOS');
 
 $detial2 = new VoidedDetail();
 $detial2->setTipoDoc('07')
