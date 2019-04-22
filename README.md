@@ -21,6 +21,8 @@ git clone https://github.com/giansalex/greenter-sample.git
 cd greenter-sample
 composer install --no-dev -o
 ```
+**Permisos**   
+Las carpetas `/cache` y `/files` requieren permisos de escritura.
 
 ### Ejecutar
 
