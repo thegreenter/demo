@@ -37,6 +37,11 @@ return [
         'tags' => ['2.1'],
     ],
     [
+        'file' => 'factura-anticipo.php',
+        'title' => 'Factura con Anticipos',
+        'tags' => ['2.1'],
+    ],
+    [
         'file' => 'nota-credito.php',
         'title' => 'Nota de Crédito',
         'tags' => ['2.1'],
