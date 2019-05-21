@@ -19,6 +19,7 @@ $invoice
     ->setCorrelativo('123')
     ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
+    ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
     ->setMtoOperExoneradas(100)
@@ -26,7 +27,7 @@ $invoice
     ->setTotalImpuestos(36)
     ->setValorVenta(300)
     ->setMtoImpVenta(336)
-    ->setCompany($util->shared->getCompany());
+    ;
 
 $item1 = new SaleDetail();
 $item1->setCodProducto('P001')
@@ -74,13 +75,14 @@ $see = $util->getSee(SunatEndpoints::FE_BETA);
 $res = $see->send($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());
 
-if ($res->isSuccess()) {
-    /**@var $res \Greenter\Model\Response\BillResult*/
-    $cdr = $res->getCdrResponse();
-    $util->writeCdr($invoice, $res->getCdrZip());
-
-    $util->showResponse($invoice, $cdr);
-} else {
+if (!$res->isSuccess()) {
     echo $util->getErrorResponse($res->getError());
+
+    exit();
 }
 
+/**@var $res \Greenter\Model\Response\BillResult*/
+$cdr = $res->getCdrResponse();
+$util->writeCdr($invoice, $res->getCdrZip());
+
+$util->showResponse($invoice, $cdr);
