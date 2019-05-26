@@ -40,6 +40,12 @@ final class Util
         $see->setService($endpoint);
 //        $see->setCodeProvider(new XmlErrorCodeProvider());
         $see->setCertificate(file_get_contents(__DIR__ . '/../resources/cert.pem'));
+        /**
+         * Clave SOL
+         * Ruc     = 20000000001
+         * Usuario = MODDATOS
+         * Clave   = moddatos
+         */
         $see->setCredentials('20000000001MODDATOS', 'moddatos');
         $see->setCachePath(__DIR__ . '/../cache');
 
