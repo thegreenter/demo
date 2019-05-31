@@ -288,16 +288,16 @@
         },
         {
             "name": "greenter/ws",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-ws.git",
-                "reference": "3b1bcdc22e949560146e28e9bed9a9346f04d85c"
+                "reference": "689bc91685b8367b20e9cc2ab6dc9da1ff9c3ca9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/3b1bcdc22e949560146e28e9bed9a9346f04d85c",
-                "reference": "3b1bcdc22e949560146e28e9bed9a9346f04d85c",
+                "url": "https://api.github.com/repos/giansalex/greenter-ws/zipball/689bc91685b8367b20e9cc2ab6dc9da1ff9c3ca9",
+                "reference": "689bc91685b8367b20e9cc2ab6dc9da1ff9c3ca9",
                 "shasum": ""
             },
             "require": {
@@ -309,6 +309,7 @@
                 "php": ">=5.5.9"
             },
             "require-dev": {
+                "mockery/mockery": "^1.2",
                 "phpunit/phpunit": ">=4.8 < 6.0"
             },
             "type": "library",
@@ -336,7 +337,7 @@
                 "sunat",
                 "webservices"
             ],
-            "time": "2019-01-30T16:40:42+00:00"
+            "time": "2019-04-08T23:53:12+00:00"
         },
         {
             "name": "greenter/xml",
@@ -389,23 +390,22 @@
         },
         {
             "name": "greenter/xmldsig",
-            "version": "v5.0.1",
+            "version": "v5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/xmldsig.git",
-                "reference": "b44e9dd38128209b12647bc4f973d360887f9a3e"
+                "reference": "fc71824f105d7370b6be84d62ad40f17fa989603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/b44e9dd38128209b12647bc4f973d360887f9a3e",
-                "reference": "b44e9dd38128209b12647bc4f973d360887f9a3e",
+                "url": "https://api.github.com/repos/giansalex/xmldsig/zipball/fc71824f105d7370b6be84d62ad40f17fa989603",
+                "reference": "fc71824f105d7370b6be84d62ad40f17fa989603",
                 "shasum": ""
             },
             "require": {
+                "ext-dom": "*",
+                "ext-openssl": "*",
                 "php": ">=5.5.9"
-            },
-            "suggest": {
-                "ext-openssl": "The OpenSsl Extension"
             },
             "type": "library",
             "autoload": {
@@ -426,7 +426,7 @@
                 "xml",
                 "xmldsig"
             ],
-            "time": "2018-03-11T18:10:47+00:00"
+            "time": "2019-05-29T21:00:57+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -612,16 +612,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.41.0",
+            "version": "v1.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "575cd5028362da591facde1ef5d7b94553c375c9"
+                "reference": "2983fcf2e20a4afe95f07e61d89a7590b3c8df2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/575cd5028362da591facde1ef5d7b94553c375c9",
-                "reference": "575cd5028362da591facde1ef5d7b94553c375c9",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2983fcf2e20a4afe95f07e61d89a7590b3c8df2e",
+                "reference": "2983fcf2e20a4afe95f07e61d89a7590b3c8df2e",
                 "shasum": ""
             },
             "require": {
@@ -631,12 +631,12 @@
             "require-dev": {
                 "psr/container": "^1.0",
                 "symfony/debug": "^2.7",
-                "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+                "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.41-dev"
+                    "dev-master": "1.42-dev"
                 }
             },
             "autoload": {
@@ -674,7 +674,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-05-14T11:59:08+00:00"
+            "time": "2019-05-31T06:20:05+00:00"
         }
     ],
     "packages-dev": [],
