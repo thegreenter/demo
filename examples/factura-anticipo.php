@@ -1,5 +1,6 @@
 <?php
 
+use Greenter\Model\Sale\Charge;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\Prepayment;
 use Greenter\Model\Sale\SaleDetail;
@@ -15,14 +16,21 @@ $invoice
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('123')
+    ->setCorrelativo('143')
     ->setFechaEmision(new \DateTime())
     ->setTipoMoneda('PEN')
     ->setClient($util->shared->getClient())
     ->setCompany($util->shared->getCompany())
+    ->setDescuentos([(
+        new Charge())
+        ->setCodTipo('04')
+        ->setFactor(1)
+        ->setMonto(100) // anticipo
+        ->setMontoBase(100)
+    ])
     ->setMtoOperGravadas(100)
     ->setMtoIGV(18)
-    ->setValorVenta(100)
+    ->setValorVenta(200)
     ->setTotalImpuestos(18)
     ->setMtoImpVenta(118)
     ->setAnticipos([
