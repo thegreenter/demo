@@ -102,6 +102,7 @@ HTML;
         $render = new PdfReport($html);
         $render->setOptions( [
             'no-outline',
+            'print-media-type',
             'viewport-size' => '1280x1024',
             'page-width' => '21cm',
             'page-height' => '29.7cm',
