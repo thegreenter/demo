@@ -31,8 +31,7 @@ RUN curl --silent --show-error -sS https://getcomposer.org/installer | php -- --
     cd /var/www/html && \
     chmod -R 777 ./cache && \
     chmod -R 777 ./files && \
-    composer install --no-interaction --no-dev --optimize-autoloader && \
-    composer dump-autoload --optimize --no-dev --classmap-authoritative
+    composer install --no-interaction --no-dev -o -a
 
 RUN apk del .build-green-deps && \
     rm -rf /var/cache/apk/*
