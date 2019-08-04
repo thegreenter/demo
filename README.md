@@ -37,7 +37,7 @@ Finalmente navegar a http://localhost:8080
 
 ### Lista de Ejemplos
 :white_check_mark: Factura (PDF) (UBL 2.1)    
-:white_check_mark: Boleta  (PDF) (UBL 2.1)   
+:white_check_mark: Boleta de venta (PDF) (UBL 2.1)   
 :white_check_mark: Nota de Crédito (PDF) (UBL 2.1)    
 :white_check_mark: Nota de Débito  (PDF) (UBL 2.1)   
 :white_check_mark: Resumen Diario de Boletas (PDF) (v2)    
@@ -48,4 +48,5 @@ Finalmente navegar a http://localhost:8080
 :white_check_mark: Resumen de Reversión (PDF)  
 :white_check_mark: Consultar estado del CDR   
 :ballot_box_with_check: Factura por Contingencia (UBL 2.1)   
-:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)   
+:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)
+:ballot_box_with_check: Factura con ICBPER (UBL 2.1)      
