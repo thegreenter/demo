@@ -146,18 +146,15 @@ $result = process($_POST);
                                         <strong>Credenciales</strong>
                                         <div class="form-group">
                                             <label for="rucSol">Ruc:</label>
-                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11"
-                                                <?php if (isset($_POST['rucSol'])) {?> value="<?=$_POST['rucSol']; ?>" <?php }?>>
+                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=$_POST['rucSol'] ?? "" ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="userSol">Usuario:</label>
-                                            <input type="text" class="form-control" name="userSol" id="userSol"
-                                                <?php if (isset($_POST['userSol'])) {?> value="<?=$_POST['userSol']; ?>" <?php }?>>
+                                            <input type="text" class="form-control" name="userSol" id="userSol" value="<?=$_POST['userSol'] ?? "" ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="passSol">Contraseña:</label>
-                                            <input type="password" class="form-control" name="passSol" id="passSol"
-                                                <?php if (isset($_POST['passSol'])) {?> value="<?=$_POST['passSol']; ?>" <?php }?>>
+                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=$_POST['passSol'] ?? "" ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -166,23 +163,34 @@ $result = process($_POST);
                                             <label for="ruc">Ruc Emisor:</label>
                                             <input type="text" class="form-control" name="ruc" id="ruc"
                                                    maxlength="11"
-                                                <?php if (isset($_POST['ruc'])) {?>
-                                                    value="<?=$_POST['ruc']?>"
-                                                <?php } else {?>
-                                                    value="20000000001"
-                                                <?php }?>>
+                                                   value="<?= $_POST['ruc'] ?? '20000000001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo">Tipo:</label>
-                                            <input type="text" class="form-control" name="tipo" id="tipo" value="01" maxlength="2">
+                                            <input  type="text"
+                                                    class="form-control"
+                                                    name="tipo"
+                                                    id="tipo"
+                                                    maxlength="2"
+                                                    value="<?= $_POST['tipo'] ?? '01'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="serie">Serie:</label>
-                                            <input type="text" class="form-control" name="serie" id="serie" value="F001" maxlength="4">
+                                            <input  type="text"
+                                                    class="form-control"
+                                                    name="serie"
+                                                    id="serie"
+                                                    maxlength="4"
+                                                    value="<?= $_POST['serie'] ?? 'F001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="numero">Correlativo:</label>
-                                            <input type="number" class="form-control" name="numero" id="numero" value="1" min="1">
+                                            <input  type="number"
+                                                    class="form-control"
+                                                    name="numero"
+                                                    id="numero"
+                                                    min="1"
+                                                    value="<?= $_POST['numero'] ?? '1'?>">
                                         </div>
                                     </div>
                                 </div>
@@ -199,4 +207,3 @@ $result = process($_POST);
 <?php include '../../views/footer.php'; ?>
 </body>
 </html>
-
