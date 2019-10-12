@@ -26,6 +26,7 @@ $invoice
     ->setMtoIGV(36)
     ->setTotalImpuestos(36)
     ->setValorVenta(300)
+    ->setSubTotal(336)
     ->setMtoImpVenta(336)
     ;
 

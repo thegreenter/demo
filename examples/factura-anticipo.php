@@ -32,6 +32,7 @@ $invoice
     ->setMtoIGV(18)
     ->setValorVenta(200)
     ->setTotalImpuestos(18)
+    ->setSubTotal(218)
     ->setMtoImpVenta(118)
     ->setAnticipos([
         (new Prepayment())

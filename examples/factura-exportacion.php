@@ -29,6 +29,7 @@ $invoice
     ->setMtoIGV(0)
     ->setTotalImpuestos(0)
     ->setValorVenta(100)
+    ->setSubTotal(100)
     ->setMtoImpVenta(100);
 
 $item = new SaleDetail();

@@ -26,6 +26,7 @@ $invoice
     ->setMtoIGV(36)
     ->setTotalImpuestos(36)
     ->setValorVenta(200)
+    ->setSubTotal(236)
     ->setMtoImpVenta(236)
     ->setPerception((new SalePerception())
         ->setCodReg('51')

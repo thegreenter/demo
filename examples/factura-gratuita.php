@@ -25,6 +25,7 @@ $invoice
     ->setMtoIGV(36)
     ->setTotalImpuestos(0)
     ->setValorVenta(0)
+    ->setSubTotal(0)
     ->setMtoImpVenta(0);
 
 $detail = new SaleDetail();

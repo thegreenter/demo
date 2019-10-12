@@ -17,10 +17,10 @@
         }
     },
     "require": {
+        "ext-gd": "*",
         "greenter/greenter": "^3.0",
         "greenter/report": "^2.1",
         "greenter/htmltopdf": "^2.1",
-        "ext-gd": "*",
         "greenter/data": "dev-master"
     },
     "scripts": {
