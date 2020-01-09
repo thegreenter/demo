@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-data.git",
-                "reference": "9b525884a65cc44d2546892ea60aae4eb73985a3"
+                "reference": "dd094bdf877a5e518aba34b4fedc7c52e9c83bdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/9b525884a65cc44d2546892ea60aae4eb73985a3",
-                "reference": "9b525884a65cc44d2546892ea60aae4eb73985a3",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/dd094bdf877a5e518aba34b4fedc7c52e9c83bdd",
+                "reference": "dd094bdf877a5e518aba34b4fedc7c52e9c83bdd",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
             "keywords": [
                 "greenter"
             ],
-            "time": "2019-10-12T02:25:44+00:00"
+            "time": "2020-01-09T01:37:54+00:00"
         },
         {
             "name": "greenter/greenter",
