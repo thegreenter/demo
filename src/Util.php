@@ -108,9 +108,10 @@ HTML;
             'page-height' => '29.7cm',
             'footer-html' => __DIR__.'/../resources/footer.html',
         ]);
-        $config = require __DIR__.'/../config.php';
-        $render->setBinPath($config['wkhtmltopdf_bin']);
-
+        $binPath = self::getPathBin();
+        if (file_exists($binPath)) {
+            $render->setBinPath($binPath);
+        }
         $hash = $this->getHash($document);
         $params = self::getParametersPdf();
         $params['system']['hash'] = $hash;
@@ -160,9 +161,44 @@ HTML;
         echo $content;
     }
 
+    public static function getPathBin()
+    {
+        $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
+        if (self::isWindows()) {
+            $path .= '.exe';
+        }
+
+        return $path;
+    }
+
     public static function isWindows()
     {
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+    }
+
+    public static function inPath($command) {
+        $whereIsCommand = self::isWindows() ? 'where' : 'which';
+
+        $process = proc_open(
+            "$whereIsCommand $command",
+            array(
+                0 => array("pipe", "r"), //STDIN
+                1 => array("pipe", "w"), //STDOUT
+                2 => array("pipe", "w"), //STDERR
+            ),
+            $pipes
+        );
+        if ($process !== false) {
+            $stdout = stream_get_contents($pipes[1]);
+            stream_get_contents($pipes[2]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            proc_close($process);
+
+            return $stdout != '';
+        }
+
+        return false;
     }
 
     private function getHash(DocumentInterface $document)

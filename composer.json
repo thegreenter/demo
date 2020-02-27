@@ -24,6 +24,10 @@
         "greenter/htmltopdf": "^2.1",
         "greenter/data": "dev-master"
     },
+    "scripts": {
+        "post-install-cmd": "ComposerScripts::postInstall",
+        "reset-cache": "ComposerScripts::clearCache"
+    },
     "config": {
         "optimize-autoloader": true,
         "classmap-authoritative": true
