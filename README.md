@@ -21,8 +21,18 @@ git clone https://github.com/giansalex/greenter-sample.git
 cd greenter-sample
 composer install --no-dev -o
 ```
+
 **Permisos**   
 Las carpetas `/cache` y `/files` requieren permisos de escritura.
+
+**Wkhtmltopdf**   
+Si no tienes instalado [whtmltopdf](https://wkhtmltopdf.org/downloads.html) puedes descargarlo desde estas rutas:
+
+|OS      |       -                                                                                                    |  -  
+|--------|------------------------------------------------------------------------------------------------------------|---------
+|Windows | [x32](https://raw.githubusercontent.com/wemersonjanuario/wkhtmltopdf-windows/master/bin/wkhtmltopdf32.exe) |  [x64](https://raw.githubusercontent.com/wemersonjanuario/wkhtmltopdf-windows/master/bin/wkhtmltopdf64.exe)      
+|Linux   | [x32](https://raw.githubusercontent.com/h4cc/wkhtmltopdf-i386/master/bin/wkhtmltopdf-i386)                 |  [x64](https://raw.githubusercontent.com/h4cc/wkhtmltopdf-amd64/master/bin/wkhtmltopdf-amd64)
+Luego colocar la ruta completa en `config.php`.  
 
 ### Ejecutar
 
