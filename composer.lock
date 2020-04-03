@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d116a32f2d727c12ed07b0909a52c15f",
+    "content-hash": "519e2d4d69345755ca35bf50fc319133",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-data.git",
-                "reference": "dd094bdf877a5e518aba34b4fedc7c52e9c83bdd"
+                "reference": "04f21e316a67e0b46da056ff60a44ca609a235d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/dd094bdf877a5e518aba34b4fedc7c52e9c83bdd",
-                "reference": "dd094bdf877a5e518aba34b4fedc7c52e9c83bdd",
+                "url": "https://api.github.com/repos/giansalex/greenter-data/zipball/04f21e316a67e0b46da056ff60a44ca609a235d2",
+                "reference": "04f21e316a67e0b46da056ff60a44ca609a235d2",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
             "keywords": [
                 "greenter"
             ],
-            "time": "2020-01-09T01:37:54+00:00"
+            "time": "2020-04-03T14:34:52+00:00"
         },
         {
             "name": "greenter/greenter",
@@ -341,22 +341,22 @@
         },
         {
             "name": "greenter/xml",
-            "version": "v2.2.3",
+            "version": "v2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giansalex/greenter-xml.git",
-                "reference": "27a04b39640e7a9c6b84da5448d7ed364b42621c"
+                "reference": "03f0f1dc61525ca27451f4ef0092163a38b646a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/27a04b39640e7a9c6b84da5448d7ed364b42621c",
-                "reference": "27a04b39640e7a9c6b84da5448d7ed364b42621c",
+                "url": "https://api.github.com/repos/giansalex/greenter-xml/zipball/03f0f1dc61525ca27451f4ef0092163a38b646a9",
+                "reference": "03f0f1dc61525ca27451f4ef0092163a38b646a9",
                 "shasum": ""
             },
             "require": {
                 "greenter/core": "^2.1",
                 "php": ">=5.5.9",
-                "twig/twig": "~1.0 || ~2.0"
+                "twig/twig": "~1.0 || ~2.0 || ~3.0"
             },
             "require-dev": {
                 "greenter/data": "dev-master",
@@ -386,7 +386,7 @@
                 "greenter",
                 "xml"
             ],
-            "time": "2019-10-12T03:47:51+00:00"
+            "time": "2020-04-03T15:06:10+00:00"
         },
         {
             "name": "greenter/xmldsig",
@@ -686,7 +686,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
