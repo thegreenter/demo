@@ -48,5 +48,5 @@ Finalmente navegar a http://localhost:8080
 :white_check_mark: Resumen de Reversión (PDF)  
 :white_check_mark: Consultar estado del CDR   
 :ballot_box_with_check: Factura por Contingencia (UBL 2.1)   
-:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)
+:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)   
 :ballot_box_with_check: Factura con ICBPER (UBL 2.1)      
