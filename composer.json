@@ -1,6 +1,6 @@
 {
     "name": "greenter/sample",
-    "description": "Greenter Samples",
+    "description": "Greenter Demo",
     "keywords": ["samples", "greenter", "facturacion electronica", "sunat"],
     "license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "email": "giansalex@gmail.com"
         }
     ],
-    "homepage": "https://github.com/giansalex/greenter-sample",
+    "homepage": "https://github.com/thegreenter/demo",
     "type": "project",
     "autoload": {
         "psr-4": {
