@@ -1,6 +1,6 @@
-# :tada: Greenter Samples :tada: 
-[![GitHub last commit](https://img.shields.io/github/last-commit/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample) [![GitHub issues](https://img.shields.io/github/issues/giansalex/greenter-sample.svg?style=flat-square)](https://github.com/giansalex/greenter-sample/issues)  
-Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/giansalex/greenter).
+# :tada: Greenter Demo :tada: 
+[![GitHub last commit](https://img.shields.io/github/last-commit/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo) [![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)  
+Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/thegreenter/greenter).
 
 ### Topics
 - Generación de XML UBL 2.0, UBL 2.1
@@ -17,7 +17,7 @@ Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://gith
 Clonar el repositorio e instalar las dependencias.
 
 ```bash
-git clone https://github.com/giansalex/greenter-sample.git
+git clone https://github.com/thegreenter/demo.git
 cd greenter-sample
 composer install --no-dev -o
 ```
@@ -48,5 +48,5 @@ Finalmente navegar a http://localhost:8080
 :white_check_mark: Resumen de Reversión (PDF)  
 :white_check_mark: Consultar estado del CDR   
 :ballot_box_with_check: Factura por Contingencia (UBL 2.1)   
-:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)
+:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)   
 :ballot_box_with_check: Factura con ICBPER (UBL 2.1)      
