@@ -18,7 +18,7 @@ Clonar el repositorio e instalar las dependencias.
 
 ```bash
 git clone https://github.com/thegreenter/demo.git
-cd greenter-sample
+cd demo
 composer install --no-dev -o
 ```
 **Permisos**   
