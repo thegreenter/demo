@@ -20,11 +20,11 @@ $detiail->setTipoDoc('03')
     ->setEstado('3')
     ->setClienteTipo('1')
     ->setClienteNro('00000000')
-    ->setTotal(100)
-    ->setMtoOperGravadas(20.555)
+    ->setTotal(119.555)
+    ->setMtoOperGravadas(20)
     ->setMtoOperInafectas(24.4)
     ->setMtoOperExoneradas(50)
-    ->setMtoOtrosCargos(21)
+    ->setMtoOtrosCargos(21.555)
     ->setMtoIGV(3.6);
 
 $sum->setDetails([$detiail]);
