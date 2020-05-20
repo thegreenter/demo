@@ -146,15 +146,15 @@ $result = process($_POST);
                                         <strong>Credenciales</strong>
                                         <div class="form-group">
                                             <label for="rucSol">Ruc:</label>
-                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=$_POST['rucSol'] ?? "" ?>">
+                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=filter_input(INPUT_POST, 'rucSol') && ""?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="userSol">Usuario:</label>
-                                            <input type="text" class="form-control" name="userSol" id="userSol" value="<?=$_POST['userSol'] ?? "" ?>">
+                                            <input type="text" class="form-control" name="userSol" id="userSol" value="<?=filter_input(INPUT_POST, 'userSol') && ""?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="passSol">Contraseña:</label>
-                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=$_POST['passSol'] ?? "" ?>">
+                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=filter_input(INPUT_POST, 'passSol') && "" ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -163,7 +163,7 @@ $result = process($_POST);
                                             <label for="ruc">Ruc Emisor:</label>
                                             <input type="text" class="form-control" name="ruc" id="ruc"
                                                    maxlength="11"
-                                                   value="<?= $_POST['ruc'] ?? '20000000001'?>">
+                                                   value="<?= filter_input(INPUT_POST, 'ruc') && '20000000001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo">Tipo:</label>
@@ -172,7 +172,7 @@ $result = process($_POST);
                                                     name="tipo"
                                                     id="tipo"
                                                     maxlength="2"
-                                                    value="<?= $_POST['tipo'] ?? '01'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'tipo') && '01'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="serie">Serie:</label>
@@ -181,7 +181,7 @@ $result = process($_POST);
                                                     name="serie"
                                                     id="serie"
                                                     maxlength="4"
-                                                    value="<?= $_POST['serie'] ?? 'F001'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'serie') && 'F001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="numero">Correlativo:</label>
@@ -190,7 +190,7 @@ $result = process($_POST);
                                                     name="numero"
                                                     id="numero"
                                                     min="1"
-                                                    value="<?= $_POST['numero'] ?? '1'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'numero') && '1'?>">
                                         </div>
                                     </div>
                                 </div>
