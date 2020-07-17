@@ -22,7 +22,7 @@ $invoice
     ->setClient($util->shared->getClient())
     ->setCompany($util->shared->getCompany())
     ->setMtoOperGratuitas(200)
-    ->setMtoIGV(36)
+    ->setMtoIGVGratuitas(36)
     ->setTotalImpuestos(0)
     ->setValorVenta(0)
     ->setSubTotal(0)
