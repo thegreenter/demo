@@ -54,16 +54,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v2.2.3",
+            "version": "v2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/core.git",
-                "reference": "faf2efab232c9f29ce22e603db094402fac41565"
+                "reference": "af77a46dafd51d559257333a60175c98e2e7cb9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/core/zipball/faf2efab232c9f29ce22e603db094402fac41565",
-                "reference": "faf2efab232c9f29ce22e603db094402fac41565",
+                "url": "https://api.github.com/repos/thegreenter/core/zipball/af77a46dafd51d559257333a60175c98e2e7cb9b",
+                "reference": "af77a46dafd51d559257333a60175c98e2e7cb9b",
                 "shasum": ""
             },
             "require": {
@@ -86,12 +86,13 @@
                 }
             ],
             "description": "Greenter Core",
-            "homepage": "https://github.com/giansalex/greenter-core",
+            "homepage": "https://github.com/thegreenter/core",
             "keywords": [
+                "facturación electrónica",
                 "greenter",
                 "sunat"
             ],
-            "time": "2019-10-11T23:42:00+00:00"
+            "time": "2020-07-10T16:21:59+00:00"
         },
         {
             "name": "greenter/data",
@@ -138,12 +139,12 @@
             "version": "v3.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/giansalex/greenter.git",
+                "url": "https://github.com/thegreenter/greenter.git",
                 "reference": "a63147b2176e773147485e60db9fb745a377f5bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giansalex/greenter/zipball/a63147b2176e773147485e60db9fb745a377f5bd",
+                "url": "https://api.github.com/repos/thegreenter/greenter/zipball/a63147b2176e773147485e60db9fb745a377f5bd",
                 "reference": "a63147b2176e773147485e60db9fb745a377f5bd",
                 "shasum": ""
             },
@@ -337,16 +338,16 @@
         },
         {
             "name": "greenter/xml",
-            "version": "v2.2.5",
+            "version": "v2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xml.git",
-                "reference": "03f0f1dc61525ca27451f4ef0092163a38b646a9"
+                "reference": "8f0ca0fa23bad1e06ea0c57d4a55b2bf0a3acc8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xml/zipball/03f0f1dc61525ca27451f4ef0092163a38b646a9",
-                "reference": "03f0f1dc61525ca27451f4ef0092163a38b646a9",
+                "url": "https://api.github.com/repos/thegreenter/xml/zipball/8f0ca0fa23bad1e06ea0c57d4a55b2bf0a3acc8d",
+                "reference": "8f0ca0fa23bad1e06ea0c57d4a55b2bf0a3acc8d",
                 "shasum": ""
             },
             "require": {
@@ -376,12 +377,13 @@
                 }
             ],
             "description": "XML generación de documentos electrónicos, Facturacion Electrónica SUNAT - Perú",
-            "homepage": "https://github.com/giansalex/greenter-xml",
+            "homepage": "https://github.com/thegreenter/xml",
             "keywords": [
+                "facturación electrónica",
                 "greenter",
                 "xml"
             ],
-            "time": "2020-04-03T15:06:10+00:00"
+            "time": "2020-07-10T18:16:45+00:00"
         },
         {
             "name": "greenter/xmldsig",
