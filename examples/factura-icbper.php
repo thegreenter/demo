@@ -64,7 +64,7 @@ $detailBolsa
 
 $legend = new Legend();
 $legend->setCode('1000')
-    ->setValue('SON DOSCIENTOS TREINTA Y SEIS CON 00/100 SOLES');
+    ->setValue('SON DOSCIENTOS TREINTA Y SIETE CON 00/100 SOLES');
 
 $invoice->setDetails([$detail, $detailBolsa])
     ->setLegends([$legend]);
