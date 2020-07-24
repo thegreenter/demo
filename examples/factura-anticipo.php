@@ -28,12 +28,12 @@ $invoice
         ->setMonto(100) // anticipo
         ->setMontoBase(100)
     ])
-    ->setMtoOperGravadas(100)
+    ->setMtoOperGravadas(100) // Sumatoria de Valor Venta (detalles) menos descuentos globales (anticipo): 200 - 100
     ->setMtoIGV(18)
-    ->setValorVenta(200)
+    ->setValorVenta(200) // sumatoria de valor venta (detalle)
     ->setTotalImpuestos(18)
-    ->setSubTotal(218)
-    ->setMtoImpVenta(118)
+    ->setSubTotal(236) // ValorVenta + (sumatoria de valor venta detalle) * 18% (IGV)
+    ->setMtoImpVenta(136) // subTotal - Anticipos: 236 - 100
     ->setAnticipos([
         (new Prepayment())
             ->setTipoDocRel('02') // catalog. 12
