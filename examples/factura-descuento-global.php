@@ -49,7 +49,7 @@ $item1->setCodProducto('P001')
     ->setIgv(3.6)
     ->setTipAfeIgv('10')
     ->setTotalImpuestos(3.6)
-    ->setMtoPrecioUnitario(11.8)
+    ->setMtoPrecioUnitario(2.36)
 ;
 
 $item2 = new SaleDetail();
