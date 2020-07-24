@@ -34,7 +34,7 @@ $invoice
 
 $item = new SaleDetail();
 $item->setCodProducto('P001')
-    ->setCodProdSunat('10000000') // Codigo Producto Sunat, requerido.
+    ->setCodProdSunat('44121618') // Codigo Producto Sunat, requerido.
     ->setUnidad('KG')
     ->setDescripcion('PROD 1')
     ->setCantidad(2)

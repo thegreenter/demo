@@ -25,7 +25,7 @@ $note
     ->setGuias([/* Guias (Opcional) */
         (new Document())
         ->setTipoDoc('09')
-        ->setNroDoc('001-213')
+        ->setNroDoc('0001-213')
     ])
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())

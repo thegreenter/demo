@@ -42,7 +42,7 @@ $detail1
     ->setTotalImpuestos(18)
     ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
+    ->setMtoPrecioUnitario(59);
 
 $detail2 = new SaleDetail();
 $detail2
@@ -57,7 +57,7 @@ $detail2
     ->setTotalImpuestos(18)
     ->setMtoValorVenta(100)
     ->setMtoValorUnitario(50)
-    ->setMtoPrecioUnitario(56);
+    ->setMtoPrecioUnitario(59);
 
 $legend = new Legend();
 $legend->setCode('1000')

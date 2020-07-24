@@ -22,11 +22,11 @@ $invoice
     ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200.20)
     ->setMtoIGV(36.04)
-    ->setIcbper(0.40)
-    ->setTotalImpuestos(36.44)
+    ->setIcbper(0.80)
+    ->setTotalImpuestos(36.84)
     ->setValorVenta(200.20)
-    ->setSubTotal(236.64)
-    ->setRedondeo(0.36)
+    ->setSubTotal(237.04)
+    ->setRedondeo(0.04)
     ->setMtoImpVenta(237);
 
 $detail = new SaleDetail();
@@ -57,14 +57,14 @@ $detailBolsa
     ->setMtoBaseIgv(0.20)
     ->setPorcentajeIgv(18.0)
     ->setIgv(0.04)
-    ->setTotalImpuestos(0.44)
-    ->setIcbper(0.40) // (cantidad)*(factor ICBPER)
-    ->setFactorIcbper(0.10)
+    ->setIcbper(0.80) // (cantidad)*(factor ICBPER)
+    ->setFactorIcbper(0.20)
+    ->setTotalImpuestos(0.84)
 ;
 
 $legend = new Legend();
 $legend->setCode('1000')
-    ->setValue('SON DOSCIENTOS TREINTA Y SEIS CON 00/100 SOLES');
+    ->setValue('SON DOSCIENTOS TREINTA Y SIETE CON 00/100 SOLES');
 
 $invoice->setDetails([$detail, $detailBolsa])
     ->setLegends([$legend]);
