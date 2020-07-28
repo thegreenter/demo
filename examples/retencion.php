@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 use Greenter\Model\Retention\Exchange;
 use Greenter\Model\Retention\Payment;

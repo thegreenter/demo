@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
 use Greenter\Ws\Services\SunatEndpoints;
