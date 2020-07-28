@@ -23,8 +23,8 @@
         "greenter/greenter": "^4.0"
     },
     "scripts": {
-        "post-install-cmd": "php composer/PostInstall.php",
-        "reset-cache": "php composer/ClearCache.php"
+        "post-install-cmd": "@php composer/PostInstall.php",
+        "reset-cache": "@php composer/ClearCache.php"
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
