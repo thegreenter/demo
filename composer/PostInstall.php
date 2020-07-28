@@ -9,6 +9,7 @@ final class PostInstall
         }
 
         if (self::inPath('wkhtmltopdf')) {
+            echo 'Wkhtmltopdf global install found.';
             return;
         }
 
@@ -21,9 +22,9 @@ final class PostInstall
         $url = self::getUrlDownload(Util::isWindows(), self::is64Bit());
 
         if (!is_dir( __DIR__.'/../vendor/bin')) {
-            $oldmask = umask(0);
+            $oldMask = umask(0);
             mkdir(__DIR__.'/../vendor/bin', 0777, true);
-            umask($oldmask);
+            umask($oldMask);
         }
         self::downloadBin($url, $pathBin);
     }
