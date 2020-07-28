@@ -24,7 +24,9 @@
     },
     "scripts": {
         "post-install-cmd": "@php composer/PostInstall.php",
-        "reset-cache": "@php composer/ClearCache.php"
+        "reset-cache": "@php composer/ClearCache.php",
+        "lint": "phpstan analyse",
+        "lint:ci": "phpstan analyse --error-format=github"
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
