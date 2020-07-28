@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\StatusCdrResult;
 use Greenter\Ws\Services\ConsultCdrService;
 use Greenter\Ws\Services\SoapClient;
 use Greenter\Ws\Services\SunatEndpoints;
@@ -11,7 +12,11 @@ require __DIR__ . '/../../vendor/autoload.php';
 $errorMsg = null;
 $filename = null;
 
-function validateFields(array $items)
+/**
+ * @param array<string, string> $items
+ * @return bool
+ */
+function validateFields(array $items): bool
 {
     global $errorMsg;
     $validateFiels = ['rucSol', 'userSol', 'passSol', 'ruc', 'tipo', 'serie', 'numero'];
@@ -25,7 +30,12 @@ function validateFields(array $items)
     return true;
 }
 
-function getCdrStatusService($user, $password)
+/**
+ * @param string $user
+ * @param string $password
+ * @return ConsultCdrService
+ */
+function getCdrStatusService(?string $user, ?string $password): ConsultCdrService
 {
     $ws = new SoapClient(SunatEndpoints::FE_CONSULTA_CDR.'?wsdl');
     $ws->setCredentials($user, $password);
@@ -36,7 +46,11 @@ function getCdrStatusService($user, $password)
     return $service;
 }
 
-function savedFile($filename, $content)
+/**
+ * @param string $filename
+ * @param string $content
+ */
+function savedFile(?string $filename, ?string $content): void
 {
     $fileDir = __DIR__.'/../../files';
 
@@ -47,7 +61,11 @@ function savedFile($filename, $content)
     file_put_contents($pathZip, $content);
 }
 
-function process($fields)
+/**
+ * @param array<string, string> $fields
+ * @return StatusCdrResult|null
+ */
+function process(array $fields): ?StatusCdrResult
 {
     global $filename;
 
