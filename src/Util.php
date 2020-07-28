@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Data\SharedStore;
 use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
 use Greenter\Report\HtmlReport;
 use Greenter\Report\PdfReport;
 use Greenter\Report\Resolver\DefaultTemplateResolver;
+use Greenter\Report\XmlUtils;
 use Greenter\See;
 
 final class Util
@@ -119,7 +122,7 @@ HTML;
 
         $pdf = $render->render($document, $params);
 
-        if ($pdf === false) {
+        if (is_null($pdf)) {
             $error = $render->getExporter()->getError();
             echo 'Error: '.$error;
             exit();
@@ -206,9 +209,7 @@ HTML;
         $see = $this->getSee('');
         $xml = $see->getXmlSigned($document);
 
-        $hash = (new \Greenter\Report\XmlUtils())->getHashSign($xml);
-
-        return $hash;
+        return (new XmlUtils())->getHashSign($xml);
     }
 
     private static function getParametersPdf()
