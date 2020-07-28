@@ -1,6 +1,6 @@
 {
-    "name": "greenter/sample",
-    "description": "Greenter Demo",
+    "name": "greenter/demo",
+    "description": "Demostración de Greenter",
     "keywords": ["greenter", "facturacion-electronica", "sunat"],
     "license": "MIT",
     "authors": [
