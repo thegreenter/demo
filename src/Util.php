@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Data\GeneratorFactory;
 use Greenter\Data\SharedStore;
 use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
@@ -142,7 +143,7 @@ HTML;
 
     public function getGenerator($type)
     {
-        $factory = new \Greenter\Data\GeneratorFactory();
+        $factory = new GeneratorFactory();
         $factory->shared = $this->shared;
 
         return $factory->create($type);
@@ -183,31 +184,6 @@ HTML;
     public static function isWindows()
     {
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
-    }
-
-    public static function inPath($command) {
-        $whereIsCommand = self::isWindows() ? 'where' : 'which';
-
-        $process = proc_open(
-            "$whereIsCommand $command",
-            array(
-                0 => array("pipe", "r"), //STDIN
-                1 => array("pipe", "w"), //STDOUT
-                2 => array("pipe", "w"), //STDERR
-            ),
-            $pipes
-        );
-        if ($process !== false) {
-            $stdout = stream_get_contents($pipes[1]);
-            stream_get_contents($pipes[2]);
-            fclose($pipes[1]);
-            fclose($pipes[2]);
-            proc_close($process);
-
-            return $stdout != '';
-        }
-
-        return false;
     }
 
     private function getHash(DocumentInterface $document)
