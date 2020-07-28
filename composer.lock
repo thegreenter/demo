@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/greenter.git",
-                "reference": "3e541f48396a78e7900a356c0c31c8358eeb6097"
+                "reference": "d60d1545bd66d91959f8d7d7589e6fefda72d6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/greenter/zipball/3e541f48396a78e7900a356c0c31c8358eeb6097",
-                "reference": "3e541f48396a78e7900a356c0c31c8358eeb6097",
+                "url": "https://api.github.com/repos/thegreenter/greenter/zipball/d60d1545bd66d91959f8d7d7589e6fefda72d6ef",
+                "reference": "d60d1545bd66d91959f8d7d7589e6fefda72d6ef",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-07-27T20:44:37+00:00"
+            "time": "2020-07-28T21:04:03+00:00"
         },
         {
             "name": "greenter/xmldsig",
