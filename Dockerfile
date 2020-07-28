@@ -27,8 +27,8 @@ COPY . /var/www/html/
 # Install Packages
 RUN curl --silent --show-error -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     cd /var/www/html && \
-    chmod -R 777 ./cache && \
-    chmod -R 777 ./files && \
+    mkdir ./cache && chmod -R 777 ./cache && \
+    mkdir ./files && chmod -R 777 ./files && \
     composer install --no-interaction --no-dev -o -a
 
 RUN apk del .build-green-deps && \
