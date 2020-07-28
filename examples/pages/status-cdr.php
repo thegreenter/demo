@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Giansalex
- * Date: 09/09/2018
- * Time: 12:48
- */
+
+declare(strict_types=1);
 
 use Greenter\Ws\Services\ConsultCdrService;
 use Greenter\Ws\Services\SoapClient;
