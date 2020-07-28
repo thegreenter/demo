@@ -1,5 +1,7 @@
 .git
 .idea
+cache
+files
 vendor
 .gitignore
 /*.md
