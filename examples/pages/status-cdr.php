@@ -136,7 +136,7 @@ $result = process($_POST);
                 <div class="card-block">
                     <div class="card bg-light text-dark">
                         <div class="card-body">
-                            <?php if (isset($errorMsg)):?>
+                            <?php if (!is_null($errorMsg)):?>
                                 <div class="alert alert-danger">
                                     <?=$errorMsg?>
                                 </div>
