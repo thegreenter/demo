@@ -89,7 +89,13 @@ HTML;
             return;
         }
 
-        file_put_contents(__DIR__.'/../files/'.$filename, $content);
+        $fileDir = __DIR__.'/../files';
+
+        if (!file_exists($fileDir)) {
+            mkdir($fileDir, 0777, true);
+        }
+
+        file_put_contents($fileDir.DIRECTORY_SEPARATOR.$filename, $content);
     }
 
     public function getPdf(DocumentInterface $document)

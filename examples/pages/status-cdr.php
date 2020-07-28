@@ -38,7 +38,12 @@ function getCdrStatusService($user, $password)
 
 function savedFile($filename, $content)
 {
-    $pathZip = __DIR__.'/../../files/'.$filename;
+    $fileDir = __DIR__.'/../../files';
+
+    if (!file_exists($fileDir)) {
+        mkdir($fileDir, 0777, true);
+    }
+    $pathZip = $fileDir.DIRECTORY_SEPARATOR.$filename;
     file_put_contents($pathZip, $content);
 }
 
