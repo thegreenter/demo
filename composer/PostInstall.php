@@ -4,7 +4,7 @@ final class PostInstall
 {
     public static function run()
     {
-        if (getenv('NOT_INSTALL')) {
+        if (getenv('DOCKER')) {
             return;
         }
 

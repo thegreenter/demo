@@ -20,7 +20,7 @@ RUN docker-php-ext-install soap && \
     docker-php-ext-install gd && \
     docker-php-ext-install zip
 
-ENV NOT_INSTALL 1
+ENV DOCKER 1
 
 COPY docker/config/opcache.ini $PHP_INI_DIR/conf.d/
 
