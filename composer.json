@@ -18,7 +18,6 @@
     },
     "require": {
         "php": "^7.2",
-        "ext-gd": "*",
         "ext-json": "*",
         "greenter/greenter": "^4.0"
     },
