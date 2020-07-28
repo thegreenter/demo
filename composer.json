@@ -24,7 +24,7 @@
     },
     "scripts": {
         "post-install-cmd": "ComposerScripts::postInstall",
-        "reset-cache": "ComposerScripts::clearCache"
+        "clear-cache": "php composer/ClearCache.php"
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
