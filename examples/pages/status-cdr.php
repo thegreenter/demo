@@ -111,7 +111,7 @@ $result = process($_POST);
                                         <br>
                                         <?php if (!is_null($filename)): ?>
                                             <strong>CDR: </strong><br>
-                                            <a href="/examples/pages/file-download.php?name=<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
+                                            <a href="/files/<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 <?php else: ?>
