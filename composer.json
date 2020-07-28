@@ -23,7 +23,7 @@
         "greenter/greenter": "^4.0"
     },
     "scripts": {
-        "post-install-cmd": "ComposerScripts::postInstall",
+        "post-install-cmd": "php composer/PostInstall.php",
         "clear-cache": "php composer/ClearCache.php"
     },
     "prefer-stable": true,
