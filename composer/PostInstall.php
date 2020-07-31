@@ -19,7 +19,7 @@ final class PostInstall
             return;
         }
 
-        $url = self::getUrlDownload(Util::isWindows(), self::is64Bit());
+        $url = self::getUrlDownload(self::isWindows(), self::is64Bit());
 
         if (!is_dir( __DIR__.'/../vendor/bin')) {
             $oldMask = umask(0);
