@@ -55,7 +55,7 @@ final class Util
          * Usuario = MODDATOS
          * Clave   = moddatos
          */
-        $see->setCredentials('20000000001MODDATOS', 'moddatos');
+        $see->setClaveSOL('20000000001', 'MODDATOS', 'moddatos');
         $see->setCachePath(__DIR__ . '/../cache');
 
         return $see;
