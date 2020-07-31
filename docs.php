@@ -22,6 +22,11 @@ $items = [
         'tag' => '2.1',
     ],
     [
+        'file' => 'examples/factura-exonerado.php',
+        'title' => 'Factura Exonerado',
+        'tag' => '2.1',
+    ],
+    [
         'file' => 'examples/factura-gratuita.php',
         'title' => 'Factura Gratuita',
         'tag' => '2.1',
