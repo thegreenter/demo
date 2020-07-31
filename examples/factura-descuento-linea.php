@@ -71,7 +71,7 @@ $invoice->setDetails([$itemDescuento, $item2])
     ->setLegends([
         (new Legend())
             ->setCode('1000')
-            ->setValue('SON SETENTA Y NUEVE CON O6/100 SOLES')
+            ->setValue('SON SETENTA Y SIETE CON 88/100 SOLES')
     ]);
 
 // Envio a SUNAT.
