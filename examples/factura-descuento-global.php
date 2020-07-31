@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Charge;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
@@ -12,15 +13,16 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
+// Factura con descuento global (que afecta la base imponible).
 $invoice = new Invoice();
 $invoice
     ->setUblVersion('2.1')
-    ->setFecVencimiento(new \DateTime())
+    ->setFecVencimiento(new DateTime())
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('1')
-    ->setFechaEmision(new \DateTime())
+    ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
@@ -87,7 +89,7 @@ if (!$res->isSuccess()) {
     exit();
 }
 
-/**@var $res \Greenter\Model\Response\BillResult*/
+/**@var $res BillResult*/
 $cdr = $res->getCdrResponse();
 
 $util->writeCdr($invoice, $res->getCdrZip());
