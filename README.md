@@ -1,5 +1,7 @@
-# :tada: Greenter Demo :tada: 
-[![GitHub last commit](https://img.shields.io/github/last-commit/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo) [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo) [![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)  
+# ![Greenter](https://cdn.giansalex.dev/images/github/greenter-ico.png) Greenter Demo
+![CI](https://github.com/thegreenter/demo/workflows/CI/badge.svg)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo)
+[![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)   
 Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/thegreenter/greenter).
 
 ### Topics
@@ -14,15 +16,13 @@ Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://gith
 
 ### Pasos
 
-Clonar el repositorio e instalar las dependencias.
+Clonar el repositorio e instalar las dependencias, se require `PHP 7.2` o superior
 
 ```bash
 git clone https://github.com/thegreenter/demo.git
 cd demo
 composer install --no-dev -o
 ```
-**Permisos**   
-Las carpetas `/cache` y `/files` requieren permisos de escritura.
 
 ### Ejecutar
 
@@ -33,20 +33,20 @@ php -S 0.0.0.0:8080
 ```
 
 Finalmente navegar a http://localhost:8080
-> Los xml, pdf y cdr (archivos zip) seran guardados en la carptea `files`, sino quiere que los archivos no se almacenen en su ordenador definir la variable de entorno `GREENTER_NO_FILES`
+> Los xml, pdf y cdr (archivos zip) seran guardados en la carptea `files`.
 
 ### Lista de Ejemplos
-:white_check_mark: Factura (PDF) (UBL 2.1)    
-:white_check_mark: Boleta de venta (PDF) (UBL 2.1)   
-:white_check_mark: Nota de Crédito (PDF) (UBL 2.1)    
-:white_check_mark: Nota de Débito  (PDF) (UBL 2.1)   
-:white_check_mark: Resumen Diario de Boletas (PDF) (v2)    
-:white_check_mark: Comunicación de Baja (PDF)  
-:white_check_mark: Guia de Remisión  (PDF) (UBL 2.1)    
-:white_check_mark: Retención (PDF)  
-:white_check_mark: Perecepción (PDF)  
-:white_check_mark: Resumen de Reversión (PDF)  
+:white_check_mark: Factura    
+:white_check_mark: Boleta de venta   
+:white_check_mark: Nota de Crédito    
+:white_check_mark: Nota de Débito   
+:white_check_mark: Resumen Diario de Boletas    
+:white_check_mark: Comunicación de Baja 
+:white_check_mark: Guia de Remisión    
+:white_check_mark: Retención  
+:white_check_mark: Perecepción  
+:white_check_mark: Resumen de Reversión   
 :white_check_mark: Consultar estado del CDR   
-:ballot_box_with_check: Factura por Contingencia (UBL 2.1)   
-:ballot_box_with_check: Resumen de Boletas por Contingencia (UBL 2.1)   
-:ballot_box_with_check: Factura con ICBPER (UBL 2.1)      
+:ballot_box_with_check: Factura por Contingencia    
+:ballot_box_with_check: Resumen de Boletas por Contingencia    
+:ballot_box_with_check: Factura con ICBPER       
