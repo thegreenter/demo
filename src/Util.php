@@ -134,7 +134,7 @@ HTML;
 
         $pdf = $render->render($document, $params);
 
-        if (is_null($pdf)) {
+        if ($pdf === null) {
             $error = $render->getExporter()->getError();
             echo 'Error: '.$error;
             exit();
