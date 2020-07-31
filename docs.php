@@ -57,6 +57,11 @@ $items = [
         'tag' => '2.1',
     ],
     [
+        'file' => 'examples/factura-descuento-linea.php',
+        'title' => 'Factura con Descuento linea',
+        'tag' => '2.1',
+    ],
+    [
         'file' => 'examples/nota-credito.php',
         'title' => 'Nota de Crédito',
         'tag' => '2.1',
