@@ -29,6 +29,8 @@ jobs:
     - name: Install dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
+      env:
+        CI: 1
 
     - name: Run PHPStan
       run: composer run-script lint:ci
