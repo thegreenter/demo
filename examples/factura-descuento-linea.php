@@ -13,48 +13,45 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-// Factura con descuento global (que afecta la base imponible).
+// Factura con descuento por linea (que afecta la base imponible).
 $invoice = new Invoice();
 $invoice
     ->setUblVersion('2.1')
-    ->setFecVencimiento(new DateTime())
-    ->setTipoOperacion('0101')
+    ->setTipoOperacion('0101') // Cat.51
     ->setTipoDoc('01')
-    ->setSerie('F001')
+    ->setSerie('FE01')
     ->setCorrelativo('1')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
-    ->setDescuentos([
-        (new Charge())
-            ->setCodTipo('02') // Catalog. 53
-            ->setMontoBase(3)
-            ->setFactor(1)
-            ->setMonto(3)
-    ])
-    ->setMtoOperGravadas(67) // suma de v. venta (items) - descuento global.
-    ->setMtoIGV(12.06)
-    ->setTotalImpuestos(12.06)
-    ->setValorVenta(67)
-    ->setSubTotal(79.06)
-    ->setMtoImpVenta(79.06)
-;
+    ->setMtoOperGravadas(66) // suma de v. venta (items).
+    ->setMtoIGV(11.88)
+    ->setTotalImpuestos(11.88)
+    ->setValorVenta(66)
+    ->setSubTotal(77.88)
+    ->setMtoImpVenta(77.88);
 
-$item1 = new SaleDetail();
-$item1->setCodProducto('P001')
+$itemDescuento = new SaleDetail();
+$itemDescuento->setCodProducto('P001')
     ->setUnidad('NIU')
     ->setDescripcion('Cuadernos')
     ->setCantidad(10)
+    ->setDescuentos([
+        (new Charge())
+            ->setCodTipo('00') // Catalog. 53 (00: Descuento que afecta la Base Imponible)
+            ->setMontoBase(20) // cantidad * valor unitario
+            ->setFactor(0.2) // 20% descuento
+            ->setMonto(4)
+    ])
     ->setMtoValorUnitario(2)
-    ->setMtoValorVenta(20)
-    ->setMtoBaseIgv(20)
+    ->setMtoValorVenta(16) // cantidad * valor unitario - descuento (que afecta la base)
+    ->setMtoBaseIgv(16)
     ->setPorcentajeIgv(18)
-    ->setIgv(3.6)
+    ->setIgv(2.88)
     ->setTipAfeIgv('10')
-    ->setTotalImpuestos(3.6)
-    ->setMtoPrecioUnitario(2.36)
-;
+    ->setTotalImpuestos(2.88)
+    ->setMtoPrecioUnitario(1.89); // (Valor venta + Total Impuestos) / Cantidad
 
 $item2 = new SaleDetail();
 $item2->setCodProducto('P002')
@@ -68,14 +65,13 @@ $item2->setCodProducto('P002')
     ->setIgv(9)
     ->setTipAfeIgv('10')
     ->setTotalImpuestos(9)
-    ->setMtoPrecioUnitario(59)
-;
+    ->setMtoPrecioUnitario(59);
 
-$invoice->setDetails([$item1, $item2])
+$invoice->setDetails([$itemDescuento, $item2])
     ->setLegends([
         (new Legend())
             ->setCode('1000')
-            ->setValue('SON SETENTA Y NUEVE CON O6/100 SOLES')
+            ->setValue('SON SETENTA Y SIETE CON 88/100 SOLES')
     ]);
 
 // Envio a SUNAT.
@@ -89,7 +85,7 @@ if (!$res->isSuccess()) {
     exit();
 }
 
-/**@var $res BillResult*/
+/**@var $res BillResult */
 $cdr = $res->getCdrResponse();
 
 $util->writeCdr($invoice, $res->getCdrZip());

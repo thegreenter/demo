@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Client\Client;
 use Greenter\Model\Despatch\Despatch;
 use Greenter\Model\Despatch\DespatchDetail;

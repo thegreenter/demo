@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Voided\Reversion;
 use Greenter\Model\Voided\VoidedDetail;
 use Greenter\Ws\Services\SunatEndpoints;

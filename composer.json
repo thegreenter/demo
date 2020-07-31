@@ -1,7 +1,7 @@
 {
-    "name": "greenter/sample",
-    "description": "Greenter Demo",
-    "keywords": ["samples", "greenter", "facturacion electronica", "sunat"],
+    "name": "greenter/demo",
+    "description": "Demostración de Greenter",
+    "keywords": ["greenter", "facturacion-electronica", "sunat"],
     "license": "MIT",
     "authors": [
         {
@@ -17,19 +17,23 @@
         }
     },
     "require": {
-        "ext-gd": "*",
+        "php": "^7.2",
         "ext-json": "*",
-        "greenter/greenter": "^3.0",
-        "greenter/report": "^2.1",
-        "greenter/htmltopdf": "^2.1",
-        "greenter/data": "dev-master"
+        "greenter/greenter": "^4.0"
     },
     "scripts": {
-        "post-install-cmd": "ComposerScripts::postInstall",
-        "reset-cache": "ComposerScripts::clearCache"
+        "post-install-cmd": "@php composer/PostInstall.php",
+        "reset-cache": "@php composer/ClearCache.php",
+        "lint": "phpstan analyse",
+        "lint:ci": "phpstan analyse --error-format=github"
     },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "config": {
         "optimize-autoloader": true,
         "classmap-authoritative": true
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.33"
     }
 }

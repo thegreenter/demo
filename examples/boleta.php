@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Client\Client;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;

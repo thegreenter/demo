@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Sale\Document;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;

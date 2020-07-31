@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Model\Perception\Perception;
 use Greenter\Model\Perception\PerceptionDetail;
 use Greenter\Model\Retention\Exchange;

@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Giansalex
- * Date: 09/09/2018
- * Time: 12:48
- */
 
+declare(strict_types=1);
+
+use Greenter\Model\Response\StatusCdrResult;
 use Greenter\Ws\Services\ConsultCdrService;
 use Greenter\Ws\Services\SoapClient;
 use Greenter\Ws\Services\SunatEndpoints;
@@ -15,7 +12,11 @@ require __DIR__ . '/../../vendor/autoload.php';
 $errorMsg = null;
 $filename = null;
 
-function validateFields(array $items)
+/**
+ * @param array<string, string> $items
+ * @return bool
+ */
+function validateFields(array $items): bool
 {
     global $errorMsg;
     $validateFiels = ['rucSol', 'userSol', 'passSol', 'ruc', 'tipo', 'serie', 'numero'];
@@ -29,7 +30,12 @@ function validateFields(array $items)
     return true;
 }
 
-function getCdrStatusService($user, $password)
+/**
+ * @param string $user
+ * @param string $password
+ * @return ConsultCdrService
+ */
+function getCdrStatusService(?string $user, ?string $password): ConsultCdrService
 {
     $ws = new SoapClient(SunatEndpoints::FE_CONSULTA_CDR.'?wsdl');
     $ws->setCredentials($user, $password);
@@ -40,13 +46,26 @@ function getCdrStatusService($user, $password)
     return $service;
 }
 
-function savedFile($filename, $content)
+/**
+ * @param string $filename
+ * @param string $content
+ */
+function savedFile(?string $filename, ?string $content): void
 {
-    $pathZip = __DIR__.'/../../files/'.$filename;
+    $fileDir = __DIR__.'/../../files';
+
+    if (!file_exists($fileDir)) {
+        mkdir($fileDir, 0777, true);
+    }
+    $pathZip = $fileDir.DIRECTORY_SEPARATOR.$filename;
     file_put_contents($pathZip, $content);
 }
 
-function process($fields)
+/**
+ * @param array<string, string> $fields
+ * @return StatusCdrResult|null
+ */
+function process(array $fields): ?StatusCdrResult
 {
     global $filename;
 
@@ -115,7 +134,7 @@ $result = process($_POST);
                                         <br>
                                         <?php if (!is_null($filename)): ?>
                                             <strong>CDR: </strong><br>
-                                            <a href="/examples/pages/file-download.php?name=<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
+                                            <a href="/files/<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 <?php else: ?>
@@ -135,7 +154,7 @@ $result = process($_POST);
                 <div class="card-block">
                     <div class="card bg-light text-dark">
                         <div class="card-body">
-                            <?php if (isset($errorMsg)):?>
+                            <?php if (!is_null($errorMsg)):?>
                                 <div class="alert alert-danger">
                                     <?=$errorMsg?>
                                 </div>
@@ -146,15 +165,15 @@ $result = process($_POST);
                                         <strong>Credenciales</strong>
                                         <div class="form-group">
                                             <label for="rucSol">Ruc:</label>
-                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=filter_input(INPUT_POST, 'rucSol') && ""?>">
+                                            <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=filter_input(INPUT_POST, 'rucSol') ?? ""?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="userSol">Usuario:</label>
-                                            <input type="text" class="form-control" name="userSol" id="userSol" value="<?=filter_input(INPUT_POST, 'userSol') && ""?>">
+                                            <input type="text" class="form-control" name="userSol" id="userSol" value="<?=filter_input(INPUT_POST, 'userSol') ?? ""?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="passSol">Contraseña:</label>
-                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=filter_input(INPUT_POST, 'passSol') && "" ?>">
+                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=filter_input(INPUT_POST, 'passSol') ?? ""?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -163,7 +182,7 @@ $result = process($_POST);
                                             <label for="ruc">Ruc Emisor:</label>
                                             <input type="text" class="form-control" name="ruc" id="ruc"
                                                    maxlength="11"
-                                                   value="<?= filter_input(INPUT_POST, 'ruc') && '20000000001'?>">
+                                                   value="<?= filter_input(INPUT_POST, 'ruc') ?? '20000000001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo">Tipo:</label>
@@ -172,7 +191,7 @@ $result = process($_POST);
                                                     name="tipo"
                                                     id="tipo"
                                                     maxlength="2"
-                                                    value="<?= filter_input(INPUT_POST, 'tipo') && '01'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'tipo') ?? '01'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="serie">Serie:</label>
@@ -181,7 +200,7 @@ $result = process($_POST);
                                                     name="serie"
                                                     id="serie"
                                                     maxlength="4"
-                                                    value="<?= filter_input(INPUT_POST, 'serie') && 'F001'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'serie') ?? 'F001'?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="numero">Correlativo:</label>
@@ -190,7 +209,7 @@ $result = process($_POST);
                                                     name="numero"
                                                     id="numero"
                                                     min="1"
-                                                    value="<?= filter_input(INPUT_POST, 'numero') && '1'?>">
+                                                    value="<?= filter_input(INPUT_POST, 'numero') ?? '1'?>">
                                         </div>
                                     </div>
                                 </div>

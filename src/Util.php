@@ -1,15 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
+use Greenter\Data\DocumentGeneratorInterface;
+use Greenter\Data\GeneratorFactory;
 use Greenter\Data\SharedStore;
 use Greenter\Model\DocumentInterface;
 use Greenter\Model\Response\CdrResponse;
+use Greenter\Model\Sale\SaleDetail;
 use Greenter\Report\HtmlReport;
 use Greenter\Report\PdfReport;
 use Greenter\Report\Resolver\DefaultTemplateResolver;
+use Greenter\Report\XmlUtils;
 use Greenter\See;
 
 final class Util
 {
+    /**
+     * @var Util
+     */
     private static $current;
     /**
      * @var SharedStore
@@ -21,7 +30,7 @@ final class Util
         $this->shared = new SharedStore();
     }
 
-    public static function getInstance()
+    public static function getInstance(): Util
     {
         if (!self::$current instanceof self) {
             self::$current = new self();
@@ -30,36 +39,36 @@ final class Util
         return self::$current;
     }
 
-    /**
-     * @param string $endpoint
-     * @return See
-     */
-    public function getSee($endpoint)
+    public function getSee(?string $endpoint)
     {
         $see = new See();
         $see->setService($endpoint);
 //        $see->setCodeProvider(new XmlErrorCodeProvider());
-        $see->setCertificate(file_get_contents(__DIR__ . '/../resources/cert.pem'));
+        $certificate = file_get_contents(__DIR__ . '/../resources/cert.pem');
+        if ($certificate === false) {
+            throw new Exception('No se pudo cargar el certificado');
+        }
+        $see->setCertificate($certificate);
         /**
          * Clave SOL
          * Ruc     = 20000000001
          * Usuario = MODDATOS
          * Clave   = moddatos
          */
-        $see->setCredentials('20000000001MODDATOS', 'moddatos');
+        $see->setClaveSOL('20000000001', 'MODDATOS', 'moddatos');
         $see->setCachePath(__DIR__ . '/../cache');
 
         return $see;
     }
 
-    public function showResponse(DocumentInterface $document, CdrResponse $cdr)
+    public function showResponse(DocumentInterface $document, CdrResponse $cdr): void
     {
         $filename = $document->getName();
 
         require __DIR__.'/../views/response.php';
     }
 
-    public function getErrorResponse(\Greenter\Model\Response\Error $error)
+    public function getErrorResponse(\Greenter\Model\Response\Error $error): string
     {
         $result = <<<HTML
         <h2 class="text-danger">Error:</h2><br>
@@ -70,26 +79,32 @@ HTML;
         return $result;
     }
 
-    public function writeXml(DocumentInterface $document, $xml)
+    public function writeXml(DocumentInterface $document, ?string $xml): void
     {
         $this->writeFile($document->getName().'.xml', $xml);
     }
 
-    public function writeCdr(DocumentInterface $document, $zip)
+    public function writeCdr(DocumentInterface $document, ?string $zip): void
     {
         $this->writeFile('R-'.$document->getName().'.zip', $zip);
     }
 
-    public function writeFile($filename, $content)
+    public function writeFile(?string $filename, ?string $content): void
     {
         if (getenv('GREENTER_NO_FILES')) {
             return;
         }
 
-        file_put_contents(__DIR__.'/../files/'.$filename, $content);
+        $fileDir = __DIR__.'/../files';
+
+        if (!file_exists($fileDir)) {
+            mkdir($fileDir, 0777, true);
+        }
+
+        file_put_contents($fileDir.DIRECTORY_SEPARATOR.$filename, $content);
     }
 
-    public function getPdf(DocumentInterface $document)
+    public function getPdf(DocumentInterface $document): ?string
     {
         $html = new HtmlReport('', [
             'cache' => __DIR__ . '/../cache',
@@ -119,7 +134,7 @@ HTML;
 
         $pdf = $render->render($document, $params);
 
-        if ($pdf === false) {
+        if ($pdf === null) {
             $error = $render->getExporter()->getError();
             echo 'Error: '.$error;
             exit();
@@ -131,15 +146,20 @@ HTML;
         return $pdf;
     }
 
-    public function getGenerator($type)
+    public function getGenerator(string $type): ?DocumentGeneratorInterface
     {
-        $factory = new \Greenter\Data\GeneratorFactory();
+        $factory = new GeneratorFactory();
         $factory->shared = $this->shared;
 
         return $factory->create($type);
     }
 
-    public static function generator($item, $count)
+    /**
+     * @param SaleDetail $item
+     * @param int $count
+     * @return array<SaleDetail>
+     */
+    public function generator(SaleDetail $item, int $count): array
     {
         $items = [];
 
@@ -150,7 +170,7 @@ HTML;
         return $items;
     }
 
-    public function showPdf($content, $filename)
+    public function showPdf(?string $content, ?string $filename): void
     {
         $this->writeFile($filename, $content);
         header('Content-type: application/pdf');
@@ -161,7 +181,7 @@ HTML;
         echo $content;
     }
 
-    public static function getPathBin()
+    public static function getPathBin(): string
     {
         $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
         if (self::isWindows()) {
@@ -171,47 +191,23 @@ HTML;
         return $path;
     }
 
-    public static function isWindows()
+    public static function isWindows(): bool
     {
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
-    public static function inPath($command) {
-        $whereIsCommand = self::isWindows() ? 'where' : 'which';
-
-        $process = proc_open(
-            "$whereIsCommand $command",
-            array(
-                0 => array("pipe", "r"), //STDIN
-                1 => array("pipe", "w"), //STDOUT
-                2 => array("pipe", "w"), //STDERR
-            ),
-            $pipes
-        );
-        if ($process !== false) {
-            $stdout = stream_get_contents($pipes[1]);
-            stream_get_contents($pipes[2]);
-            fclose($pipes[1]);
-            fclose($pipes[2]);
-            proc_close($process);
-
-            return $stdout != '';
-        }
-
-        return false;
-    }
-
-    private function getHash(DocumentInterface $document)
+    private function getHash(DocumentInterface $document): ?string
     {
         $see = $this->getSee('');
         $xml = $see->getXmlSigned($document);
 
-        $hash = (new \Greenter\Report\XmlUtils())->getHashSign($xml);
-
-        return $hash;
+        return (new XmlUtils())->getHashSign($xml);
     }
 
-    private static function getParametersPdf()
+    /**
+     * @return array<string, array>
+     */
+    private static function getParametersPdf(): array
     {
         $logo = file_get_contents(__DIR__.'/../resources/logo.png');
 

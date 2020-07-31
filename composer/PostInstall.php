@@ -1,69 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Giansalex
- * Date: 20/01/2018
- * Time: 22:37
- */
 
-use Composer\Script\Event;
-
-/**
- * Class ComposerScripts
- */
-final class ComposerScripts
+final class PostInstall
 {
-    public static function postInstall(Event $event)
+    public static function run()
     {
-        if (getenv('NOT_INSTALL')) {
+        if (getenv('DOCKER') || getenv('CI')) {
             return;
         }
 
-        if (Util::inPath('wkhtmltopdf')) {
+        if (self::inPath('wkhtmltopdf')) {
+            echo 'Wkhtmltopdf global install found.';
             return;
         }
 
-        $pathBin = Util::getPathBin();
+        $pathBin = self::getPathBin();
         if (file_exists($pathBin)) {
             echo $pathBin . PHP_EOL;
             return;
         }
 
-        $url = self::getUrlDownload(Util::isWindows(), self::is64Bit());
+        $url = self::getUrlDownload(self::isWindows(), self::is64Bit());
 
         if (!is_dir( __DIR__.'/../vendor/bin')) {
-            $oldmask = umask(0);
+            $oldMask = umask(0);
             mkdir(__DIR__.'/../vendor/bin', 0777, true);
-            umask($oldmask);
+            umask($oldMask);
         }
         self::downloadBin($url, $pathBin);
-    }
-
-    public static function clearCache()
-    {
-        $dirs = array_filter(glob(__DIR__.'/../cache/*'), 'is_dir');
-        foreach ($dirs as $dir) {
-            self::rrmdir($dir);
-        }
-
-        echo 'Done!';
-    }
-
-    private static function rrmdir($src) {
-        $dir = opendir($src);
-        while(false !== ( $file = readdir($dir)) ) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                $full = $src . '/' . $file;
-                if ( is_dir($full) ) {
-                    self::rrmdir($full);
-                }
-                else {
-                    unlink($full);
-                }
-            }
-        }
-        closedir($dir);
-        rmdir($src);
     }
 
     private static function is64Bit()
@@ -101,4 +64,46 @@ final class ComposerScripts
 
         echo 'FILE SIZE: '. number_format(filesize($localPath)/1048576, 2).' MB'.PHP_EOL;
     }
+
+    public static function inPath($command) {
+        $whereIsCommand = self::isWindows() ? 'where' : 'which';
+
+        $process = proc_open(
+            "$whereIsCommand $command",
+            array(
+                0 => array("pipe", "r"), //STDIN
+                1 => array("pipe", "w"), //STDOUT
+                2 => array("pipe", "w"), //STDERR
+            ),
+            $pipes
+        );
+        if ($process !== false) {
+            $stdout = stream_get_contents($pipes[1]);
+            stream_get_contents($pipes[2]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            proc_close($process);
+
+            return $stdout != '';
+        }
+
+        return false;
+    }
+
+    public static function getPathBin()
+    {
+        $path = __DIR__.'/../vendor/bin/wkhtmltopdf';
+        if (self::isWindows()) {
+            $path .= '.exe';
+        }
+
+        return $path;
+    }
+
+    public static function isWindows()
+    {
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+    }
 }
+
+PostInstall::run();

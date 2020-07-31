@@ -1,0 +1,7 @@
+parameters:
+    level: 7
+    paths:
+        - src
+        - examples
+    ignoreErrors:
+        - '#Method Util::getSee\(\) has no return typehint specified.#'

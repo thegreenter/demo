@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Greenter\Data\Generator\InvoiceStore;
 
 require __DIR__ . '/../../vendor/autoload.php';
