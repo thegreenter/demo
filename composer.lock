@@ -184,16 +184,16 @@
         },
         {
             "name": "greenter/xmldsig",
-            "version": "v5.0.2",
+            "version": "v5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xmldsig.git",
-                "reference": "fc71824f105d7370b6be84d62ad40f17fa989603"
+                "reference": "98df1580228cff6c5f02a451ac162d00d384848e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xmldsig/zipball/fc71824f105d7370b6be84d62ad40f17fa989603",
-                "reference": "fc71824f105d7370b6be84d62ad40f17fa989603",
+                "url": "https://api.github.com/repos/thegreenter/xmldsig/zipball/98df1580228cff6c5f02a451ac162d00d384848e",
+                "reference": "98df1580228cff6c5f02a451ac162d00d384848e",
                 "shasum": ""
             },
             "require": {
@@ -212,7 +212,7 @@
                 "BSD-2-Clause"
             ],
             "description": "Libreria para firmar XML según normativa de SUNAT en Facturación Electrónica",
-            "homepage": "https://github.com/giansalex/xmldsig",
+            "homepage": "https://github.com/thegreenter/xmldsig",
             "keywords": [
                 "security",
                 "signature",
@@ -220,7 +220,7 @@
                 "xml",
                 "xmldsig"
             ],
-            "time": "2019-05-29T21:00:57+00:00"
+            "time": "2020-07-31T04:45:22+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -852,16 +852,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.33",
+            "version": "0.12.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "46e698a0452526a05c4a351d7c47c4b8c37a548d"
+                "reference": "ad75388d71fb0b4a954f71a852fd989915a51cb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/46e698a0452526a05c4a351d7c47c4b8c37a548d",
-                "reference": "46e698a0452526a05c4a351d7c47c4b8c37a548d",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ad75388d71fb0b4a954f71a852fd989915a51cb7",
+                "reference": "ad75388d71fb0b4a954f71a852fd989915a51cb7",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +904,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-19T22:10:11+00:00"
+            "time": "2020-07-30T15:31:10+00:00"
         }
     ],
     "aliases": [],
