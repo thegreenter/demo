@@ -4,6 +4,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)   
 Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/thegreenter/greenter).
 
+> Si tienes dudas o necesitas consultar algo, puedes hacerlo [aquí](https://community.greenter.dev/).
+
 ### Topics
 - Generación de XML UBL 2.0, UBL 2.1
 - Generación comprobantes de contingencia.
