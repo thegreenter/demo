@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/greenter.git",
-                "reference": "fa3728baca8bfce623661fbfbcb33d2b0189dc30"
+                "reference": "8588b4f002093a0ef2e4ebb00fee6edd31c96425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/greenter/zipball/fa3728baca8bfce623661fbfbcb33d2b0189dc30",
-                "reference": "fa3728baca8bfce623661fbfbcb33d2b0189dc30",
+                "url": "https://api.github.com/repos/thegreenter/greenter/zipball/8588b4f002093a0ef2e4ebb00fee6edd31c96425",
+                "reference": "8588b4f002093a0ef2e4ebb00fee6edd31c96425",
                 "shasum": ""
             },
             "require": {
@@ -169,18 +169,27 @@
             "license": [
                 "MIT"
             ],
-            "description": "Facturacion Electrónica SUNAT - Perú",
-            "funding": [
+            "authors": [
                 {
-                    "url": "https://paypal.me/giansalex",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://yape.greenter.dev/",
-                    "type": "custom"
+                    "name": "Giancarlos Salas",
+                    "email": "giansalex@gmail.com"
                 }
             ],
-            "time": "2020-07-31T03:35:25+00:00"
+            "description": "Facturacion Electrónica SUNAT en Perú",
+            "homepage": "https://greenter.dev/",
+            "keywords": [
+                "facturacion-electronica",
+                "greenter",
+                "peru",
+                "sunat"
+            ],
+            "funding": [
+                {
+                    "url": "https://yape.greenter.dev/",
+                    "type": "yape"
+                }
+            ],
+            "time": "2020-08-09T00:29:21+00:00"
         },
         {
             "name": "greenter/xmldsig",
