@@ -21,6 +21,9 @@
         "ext-json": "*",
         "greenter/greenter": "^4.0"
     },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.33"
+    },
     "scripts": {
         "post-install-cmd": "@php composer/PostInstall.php",
         "reset-cache": "@php composer/ClearCache.php",
@@ -32,8 +35,5 @@
     "config": {
         "optimize-autoloader": true,
         "classmap-authoritative": true
-    },
-    "require-dev": {
-        "phpstan/phpstan": "^0.12.33"
     }
 }
