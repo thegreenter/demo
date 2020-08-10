@@ -43,7 +43,7 @@ Finalmente navegar a http://localhost:8080
 :white_check_mark: Nota de Crédito    
 :white_check_mark: Nota de Débito   
 :white_check_mark: Resumen Diario de Boletas    
-:white_check_mark: Comunicación de Baja 
+:white_check_mark: Comunicación de Baja    
 :white_check_mark: Guia de Remisión    
 :white_check_mark: Retención  
 :white_check_mark: Perecepción  
