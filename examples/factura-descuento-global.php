@@ -21,7 +21,7 @@ $invoice
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('1')
+    ->setCorrelativo('84')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())

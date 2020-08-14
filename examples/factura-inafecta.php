@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -17,8 +18,8 @@ $invoice
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('124')
-    ->setFechaEmision(new \DateTime())
+    ->setCorrelativo('137')
+    ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
@@ -63,7 +64,7 @@ if (!$res->isSuccess()) {
     return;
 }
 
-/**@var $res \Greenter\Model\Response\BillResult*/
+/**@var $res BillResult*/
 $cdr = $res->getCdrResponse();
 $util->writeCdr($invoice, $res->getCdrZip());
 
