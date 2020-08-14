@@ -8,6 +8,7 @@ use Greenter\Model\Despatch\DespatchDetail;
 use Greenter\Model\Despatch\Direction;
 use Greenter\Model\Despatch\Shipment;
 use Greenter\Model\Despatch\Transportist;
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Document;
 use Greenter\Ws\Services\SunatEndpoints;
 
@@ -32,15 +33,16 @@ $transp->setTipoDoc('6')
     ->setChoferDoc('40003344');
 
 $envio = new Shipment();
-$envio->setModTraslado('01')
-    ->setCodTraslado('01')
+$envio
+    ->setCodTraslado('01') // Cat.20
     ->setDesTraslado('VENTA')
-    ->setFecTraslado(new \DateTime())
+    ->setModTraslado('01') // Cat.18
+    ->setFecTraslado(new DateTime())
     ->setCodPuerto('123')
     ->setIndTransbordo(false)
     ->setPesoTotal(12.5)
     ->setUndPesoTotal('KGM')
-    ->setNumBultos(2)
+//    ->setNumBultos(2) // Solo válido para importaciones
     ->setNumContenedor('XD-2232')
     ->setLlegada(new Direction('150101', 'AV LIMA'))
     ->setPartida(new Direction('150203', 'AV ITALIA'))
@@ -50,7 +52,7 @@ $despatch = new Despatch();
 $despatch->setTipoDoc('09')
     ->setSerie('T001')
     ->setCorrelativo('123')
-    ->setFechaEmision(new \DateTime())
+    ->setFechaEmision(new DateTime())
     ->setCompany($util->shared->getCompany())
     ->setDestinatario((new Client())
         ->setTipoDoc('6')
@@ -81,7 +83,7 @@ $res = $see->send($despatch);
 $util->writeXml($despatch, $see->getFactory()->getLastXml());
 
 if ($res->isSuccess()) {
-    /**@var $res \Greenter\Model\Response\BillResult*/
+    /**@var $res BillResult*/
     $cdr = $res->getCdrResponse();
     $util->writeCdr($despatch, $res->getCdrZip());
 
