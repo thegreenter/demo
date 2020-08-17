@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\SummaryResult;
 use Greenter\Model\Voided\Reversion;
 use Greenter\Model\Voided\VoidedDetail;
 use Greenter\Ws\Services\SunatEndpoints;
@@ -9,24 +10,24 @@ use Greenter\Ws\Services\SunatEndpoints;
 require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
-$detial1 = new VoidedDetail();
-$detial1->setTipoDoc('20')
+$item1 = new VoidedDetail();
+$item1->setTipoDoc('20')
     ->setSerie('R001')
-    ->setCorrelativo('02132132')
+    ->setCorrelativo('122')
     ->setDesMotivoBaja('ERROR DE SISTEMA');
 
-$detial2 = new VoidedDetail();
-$detial2->setTipoDoc('20')
-    ->setSerie('R001')
-    ->setCorrelativo('123')
+$item2 = new VoidedDetail();
+$item2->setTipoDoc('40')
+    ->setSerie('P001')
+    ->setCorrelativo('111')
     ->setDesMotivoBaja('ERROR DE RUC');
 
 $reversion = new Reversion();
 $reversion->setCorrelativo('001')
-    ->setFecGeneracion(new \DateTime('-3days'))
-    ->setFecComunicacion(new \DateTime('-1days'))
+    ->setFecGeneracion(new DateTime('-3days'))
+    ->setFecComunicacion(new DateTime('-1days'))
     ->setCompany($util->shared->getCompany())
-    ->setDetails([$detial1, $detial2]);
+    ->setDetails([$item1, $item2]);
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::RETENCION_BETA);
@@ -39,7 +40,7 @@ if (!$res->isSuccess()) {
     return;
 }
 
-/**@var $res \Greenter\Model\Response\SummaryResult*/
+/**@var $res SummaryResult*/
 $ticket = $res->getTicket();
 echo 'Ticket :<strong>' . $ticket .'</strong>';
 
