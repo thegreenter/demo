@@ -26,7 +26,7 @@ set_time_limit(0);
                 <div class="card-block">
                     <ul class="list-group">
                         <template x-for="item in examples.invoices" :key="item.file">
-                            <li @click="loadUrl($event.target, item.file)" class="list-group-item" :id="item.file">
+                            <li @click="loadUrl($event.currentTarget, item.file)" class="list-group-item">
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-text="item.title"></span>
                                 <span class="badge badge-secondary" x-text="item.tag"></span>
                             </li>
