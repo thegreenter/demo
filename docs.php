@@ -52,6 +52,11 @@ $items = [
         'tag' => '2.1',
     ],
     [
+        'file' => 'examples/boleta-icbper.php',
+        'title' => 'Boleta ICBPER',
+        'tag' => '2.1',
+    ],
+    [
         'file' => 'examples/factura-descuento-global.php',
         'title' => 'Factura con Descuento Global',
         'tag' => '2.1',
