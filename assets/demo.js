@@ -85,26 +85,73 @@ function iconLoad() {
     $('#result').html('<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
 }
 
-function loadUrl(element, url) {
-    if(xhr && xhr.readyState != 4){
-        xhr.abort();
+function app() {
+    function getDocInUrl() {
+        const params = new URLSearchParams(window.location.search)
+        if (params.has('doc')) {
+            const doc = params.get('doc');
+
+            return doc;
+        }
+
+        return null;
     }
 
-    if (active) {
-        $(active).removeClass('active');
+    return {
+        examples: {
+            invoices:[],
+            reports: []
+        },
+        loadUrl(element, url) {
+            if(xhr && xhr.readyState != 4){
+                xhr.abort();
+            }
+
+            if (active) {
+                $(active).removeClass('active');
+            }
+
+            if (element) {
+                $(element).addClass('active');
+                active = element;
+            }
+
+            reset();
+            start();
+            iconLoad();
+
+            xhr = $.get(url, function(data) {
+                $("#result").html(data);
+            }).fail(function (r) {
+                $("#result").html('<span class="text-danger">Ocurrío un error invocando el script</span>');
+            }).always(function () {
+                stop();
+            });
+        },
+        docs() {
+            const $this = this;
+            fetch('docs.php')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    const doc = getDocInUrl();
+                    console.log(doc);
+                    $this.examples = data;
+
+                    if (doc) {
+                        const len = data.invoices.length;
+                        for (let i = 0; i < len; i++) {
+                            if (data.invoices[i].file === doc) {
+                                $this.loadUrl(null, doc);
+
+                                break;
+                            }
+                        }
+                    }
+
+                })
+            ;
+        },
     }
-    $(element).addClass('active');
-    active = element;
-
-    reset();
-    start();
-    iconLoad();
-
-    xhr = $.get(url, function(data) {
-        $("#result").html(data);
-    }).fail(function (r) {
-        $("#result").html('<span class="text-danger">Ocurrío un error invocando el script</span>');
-    }).always(function () {
-        stop();
-    });
 }

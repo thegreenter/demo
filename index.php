@@ -16,12 +16,8 @@ set_time_limit(0);
 <body>
 <?php include 'views/top.php'; ?>
 <div class="container"
-     x-data="{ examples: {invoices:[], reports: []} }"
-     x-init="
-            fetch('docs.php')
-                .then(response => response.json())
-                .then(data => examples = data)
-     "
+     x-data="app()"
+     x-init="docs()"
     >
     <div class="row mb-4">
         <div class="col-md-4">
@@ -30,7 +26,7 @@ set_time_limit(0);
                 <div class="card-block">
                     <ul class="list-group">
                         <template x-for="item in examples.invoices" :key="item.file">
-                            <li @click="loadUrl($event.target, item.file)" class="list-group-item">
+                            <li @click="loadUrl($event.target, item.file)" class="list-group-item" :id="item.file">
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-text="item.title"></span>
                                 <span class="badge badge-secondary" x-text="item.tag"></span>
                             </li>
@@ -73,7 +69,7 @@ set_time_limit(0);
     </div>
 </div>
 <?php include 'views/footer.php'; ?>
-<script src="assets/demo.js"></script>
+<script src="assets/demo.js?v2"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90097417-4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
