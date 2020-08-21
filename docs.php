@@ -52,6 +52,11 @@ $items = [
         'tag' => '2.1',
     ],
     [
+        'file' => 'examples/factura-rel-guia-remision.php',
+        'title' => 'Factura con guía remisión',
+        'tag' => '2.1',
+    ],
+    [
         'file' => 'examples/boleta-icbper.php',
         'title' => 'Boleta ICBPER',
         'tag' => '2.1',
