@@ -29,6 +29,8 @@ set_time_limit(0);
                             <li @click="loadUrl($event.currentTarget, item.file)" class="list-group-item">
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-text="item.title"></span>
                                 <span class="badge badge-secondary" x-text="item.tag"></span>
+                                <br>
+                                <sub x-text="item.description"></sub>
                             </li>
                         </template>
                         <li class="list-group-item">

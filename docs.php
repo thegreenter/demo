@@ -9,6 +9,7 @@ $items = [
         'file' => 'examples/factura-contingencia.php',
         'title' => 'Factura',
         'tag' => 'CONTINGENCIA',
+        'description' => 'Factura física emitida en situación de contingencia',
     ],
     [
         'file' => 'examples/boleta.php',
@@ -41,14 +42,17 @@ $items = [
     [
         'file' => 'examples/factura-icbper.php',
         'title' => 'Factura ICBPER',
+        'description' => 'Factura con Impuesto a la bolsa de plástico',
     ],
     [
         'file' => 'examples/factura-rel-guia-remision.php',
         'title' => 'Factura con guía remisión',
+        'description' => 'Factura relacionada a una guía de remisión',
     ],
     [
         'file' => 'examples/boleta-icbper.php',
-        'title' => 'Boleta ICBPER'
+        'title' => 'Boleta ICBPER',
+        'description' => 'Boleta con Impuesto a la bolsa de plástico',
     ],
     [
         'file' => 'examples/factura-descuento-global.php',
@@ -89,11 +93,11 @@ $items = [
     ],
     [
         'file' => 'examples/percepcion.php',
-        'title' => 'C. de Percepción',
+        'title' => 'Comprobante de Percepción',
     ],
     [
         'file' => 'examples/retencion.php',
-        'title' => 'C. de Retención',
+        'title' => 'Comprobante de Retención',
     ],
     [
         'file' => 'examples/reversion.php',
