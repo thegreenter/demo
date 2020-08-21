@@ -4,7 +4,6 @@ $items = [
     [
         'file' => 'examples/factura.php',
         'title' => 'Factura',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-contingencia.php',
@@ -14,77 +13,62 @@ $items = [
     [
         'file' => 'examples/boleta.php',
         'title' => 'Boleta de Venta',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-inafecta.php',
         'title' => 'Factura Inafecta',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-exonerado.php',
         'title' => 'Factura Exonerado',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-gratuita.php',
         'title' => 'Factura Gratuita',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-percepcion.php',
         'title' => 'Factura con Percepción',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-exportacion.php',
         'title' => 'Factura Exportación',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-anticipo.php',
         'title' => 'Factura con Anticipos',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-icbper.php',
         'title' => 'Factura ICBPER',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/factura-rel-guia-remision.php',
         'title' => 'Factura con guía remisión',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/boleta-icbper.php',
-        'title' => 'Boleta ICBPER',
-        'tag' => '2.1',
+        'title' => 'Boleta ICBPER'
     ],
     [
         'file' => 'examples/factura-descuento-global.php',
-        'title' => 'Factura con Descuento Global',
-        'tag' => '2.1',
+        'title' => 'Factura con Descuento Global'
     ],
     [
         'file' => 'examples/factura-descuento-linea.php',
-        'title' => 'Factura con Descuento linea',
-        'tag' => '2.1',
+        'title' => 'Factura con Descuento linea'
     ],
     [
         'file' => 'examples/nota-credito.php',
-        'title' => 'Nota de Crédito',
-        'tag' => '2.1',
+        'title' => 'Nota de Crédito'
     ],
     [
         'file' => 'examples/nota-debito.php',
-        'title' => 'Nota de Débito',
-        'tag' => '2.1',
+        'title' => 'Nota de Débito'
     ],
     [
         'file' => 'examples/resumen.php',
-        'title' => 'Resumen Diario',
-        'tag' => '2.0',
+        'title' => 'Resumen Diario'
     ],
     [
         'file' => 'examples/resumen-contingencia.php',
@@ -94,32 +78,26 @@ $items = [
     [
         'file' => 'examples/resumen-usd.php',
         'title' => 'Resumen Diario (en Dólares)',
-        'tag' => '2.0',
     ],
     [
         'file' => 'examples/comunicacion-baja.php',
         'title' => 'Comunicación de Baja',
-        'tag' => '2.0',
     ],
     [
         'file' => 'examples/guia-remision.php',
         'title' => 'Guía de Remisión',
-        'tag' => '2.1',
     ],
     [
         'file' => 'examples/percepcion.php',
         'title' => 'C. de Percepción',
-        'tag' => '2.0',
     ],
     [
         'file' => 'examples/retencion.php',
         'title' => 'C. de Retención',
-        'tag' => '2.0',
     ],
     [
         'file' => 'examples/reversion.php',
         'title' => 'Resumen de Reversiones',
-        'tag' => '2.0',
     ],
 ];
 
