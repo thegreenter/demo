@@ -45,6 +45,11 @@ $items = [
         'description' => 'Factura con Impuesto a la bolsa de plástico',
     ],
     [
+        'file' => 'examples/factura-icbper-gratuita.php',
+        'title' => 'Factura ICBPER gratuita',
+        'description' => 'Factura con bolsa de plástico gratuita + impuesto ICBPER',
+    ],
+    [
         'file' => 'examples/factura-rel-guia-remision.php',
         'title' => 'Factura con guía remisión',
         'description' => 'Factura relacionada a una guía de remisión',
