@@ -63,6 +63,11 @@ $items = [
         'title' => 'Factura con Descuento linea'
     ],
     [
+        'file' => 'examples/factura-descuento-nobase.php',
+        'title' => 'Factura con Descuentos',
+        'description' => 'Factura con descuento global y lineal que no afecta la base imponible',
+    ],
+    [
         'file' => 'examples/nota-credito.php',
         'title' => 'Nota de Crédito'
     ],
