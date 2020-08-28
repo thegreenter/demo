@@ -16,9 +16,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$rel = new Document();
-$rel->setTipoDoc('02') // Tipo: Numero de Orden de Entrega
-->setNroDoc('213123');
+$baja = new Document();
+$baja->setTipoDoc('09')
+    ->setNroDoc('T001-00001');
 
 $transp = new Transportist();
 $transp->setTipoDoc('6')
@@ -38,7 +38,6 @@ $envio
     ->setIndTransbordo(false)
     ->setPesoTotal(12.5)
     ->setUndPesoTotal('KGM')
-//    ->setNumBultos(2) // Solo válido para importaciones
     ->setNumContenedor('XD-2232')
     ->setLlegada(new Direction('150101', 'AV LIMA'))
     ->setPartida(new Direction('150203', 'AV ITALIA'))
@@ -53,13 +52,13 @@ $despatch->setTipoDoc('09')
     ->setDestinatario((new Client())
         ->setTipoDoc('6')
         ->setNumDoc('20000000002')
-        ->setRznSocial('EMPRESA (<!-- --> />) 1'))
+        ->setRznSocial('EMPRESA 1'))
     ->setTercero((new Client())
         ->setTipoDoc('6')
         ->setNumDoc('20000000003')
         ->setRznSocial('EMPRESA SA'))
     ->setObservacion('NOTA GUIA')
-    ->setRelDoc($rel)
+    ->setDocBaja($baja)
     ->setEnvio($envio);
 
 $detail = new DespatchDetail();
@@ -77,14 +76,13 @@ $see = $util->getSee(SunatEndpoints::GUIA_BETA);
 $res = $see->send($despatch);
 $util->writeXml($despatch, $see->getFactory()->getLastXml());
 
-if ($res->isSuccess()) {
-    /**@var $res BillResult*/
-    $cdr = $res->getCdrResponse();
-    $util->writeCdr($despatch, $res->getCdrZip());
-
-    $util->showResponse($despatch, $cdr);
-} else {
+if (!$res->isSuccess()) {
     echo $util->getErrorResponse($res->getError());
+    exit();
 }
 
+/**@var $res BillResult*/
+$cdr = $res->getCdrResponse();
+$util->writeCdr($despatch, $res->getCdrZip());
 
+$util->showResponse($despatch, $cdr);
