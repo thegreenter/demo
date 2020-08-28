@@ -42,7 +42,7 @@ set_time_limit(0);
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-success text-white">Resultado</div>
+                <div class="card-header bg-primary text-white">Resultado</div>
                 <div class="card-block">
                     <div class="card bg-light text-dark">
                         <div class="card-body">

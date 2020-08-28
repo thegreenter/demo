@@ -102,6 +102,11 @@ $items = [
         'title' => 'Guía de Remisión',
     ],
     [
+        'file' => 'examples/guia-remision-baja.php',
+        'title' => 'Guía de Remisión baja',
+        'description' => 'Adjuntando guia de remision dada de baja.'
+    ],
+    [
         'file' => 'examples/percepcion.php',
         'title' => 'Comprobante de Percepción',
     ],
