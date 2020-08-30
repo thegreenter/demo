@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Greenter\Model\Response\BillResult;
-use Greenter\Model\Sale\Document;
 use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -16,20 +15,15 @@ $util = Util::getInstance();
 $note = new Note();
 $note
     ->setUblVersion('2.1')
-    ->setTipoDoc('07')
-    ->setSerie('FF01')
-    ->setCorrelativo('123')
+    ->setTipoDoc('07') // Tipo Doc: Nota de Credito
+    ->setSerie('BB01') // Serie NCR
+    ->setCorrelativo('123') // Correlativo NCR
     ->setFechaEmision(new DateTime())
-    ->setTipDocAfectado('01') // Tipo Doc: Factura
-    ->setNumDocfectado('F001-111') // Factura: Serie-Correlativo
-    ->setCodMotivo('07') // Catalogo. 09
-    ->setDesMotivo('DEVOLUCION POR ITEM')
+    ->setTipDocAfectado('03') // Tipo Doc: Boleta
+    ->setNumDocfectado('B001-12') // Boleta: Serie-Correlativo
+    ->setCodMotivo('01') // Catalogo. 09
+    ->setDesMotivo('ANULACION DE LA OPERACION')
     ->setTipoMoneda('PEN')
-    ->setGuias([/* Guias (Opcional) */
-        (new Document())
-        ->setTipoDoc('09')
-        ->setNroDoc('0001-213')
-    ])
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
