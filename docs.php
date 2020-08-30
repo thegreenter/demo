@@ -74,7 +74,13 @@ $items = [
     ],
     [
         'file' => 'examples/nota-credito.php',
-        'title' => 'Nota de Crédito'
+        'title' => 'Nota de Crédito',
+        'description' => 'Nota de crédito de una Factura'
+    ],
+    [
+        'file' => 'examples/nota-credito-boleta.php',
+        'title' => 'Nota de Crédito',
+        'description' => 'Nota de crédito de una Boleta de venta'
     ],
     [
         'file' => 'examples/nota-debito.php',
