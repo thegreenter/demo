@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Document;
 use Greenter\Model\Sale\Note;
 use Greenter\Model\Sale\SaleDetail;
@@ -15,14 +16,14 @@ $util = Util::getInstance();
 $note = new Note();
 $note
     ->setUblVersion('2.1')
-    ->setTipDocAfectado('01')
-    ->setNumDocfectado('F001-111')
-    ->setCodMotivo('07')
-    ->setDesMotivo('DEVOLUCION POR ITEM')
     ->setTipoDoc('07')
     ->setSerie('FF01')
-    ->setFechaEmision(new DateTime())
     ->setCorrelativo('123')
+    ->setFechaEmision(new DateTime())
+    ->setTipDocAfectado('01') // Tipo Doc: Factura
+    ->setNumDocfectado('F001-111') // Factura: Serie-Correlativo
+    ->setCodMotivo('07') // Catalogo. 09
+    ->setDesMotivo('DEVOLUCION POR ITEM')
     ->setTipoMoneda('PEN')
     ->setGuias([/* Guias (Opcional) */
         (new Document())
@@ -85,7 +86,7 @@ if (!$res->isSuccess()) {
     exit();
 }
 
-/**@var $res \Greenter\Model\Response\BillResult*/
+/**@var $res BillResult*/
 $cdr = $res->getCdrResponse();
 $util->writeCdr($note, $res->getCdrZip());
 
