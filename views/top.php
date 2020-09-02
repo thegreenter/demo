@@ -13,10 +13,13 @@
                 <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://community.greenter.dev/"><i class="fab fa-discourse text-success"></i> Forum</a>
+                <a class="nav-link" href="https://community.greenter.dev/" target="_blank"><i class="fab fa-discourse text-success"></i> Forum</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://fb.me/thegreenter"><i class="fab fa-facebook text-info"></i> Facebook</a>
+                <a class="nav-link" href="https://fb.me/thegreenter" target="_blank"><i class="fab fa-facebook text-info"></i> Facebook</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://fe-primer.greenter.dev/" target="_blank"><img src="https://fe-primer.greenter.dev/img/logo.svg" height="20"> Fe Primer</a>
             </li>
         </ul>
         <ul class="navbar-nav">
