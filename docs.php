@@ -6,6 +6,10 @@ $items = [
         'title' => 'Factura',
     ],
     [
+        'file' => 'examples/factura-ivap.php',
+        'title' => 'Factura IVAP',
+    ],
+    [
         'file' => 'examples/factura-contingencia.php',
         'title' => 'Factura',
         'tag' => 'CONTINGENCIA',
