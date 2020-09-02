@@ -23,8 +23,8 @@ $invoice
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
-    ->setMtoBaseIvap(90000.00)
-    ->setMtoIvap(3600.00)
+    ->setMtoBaseIvap(90000.00) // Base IVAP
+    ->setMtoIvap(3600.00) // Suma IVAP
     ->setTotalImpuestos(3600.00)
     ->setValorVenta(90000.00)
     ->setSubTotal(93600.00)
@@ -33,15 +33,15 @@ $invoice
 
 $item = new SaleDetail();
 $item->setCodProducto('A001')
-    ->setUnidad('SA')
+    ->setUnidad('SA') // Codigo unidad de saco
     ->setDescripcion('SACOS DE ARROZ')
     ->setCantidad(900.00)
     ->setMtoValorUnitario(100.00)
     ->setMtoValorVenta(90000.00)
     ->setMtoBaseIgv(90000.00)
-    ->setPorcentajeIgv(4)
+    ->setPorcentajeIgv(4) // Tasa IVAP
     ->setIgv(3600.00)
-    ->setTipAfeIgv('17')
+    ->setTipAfeIgv('17') // Tipo Afectacion IVAP
     ->setTotalImpuestos(3600.00)
     ->setMtoPrecioUnitario(104.00)
 ;
@@ -52,7 +52,7 @@ $invoice->setDetails([$item])
             ->setCode('1000')
             ->setValue('SON TRESCIENTOS TREINTA Y SEIS CON OO/100 SOLES'),
         (new Legend())
-            ->setCode('2007')
+            ->setCode('2007') // Leyenda IVAP
             ->setValue("Operación sujeta al IVAP"),
     ]);
 
