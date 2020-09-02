@@ -55,9 +55,5 @@
     color: #5bc0de;
 }
 
-a { color: inherit; }
-a:hover { color: inherit; }
-
-.greenter-title {
-    font-size: 4vw;
-}
+.container a { color: inherit; }
+.container a:hover { color: inherit; }
