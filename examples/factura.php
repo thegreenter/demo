@@ -44,7 +44,7 @@ $item1->setCodProducto('P001')
     ->setMtoBaseIgv(200)
     ->setPorcentajeIgv(18)
     ->setIgv(36)
-    ->setTipAfeIgv('10') // Catalog: 08
+    ->setTipAfeIgv('10') // Catalog: 07
     ->setTotalImpuestos(36)
     ->setMtoPrecioUnitario(118)
 ;
@@ -60,7 +60,7 @@ $item2->setCodProducto('P002')
     ->setMtoBaseIgv(100)
     ->setPorcentajeIgv(0)
     ->setIgv(0)
-    ->setTipAfeIgv('20') // Catalog: 08
+    ->setTipAfeIgv('20') // Catalog: 07
     ->setTotalImpuestos(0)
     ->setMtoPrecioUnitario(50)
 ;
