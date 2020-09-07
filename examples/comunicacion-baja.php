@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\SummaryResult;
 use Greenter\Model\Voided\Voided;
 use Greenter\Model\Voided\VoidedDetail;
 use Greenter\Ws\Services\SunatEndpoints;
@@ -24,8 +25,9 @@ $detail2->setTipoDoc('07')
 
 $voided = new Voided();
 $voided->setCorrelativo('00111')
-    ->setFecGeneracion(new \DateTime('-3days'))
-    ->setFecComunicacion(new \DateTime('-1days'))
+    // Fecha Generacion menor que Fecha comunicacion
+    ->setFecGeneracion(new DateTime('-3days'))
+    ->setFecComunicacion(new DateTime('-1days'))
     ->setCompany($util->shared->getCompany())
     ->setDetails([$detail1, $detail2]);
 
@@ -40,7 +42,7 @@ if (!$res->isSuccess()) {
     return;
 }
 
-/**@var \Greenter\Model\Response\SummaryResult $res */
+/**@var SummaryResult $res */
 $ticket = $res->getTicket();
 echo 'Ticket :<strong>' . $ticket .'</strong>';
 

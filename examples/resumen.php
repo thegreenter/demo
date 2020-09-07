@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\SummaryResult;
 use Greenter\Model\Sale\Document;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
@@ -64,8 +65,9 @@ $detiail3->setTipoDoc('03')
     ->setMtoIGV(3.6);
 
 $sum = new Summary();
-$sum->setFecGeneracion(new \DateTime('-3days'))
-    ->setFecResumen(new \DateTime('-1days'))
+// Fecha Generacion menor que Fecha Resumen
+$sum->setFecGeneracion(new DateTime('-3days'))
+    ->setFecResumen(new DateTime('-1days'))
     ->setCorrelativo('001')
     ->setCompany($util->shared->getCompany())
     ->setDetails([$detiail1, $detiail2, $detiail3]);
@@ -81,7 +83,7 @@ if (!$res->isSuccess()) {
     return;
 }
 
-/**@var $res \Greenter\Model\Response\SummaryResult*/
+/**@var $res SummaryResult*/
 $ticket = $res->getTicket();
 echo 'Ticket :<strong>' . $ticket .'</strong>';
 

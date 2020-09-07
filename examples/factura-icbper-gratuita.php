@@ -57,7 +57,7 @@ $detailBolsa
     ->setMtoValorUnitario(0.00)
     ->setMtoValorGratuito(0.05)
     ->setMtoValorVenta(0.10)
-    ->setTipAfeIgv('13') // catalog: 08, Codigo afectacion gratuito,
+    ->setTipAfeIgv('13') // catalog: 07, Codigo afectacion gratuito,
     ->setMtoBaseIgv(0.10)
     ->setPorcentajeIgv(18.0)
     ->setIgv(0.02)

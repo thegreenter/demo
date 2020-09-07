@@ -4,6 +4,12 @@ $items = [
     [
         'file' => 'examples/factura.php',
         'title' => 'Factura',
+        'description' => 'Factura con item gravado y exonerado.'
+    ],
+    [
+        'file' => 'examples/factura-compleja.php',
+        'title' => 'Factura 2',
+        'description' => 'Factura con items gravado, exonerado, inafecto y gratuitos.'
     ],
     [
         'file' => 'examples/factura-ivap.php',
