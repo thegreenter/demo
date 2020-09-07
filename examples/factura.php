@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -14,12 +15,12 @@ $util = Util::getInstance();
 $invoice = new Invoice();
 $invoice
     ->setUblVersion('2.1')
-    ->setFecVencimiento(new \DateTime())
+    ->setFecVencimiento(new DateTime())
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('123')
-    ->setFechaEmision(new \DateTime())
+    ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
@@ -32,6 +33,7 @@ $invoice
     ->setMtoImpVenta(336)
     ;
 
+// Detalle gravado
 $item1 = new SaleDetail();
 $item1->setCodProducto('P001')
     ->setUnidad('NIU')
@@ -47,6 +49,7 @@ $item1->setCodProducto('P001')
     ->setMtoPrecioUnitario(118)
 ;
 
+// Detalle Exonerado
 $item2 = new SaleDetail();
 $item2->setCodProducto('P002')
     ->setUnidad('KG')
@@ -84,7 +87,7 @@ if (!$res->isSuccess()) {
     exit();
 }
 
-/**@var $res \Greenter\Model\Response\BillResult*/
+/**@var $res BillResult*/
 $cdr = $res->getCdrResponse();
 $util->writeCdr($invoice, $res->getCdrZip());
 
