@@ -37,18 +37,3 @@ php -S 0.0.0.0:8080
 Finalmente navegar a http://localhost:8080
 > Los xml, pdf y cdr (archivos zip) seran guardados en la carptea `files`.
 
-### Lista de Ejemplos
-:white_check_mark: Factura    
-:white_check_mark: Boleta de venta   
-:white_check_mark: Nota de Crédito    
-:white_check_mark: Nota de Débito   
-:white_check_mark: Resumen Diario de Boletas    
-:white_check_mark: Comunicación de Baja    
-:white_check_mark: Guia de Remisión    
-:white_check_mark: Retención  
-:white_check_mark: Perecepción  
-:white_check_mark: Resumen de Reversión   
-:white_check_mark: Consultar estado del CDR   
-:ballot_box_with_check: Factura por Contingencia    
-:ballot_box_with_check: Resumen de Boletas por Contingencia    
-:ballot_box_with_check: Factura con ICBPER       
