@@ -118,7 +118,7 @@ $invoice->setDetails([$item1, $item2, $item3, $item4, $item5])
     ->setLegends([
         (new Legend())
             ->setCode('1000')
-            ->setValue('SON TRESCIENTOS TREINTA Y SEIS CON OO/100 SOLES'),
+            ->setValue('SON QUINIENTOS TREINTA Y SEIS CON OO/100 SOLES'),
         (new Legend())
             ->setCode('1002')
             ->setValue('TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE')
