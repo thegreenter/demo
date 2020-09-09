@@ -4,7 +4,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)   
 Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/thegreenter/greenter).
 
-> Si tienes dudas o necesitas consultar algo, puedes hacerlo [aquí](https://community.greenter.dev/).
+:speech_balloon: Tienes preguntas, únete al [forum](https://community.greenter.dev/).
 
 ### Topics
 - Generación de XML en el estándar UBL 2.0, 2.1
