@@ -2,19 +2,18 @@
 ![CI](https://github.com/thegreenter/demo/workflows/CI/badge.svg)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo)
 [![GitHub issues](https://img.shields.io/github/issues/thegreenter/demo.svg?style=flat-square)](https://github.com/thegreenter/demo/issues)   
-Ejemplos de envio de comprobantes electronicos empleando [Greenter](https://github.com/thegreenter/greenter).
+Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/thegreenter/greenter).
 
 > Si tienes dudas o necesitas consultar algo, puedes hacerlo [aquí](https://community.greenter.dev/).
 
 ### Topics
-- Generación de XML UBL 2.0, UBL 2.1
+- Generación de XML en el estándar UBL 2.0, 2.1
 - Generación comprobantes de contingencia.
-- Firma del XML
-- Compresión del XML en formato zip
-- Envio a servicio de sunat
-- Procesamiento de la respuesta (CDR)
-- Extraccion del Hash de la Firma Digital
-- Representacion Impresa - PDF
+- Firma digital de XML
+- Envío a servicio de SUNAT
+- Procesamiento del CDR (Comprobante de Recepción)
+- Extracción del Hash o Valor Resumen
+- Representación Impresa, PDF
 
 ### Pasos
 
