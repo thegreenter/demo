@@ -127,9 +127,6 @@ $invoice->setDetails([$item1, $item2, $item3, $item4, $item5])
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_BETA);
 
-/** Si solo desea enviar un XML ya generado utilice esta función**/
-//$res = $see->sendXml(get_class($invoice), $invoice->getName(), file_get_contents($ruta_XML));
-
 $res = $see->send($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());
 
