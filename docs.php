@@ -20,6 +20,10 @@ $items = [
         'title' => 'Factura ISC',
     ],
     [
+        'file' => 'examples/factura-detraccion.php',
+        'title' => 'Factura con Detracción',
+    ],
+    [
         'file' => 'examples/factura-contingencia.php',
         'title' => 'Factura',
         'tag' => 'CONTINGENCIA',
