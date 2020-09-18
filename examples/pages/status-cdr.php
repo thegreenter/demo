@@ -139,6 +139,8 @@ $result = process($_POST);
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <div class="alert alert-danger">
+                                        <?=$result->getCode()?><br>
+                                        <?=$result->getMessage()?><br>
                                         <?=$result->getError()->getMessage()?>
                                     </div>
                                 <?php endif;?>
