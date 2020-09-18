@@ -175,7 +175,7 @@ $result = process($_POST);
                                         </div>
                                         <div class="form-group">
                                             <label for="passSol">Contraseña:</label>
-                                            <input type="password" class="form-control" name="passSol" id="passSol" value="<?=filter_input(INPUT_POST, 'passSol') ?? ""?>">
+                                            <input type="password" class="form-control" name="passSol" id="passSol" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
