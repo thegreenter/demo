@@ -22,6 +22,7 @@ $invoice
     ->setCorrelativo('128')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
+    ->setObservacion('Factura para pruebas con BEAtOSE')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
