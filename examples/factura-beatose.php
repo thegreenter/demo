@@ -19,7 +19,7 @@ $invoice
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('123')
+    ->setCorrelativo('128')
     ->setFechaEmision(new DateTime())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
@@ -45,7 +45,7 @@ $item->setCodProducto('P001')
     ->setIgv(36)
     ->setTipAfeIgv('10') // Catalog: 07
     ->setTotalImpuestos(36)
-    ->setMtoPrecioUnitario(118)
+    ->setMtoPrecioUnitario(100) // Error intencional, valor correcto: 118
 ;
 
 $invoice->setDetails([$item])
