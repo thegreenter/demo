@@ -222,7 +222,7 @@ $result = process($_POST);
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary">Consultar Estado</button>
+<!--                                <button class="btn btn-primary">Consultar Estado</button>-->
                                 <button class="btn btn-primary" name="cdr">Consultar CDR</button>
                             </form>
                         </div>
