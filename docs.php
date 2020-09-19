@@ -7,6 +7,11 @@ $items = [
         'description' => 'Factura con item gravado y exonerado.'
     ],
     [
+        'file' => 'examples/factura-beatose.php',
+        'title' => 'Factura 2',
+        'description' => 'Factura con error en ValorVenta enviada a <a href="https://github.com/thegreenter/beatose" target="_blank" style="color: blue">beatOSE</a>'
+    ],
+    [
         'file' => 'examples/factura-compleja.php',
         'title' => 'Factura 2',
         'description' => 'Factura con items gravado, exonerado, inafecto y gratuitos.'
