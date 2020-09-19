@@ -129,10 +129,17 @@ $result = process($_POST);
                                     <strong>Mensaje: </strong> <?=$result->getMessage()?> <br>
                                     <?php if (!is_null($result->getCdrResponse())):?>
                                         <strong>Estado Comprobante: </strong> <?=$result->getCdrResponse()->getDescription()?>
-                                        <br>
-                                        <strong>Observaciones: </strong> <?=implode('<br>', $result->getCdrResponse()->getNotes())?>
-                                        <br>
+                                        <?php if (!empty($result->getCdrResponse()->getNotes())): ?>
+                                            <br>
+                                            <strong>Observaciones: </strong>
+                                            <ul>
+                                            <?php foreach ($result->getCdrResponse()->getNotes() as $note): ?>
+                                                <li><?=$note?></li>
+                                            <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
                                         <?php if (!is_null($filename)): ?>
+                                            <br>
                                             <strong>CDR: </strong><br>
                                             <a href="/files/<?=$filename?>"><i class="fa fa-file-archive"></i>&nbsp;<?=$filename?></a>
                                         <?php endif; ?>
@@ -215,7 +222,7 @@ $result = process($_POST);
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary">Consultar Estado</button>
+<!--                                <button class="btn btn-primary">Consultar Estado</button>-->
                                 <button class="btn btn-primary" name="cdr">Consultar CDR</button>
                             </form>
                         </div>
