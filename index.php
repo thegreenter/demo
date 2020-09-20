@@ -30,7 +30,7 @@ set_time_limit(0);
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-html="item.title"></span>
                                 <span class="badge badge-secondary" x-text="item.tag"></span>
                                 <br>
-                                <sub x-html="item.description"></sub>
+                                <sub x-html="item.description" x-show="item.description"></sub>
                             </li>
                         </template>
                         <li class="list-group-item">
