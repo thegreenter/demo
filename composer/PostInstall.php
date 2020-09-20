@@ -9,13 +9,13 @@ final class PostInstall
         }
 
         if (self::inPath('wkhtmltopdf')) {
-            echo 'Wkhtmltopdf global install found.';
+            echo 'Wkhtmltopdf global install found.'.PHP_EOL;
             return;
         }
 
         $pathBin = self::getPathBin();
         if (file_exists($pathBin)) {
-            echo $pathBin . PHP_EOL;
+            echo $pathBin.PHP_EOL;
             return;
         }
 
