@@ -9,7 +9,7 @@ class ClearCache
             self::rrmdir($dir);
         }
 
-        echo 'Done!';
+        echo 'Done!'.PHP_EOL;
     }
 
     private static function rrmdir($src) {
