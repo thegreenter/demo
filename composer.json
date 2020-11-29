@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": "^7.2",
+        "php": ">=7.2",
         "ext-json": "*",
         "greenter/lite": "^4.0",
         "greenter/report": "^4.0",
