@@ -19,6 +19,7 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
+	"ext-fileinfo": "*",
         "greenter/lite": "^4.0",
         "greenter/report": "^4.0",
         "greenter/htmltopdf": "^4.0",
