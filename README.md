@@ -17,7 +17,11 @@ Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/t
 
 ### Pasos
 
-Clonar el repositorio e instalar las dependencias, se require `PHP 7.2` o superior
+**Requerimientos**
+- `PHP 7.2` o superior
+- Activar extensiones: `openssl`, `soap`
+
+Clonar el repositorio e instalar las dependencias.
 
 ```bash
 git clone https://github.com/thegreenter/demo.git
