@@ -37,6 +37,6 @@ Abrir la consola y ejecutar el siguiente comando.
 php -S 0.0.0.0:8080
 ```
 
-Finalmente navegar a http://localhost:8080
+Finalmente navegar a http://localhost:8080/
 > Los xml, pdf y cdr (archivos zip) seran guardados en la carptea `files`.
 
