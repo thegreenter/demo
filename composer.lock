@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9ba602371a385045defc20a684c483c",
+    "content-hash": "21ed5ef72097dd8908122df17eb4b92b",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -108,16 +108,16 @@
         },
         {
             "name": "greenter/core",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/core.git",
-                "reference": "e58684eb9557f07419469e59d0734666c10d6978"
+                "reference": "4be73c9d9eb4dfdcd05bc49fef3c6cfd760ee9aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/core/zipball/e58684eb9557f07419469e59d0734666c10d6978",
-                "reference": "e58684eb9557f07419469e59d0734666c10d6978",
+                "url": "https://api.github.com/repos/thegreenter/core/zipball/4be73c9d9eb4dfdcd05bc49fef3c6cfd760ee9aa",
+                "reference": "4be73c9d9eb4dfdcd05bc49fef3c6cfd760ee9aa",
                 "shasum": ""
             },
             "require": {
@@ -153,26 +153,26 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/core/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/core/tree/4.2.0"
             },
-            "time": "2020-11-29T14:34:40+00:00"
+            "time": "2021-02-06T14:55:08+00:00"
         },
         {
             "name": "greenter/data",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/data.git",
-                "reference": "4c5402ef38160664a76d7ddff09a3cf3d70454ba"
+                "reference": "f64f9a3b9eee000ebfc3e5245967eeb024dd1235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/data/zipball/4c5402ef38160664a76d7ddff09a3cf3d70454ba",
-                "reference": "4c5402ef38160664a76d7ddff09a3cf3d70454ba",
+                "url": "https://api.github.com/repos/thegreenter/data/zipball/f64f9a3b9eee000ebfc3e5245967eeb024dd1235",
+                "reference": "f64f9a3b9eee000ebfc3e5245967eeb024dd1235",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^4.1.1",
+                "greenter/core": "^4.2",
                 "php": ">=7.2"
             },
             "type": "library",
@@ -205,26 +205,26 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/data/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/data/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2021-02-06T14:22:46+00:00"
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/htmltopdf.git",
-                "reference": "b5759c25b217667c29d19bffdcacaf3325cb929a"
+                "reference": "67ffc6ac24691d94391d740d78dd78aab50e369a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/htmltopdf/zipball/b5759c25b217667c29d19bffdcacaf3325cb929a",
-                "reference": "b5759c25b217667c29d19bffdcacaf3325cb929a",
+                "url": "https://api.github.com/repos/thegreenter/htmltopdf/zipball/67ffc6ac24691d94391d740d78dd78aab50e369a",
+                "reference": "67ffc6ac24691d94391d740d78dd78aab50e369a",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^4.1.1",
+                "greenter/core": "^4.2",
                 "mikehaertl/phpwkhtmltopdf": "^2.4",
                 "php": ">=7.2"
             },
@@ -264,29 +264,29 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/htmltopdf/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/htmltopdf/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2020-11-29T16:18:27+00:00"
         },
         {
             "name": "greenter/lite",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/lite.git",
-                "reference": "b3e6b6349c2c0b531683f36b172f5304423fe7f8"
+                "reference": "a2486f1f6c86662008c5ae9dbf4029a1563a9095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/lite/zipball/b3e6b6349c2c0b531683f36b172f5304423fe7f8",
-                "reference": "b3e6b6349c2c0b531683f36b172f5304423fe7f8",
+                "url": "https://api.github.com/repos/thegreenter/lite/zipball/a2486f1f6c86662008c5ae9dbf4029a1563a9095",
+                "reference": "a2486f1f6c86662008c5ae9dbf4029a1563a9095",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
-                "greenter/core": "^4.1.1",
-                "greenter/ws": "^4.1.1",
-                "greenter/xml": "^4.1.1",
+                "greenter/core": "^4.2",
+                "greenter/ws": "^4.2",
+                "greenter/xml": "^4.2",
                 "greenter/xmldsig": "^5.0",
                 "php": ">=7.2"
             },
@@ -325,32 +325,32 @@
             "support": {
                 "forum": "https://community.greenter.dev/",
                 "issues": "https://github.com/thegreenter/lite/issues",
-                "source": "https://github.com/thegreenter/lite/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/lite/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2021-02-06T13:58:03+00:00"
         },
         {
             "name": "greenter/report",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/report.git",
-                "reference": "c476c8fd4f23732192f5902811143221bc1138e0"
+                "reference": "cee5fd32aaeb514d2c7fc8def8a1f27c466e3a51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/report/zipball/c476c8fd4f23732192f5902811143221bc1138e0",
-                "reference": "c476c8fd4f23732192f5902811143221bc1138e0",
+                "url": "https://api.github.com/repos/thegreenter/report/zipball/cee5fd32aaeb514d2c7fc8def8a1f27c466e3a51",
+                "reference": "cee5fd32aaeb514d2c7fc8def8a1f27c466e3a51",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^2.0",
-                "greenter/core": "^4.1.1",
+                "greenter/core": "^4.2",
                 "php": ">=7.2",
                 "twig/twig": "~3.0"
             },
             "require-dev": {
-                "greenter/data": "^4.1.1",
+                "greenter/data": "^4.2",
                 "phpunit/phpunit": "^8"
             },
             "type": "library",
@@ -384,29 +384,29 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/report/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/report/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2021-02-04T16:30:49+00:00"
         },
         {
             "name": "greenter/ws",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/ws.git",
-                "reference": "c45d35f8338aedbae674848a8c216afb63ac0793"
+                "reference": "e05389601c52d976854cd2522aafd7587f79c19f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/ws/zipball/c45d35f8338aedbae674848a8c216afb63ac0793",
-                "reference": "c45d35f8338aedbae674848a8c216afb63ac0793",
+                "url": "https://api.github.com/repos/thegreenter/ws/zipball/e05389601c52d976854cd2522aafd7587f79c19f",
+                "reference": "e05389601c52d976854cd2522aafd7587f79c19f",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-soap": "*",
                 "ext-zlib": "*",
-                "greenter/core": "^4.1.1",
+                "greenter/core": "^4.2",
                 "nelexa/zip": "^3.3",
                 "php": ">=7.2"
             },
@@ -448,31 +448,31 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/ws/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/ws/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2021-02-05T20:28:16+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xml.git",
-                "reference": "60ec009aa3a4cbd15c5d500c55723057ba4324ca"
+                "reference": "f1a51f7c2080ced07a9618bdc166f38ef02092e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xml/zipball/60ec009aa3a4cbd15c5d500c55723057ba4324ca",
-                "reference": "60ec009aa3a4cbd15c5d500c55723057ba4324ca",
+                "url": "https://api.github.com/repos/thegreenter/xml/zipball/f1a51f7c2080ced07a9618bdc166f38ef02092e7",
+                "reference": "f1a51f7c2080ced07a9618bdc166f38ef02092e7",
                 "shasum": ""
             },
             "require": {
-                "greenter/core": "^4.1.1",
+                "greenter/core": "^4.2",
                 "php": ">=7.2",
                 "twig/twig": "~3.0"
             },
             "require-dev": {
-                "greenter/data": "^4.1.1",
+                "greenter/data": "^4.2",
                 "greenter/ubl-validator": "^2.0",
                 "phpunit/phpunit": "^8"
             },
@@ -507,9 +507,9 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/xml/tree/v4.1.1"
+                "source": "https://github.com/thegreenter/xml/tree/4.2.0"
             },
-            "time": "2020-11-29T16:18:05+00:00"
+            "time": "2021-02-06T14:55:08+00:00"
         },
         {
             "name": "greenter/xmldsig",
@@ -870,16 +870,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.1.9",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "fd8305521692f27eae3263895d1ef1571c71a78d"
+                "reference": "4adc8d172d602008c204c2e16956f99257248e03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/fd8305521692f27eae3263895d1ef1571c71a78d",
-                "reference": "fd8305521692f27eae3263895d1ef1571c71a78d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/4adc8d172d602008c204c2e16956f99257248e03",
+                "reference": "4adc8d172d602008c204c2e16956f99257248e03",
                 "shasum": ""
             },
             "require": {
@@ -908,10 +908,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Finder Component",
+            "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.2.0-RC2"
+                "source": "https://github.com/symfony/finder/tree/v5.2.3"
             },
             "funding": [
                 {
@@ -927,20 +927,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-18T09:42:36+00:00"
+            "time": "2021-01-28T22:06:19+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41"
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/f4ba089a5b6366e453971d3aad5fe8e897b37f41",
-                "reference": "f4ba089a5b6366e453971d3aad5fe8e897b37f41",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/c6c942b1ac76c82448322025e084cadc56048b4e",
+                "reference": "c6c942b1ac76c82448322025e084cadc56048b4e",
                 "shasum": ""
             },
             "require": {
@@ -952,7 +952,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -990,7 +990,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.20.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.0"
             },
             "funding": [
                 {
@@ -1006,20 +1006,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
                 "shasum": ""
             },
             "require": {
@@ -1031,7 +1031,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1070,7 +1070,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.20.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.22.0"
             },
             "funding": [
                 {
@@ -1086,20 +1086,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.1.1",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b02fa41f3783a2616eccef7b92fbc2343ffed737"
+                "reference": "f795ca686d38530045859b0350b5352f7d63447d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b02fa41f3783a2616eccef7b92fbc2343ffed737",
-                "reference": "b02fa41f3783a2616eccef7b92fbc2343ffed737",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f795ca686d38530045859b0350b5352f7d63447d",
+                "reference": "f795ca686d38530045859b0350b5352f7d63447d",
                 "shasum": ""
             },
             "require": {
@@ -1114,7 +1114,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -1150,7 +1150,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.1.1"
+                "source": "https://github.com/twigphp/Twig/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -1162,22 +1162,22 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-27T19:28:23+00:00"
+            "time": "2021-01-05T15:40:36+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.58",
+            "version": "0.12.71",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "2a4847df6047b30af28854ed9dc95304cdb56ae5"
+                "reference": "d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/2a4847df6047b30af28854ed9dc95304cdb56ae5",
-                "reference": "2a4847df6047b30af28854ed9dc95304cdb56ae5",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5",
+                "reference": "d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5",
                 "shasum": ""
             },
             "require": {
@@ -1208,7 +1208,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.58"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.71"
             },
             "funding": [
                 {
@@ -1224,7 +1224,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-29T13:32:03+00:00"
+            "time": "2021-02-01T18:24:00+00:00"
         }
     ],
     "aliases": [],
