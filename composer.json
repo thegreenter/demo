@@ -19,11 +19,8 @@
     "require": {
         "php": ">=7.2",
         "ext-json": "*",
-	"ext-fileinfo": "*",
-        "greenter/lite": "^4.0",
-        "greenter/report": "^4.0",
-        "greenter/htmltopdf": "^4.0",
-        "greenter/data": "^4.0"
+	    "ext-fileinfo": "*",
+        "greenter/greenter": "dev-feature/forma-de-pago"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.33"
