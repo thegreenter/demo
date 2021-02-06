@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
+use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Charge;
+use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\Prepayment;
 use Greenter\Model\Sale\SaleDetail;
@@ -19,7 +21,8 @@ $invoice
     ->setTipoDoc('01')
     ->setSerie('F001')
     ->setCorrelativo('143')
-    ->setFechaEmision(new \DateTime())
+    ->setFechaEmision(new DateTime())
+    ->setFormaPago(new FormaPagoContado())
     ->setTipoMoneda('PEN')
     ->setClient($util->shared->getClient())
     ->setCompany($util->shared->getCompany())
@@ -77,7 +80,7 @@ if (!$res->isSuccess()) {
     exit();
 }
 
-/**@var $res \Greenter\Model\Response\BillResult*/
+/**@var $res BillResult*/
 $cdr = $res->getCdrResponse();
 
 $util->writeCdr($invoice, $res->getCdrZip());

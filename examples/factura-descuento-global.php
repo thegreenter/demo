@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Charge;
+use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -23,6 +24,7 @@ $invoice
     ->setSerie('F001')
     ->setCorrelativo('84')
     ->setFechaEmision(new DateTime())
+    ->setFormaPago(new FormaPagoContado())
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
