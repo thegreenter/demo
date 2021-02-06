@@ -7,6 +7,12 @@ $items = [
         'description' => 'Factura con item gravado y exonerado.'
     ],
     [
+        'file' => 'examples/factura-credito.php',
+        'title' => 'Factura - Pago Crédito',
+        'description' => 'Factura con forma de pago Crédito.',
+        'tag' => 'Nuevo'
+    ],
+    [
         'file' => 'examples/factura-beatose.php',
         'title' => 'Factura 2 <img alt="beatOSE" style="height: 18px" src="https://raw.githubusercontent.com/thegreenter/beatose/master/public/beat-ose.png"/>',
         'description' => 'Factura con observaciones enviada a <a href="https://github.com/thegreenter/beatose" target="_blank" style="color: blue">beatOSE</a>'
