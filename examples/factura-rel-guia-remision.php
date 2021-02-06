@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Greenter\Model\Response\BillResult;
 use Greenter\Model\Sale\Document;
+use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -26,6 +27,7 @@ $invoice
     ->setSerie('F001')
     ->setCorrelativo('223')
     ->setFechaEmision(new DateTime())
+    ->setFormaPago(new FormaPagoContado())
     ->setTipoMoneda('PEN')
     ->setRelDocs([
         $guiaRemision // Incluir guia remision como documento relacionado.

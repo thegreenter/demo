@@ -220,7 +220,7 @@ HTML;
                 'resolucion' => '212321',
                 'header' => 'Telf: <b>(056) 123375</b>',
                 'extras' => [
-                    ['name' => 'CONDICION DE PAGO', 'value' => 'Efectivo'],
+                    ['name' => 'FORMA DE PAGO', 'value' => 'Contado'],
                     ['name' => 'VENDEDOR', 'value' => 'GITHUB SELLER'],
                 ],
             ]

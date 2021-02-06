@@ -3,7 +3,8 @@
 declare(strict_types=1);
 
 use Greenter\Model\Response\BillResult;
-use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
+use Greenter\Model\Sale\Cuota;
+use Greenter\Model\Sale\FormaPagos\FormaPagoCredito;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\SaleDetail;
 use Greenter\Model\Sale\Legend;
@@ -20,23 +21,29 @@ $invoice
     ->setTipoOperacion('0101')
     ->setTipoDoc('01')
     ->setSerie('F001')
-    ->setCorrelativo('127')
+    ->setCorrelativo('132')
     ->setFechaEmision(new DateTime())
-    ->setFormaPago(new FormaPagoContado())
+    ->setFormaPago(new FormaPagoCredito(236))
+    ->setCuotas([
+        (new Cuota())
+            ->setMonto(100)
+            ->setFechaPago(new DateTime('+7days')),
+        (new Cuota())
+            ->setMonto(136)
+            ->setFechaPago(new DateTime('+14days'))
+    ])
     ->setTipoMoneda('PEN')
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
     ->setMtoOperGravadas(200)
-    ->setMtoIGV(42.12)
-    ->setMtoBaseIsc(200) // Sumatoria MtoBaseISC detalles
-    ->setMtoISC(34)
-    ->setTotalImpuestos(76.12)
+    ->setMtoIGV(36)
+    ->setTotalImpuestos(36)
     ->setValorVenta(200)
-    ->setSubTotal(276.12)
-    ->setMtoImpVenta(276.12)
-;
+    ->setSubTotal(236)
+    ->setMtoImpVenta(236)
+    ;
 
-// Detalle con ISC
+// Detalle gravado
 $item = new SaleDetail();
 $item->setCodProducto('P001')
     ->setUnidad('NIU')
@@ -44,23 +51,19 @@ $item->setCodProducto('P001')
     ->setCantidad(2)
     ->setMtoValorUnitario(100)
     ->setMtoValorVenta(200)
-    ->setMtoBaseIsc(200)
-    ->setTipSisIsc('01') // Catalog 08: Sistema al Valor
-    ->setPorcentajeIsc(17.00) // 17%
-    ->setIsc(34) // 200 * 0.17 (17%)
-    ->setMtoBaseIgv(234) // ValorVenta + ISC
+    ->setMtoBaseIgv(200)
     ->setPorcentajeIgv(18)
-    ->setIgv(42.12) // MtoBaseIGV * 18%
+    ->setIgv(36)
     ->setTipAfeIgv('10') // Catalog: 07
-    ->setTotalImpuestos(76.12)
-    ->setMtoPrecioUnitario(138.06) // (ValorVenta + TotalImpuestos) / Cantidad
+    ->setTotalImpuestos(36)
+    ->setMtoPrecioUnitario(118)
 ;
 
 $invoice->setDetails([$item])
     ->setLegends([
         (new Legend())
             ->setCode('1000')
-            ->setValue('SON DOSCIENTOS SETENTA Y SEIS CON 12/100 SOLES')
+            ->setValue('SON TRESCIENTOS TREINTA Y SEIS CON OO/100 SOLES')
     ]);
 
 // Envio a SUNAT.
