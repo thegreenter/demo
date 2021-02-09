@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Greenter\Model\Response\BillResult;
-use Greenter\Model\Sale\Charge;
 use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\Prepayment;
@@ -26,19 +25,12 @@ $invoice
     ->setTipoMoneda('PEN')
     ->setClient($util->shared->getClient())
     ->setCompany($util->shared->getCompany())
-    ->setDescuentos([(
-        new Charge())
-        ->setCodTipo('04')
-        ->setFactor(1)
-        ->setMonto(100) // anticipo
-        ->setMontoBase(100)
-    ])
-    ->setMtoOperGravadas(100) // Sumatoria de Valor Venta (detalles) menos descuentos globales (anticipo): 200 - 100
-    ->setMtoIGV(18)
-    ->setValorVenta(200) // sumatoria de valor venta (detalle)
-    ->setTotalImpuestos(18)
+    ->setMtoOperGravadas(200)
+    ->setMtoIGV(36)
+    ->setValorVenta(200)
+    ->setTotalImpuestos(36)
     ->setSubTotal(236) // ValorVenta + (sumatoria de valor venta detalle) * 18% (IGV)
-    ->setMtoImpVenta(136) // subTotal - Anticipos: 236 - 100
+    ->setMtoImpVenta(136) // subTotal - Anticipos (236 - 100)
     ->setAnticipos([
         (new Prepayment())
             ->setTipoDocRel('02') // catalog. 12
