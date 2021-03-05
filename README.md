@@ -13,7 +13,7 @@ Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/t
 - Envío a servicio de SUNAT
 - Procesamiento del CDR (Comprobante de Recepción)
 - Extracción del Hash o Valor Resumen
-- Representación Impresa, PDF
+- Representación Impresa, PDF, QR
 
 ### Pasos
 
