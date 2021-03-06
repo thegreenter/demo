@@ -72,12 +72,5 @@ set_time_limit(0);
 </div>
 <?php include 'views/footer.php'; ?>
 <script src="assets/demo.js?v2"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90097417-4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-90097417-4');
-</script>
 </body>
 </html>

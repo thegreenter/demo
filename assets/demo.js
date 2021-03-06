@@ -133,10 +133,8 @@ function app() {
             fetch('docs.php')
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
 
                     const doc = getDocInUrl();
-                    console.log(doc);
                     $this.examples = data;
 
                     if (doc) {
