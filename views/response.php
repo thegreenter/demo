@@ -1,5 +1,7 @@
 <?php
-/**@var $cdr \Greenter\Model\Response\CdrResponse*/
+/**@var $cdr CdrResponse*/
+
+use Greenter\Model\Response\CdrResponse;
 
 ?>
 <div class="bs-callout <?php echo $cdr->isAccepted() ? 'bs-callout-success' : 'bs-callout-danger' ?>">
@@ -32,6 +34,9 @@
     <b>Adjuntos</b><br>
     <ul class="list-group">
         <li class="list-group-item"><a target="_blank" href="files/<?=$filename?>.xml"><i class="fa fa-file-code"></i>&nbsp;<?=$filename?>.xml</a></li>
-        <li class="list-group-item"><a target="_blank" href="files/R-<?=$filename?>.zip"><i class="fa fa-file-archive"></i>&nbsp;R-<?=$filename?>.zip</a></li>
+        <li class="list-group-item">
+            <a target="_blank" href="files/R-<?=$filename?>.zip"><i class="fa fa-file-archive"></i>&nbsp;R-<?=$filename?>.zip</a>&nbsp;
+            <a target="_blank" title="Ver CDR" href="examples/pages/cdr-viewer.php?f=files/R-<?=$filename?>.zip"><i class="fa fa-eye"></i></a>
+        </li>
     </ul>
 </div>
