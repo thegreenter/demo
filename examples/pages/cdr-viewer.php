@@ -31,8 +31,13 @@ if (!file_exists($baseFiles.DIRECTORY_SEPARATOR.$zipPath)) {
     exit();
 }
 
+$content = file_get_contents($baseFiles.DIRECTORY_SEPARATOR.$zipPath);
+if ($content === false) {
+    exit(400);
+}
+
 $zipFile = new ZipFile();
-$zipFile->openFromString(file_get_contents($baseFiles.DIRECTORY_SEPARATOR.$zipPath));
+$zipFile->openFromString($content);
 $zipFile->extractTo($baseFiles);
 
 header('Content-Type: text/xml');

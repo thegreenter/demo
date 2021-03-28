@@ -22,6 +22,10 @@ function getXmlFromZip(?string $cdrContent): string
 }
 
 $zipContent = file_get_contents('path/cdr/R-20000000001-01-F001-1.zip');
+if ($zipContent === false) {
+    echo 'Error abriendo archivo zip'.PHP_EOL;
+    exit();
+}
 
 $cdrReader = new DomCdrReader(new XmlReader());
 
