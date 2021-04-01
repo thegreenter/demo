@@ -20,7 +20,7 @@ $note
     ->setUblVersion('2.1')
     ->setTipoDoc('07')
     ->setSerie('FF01')
-    ->setCorrelativo('123')
+    ->setCorrelativo('124')
     ->setFechaEmision(new DateTime())
     // Forma de Pago
     ->setFormaPago(new FormaPagoCredito(236))
@@ -31,7 +31,7 @@ $note
     ])
     ->setTipDocAfectado('01') // Tipo Doc: Factura
     ->setNumDocfectado('F001-111') // Factura: Serie-Correlativo
-    ->setCodMotivo('07') // Catalogo. 09
+    ->setCodMotivo('13') // Catalogo. 09: Ajustes – montos y/o fechas de pago
     ->setDesMotivo('DEVOLUCION POR ITEM')
     ->setTipoMoneda('PEN')
     ->setGuias([/* Guias (Opcional) */
