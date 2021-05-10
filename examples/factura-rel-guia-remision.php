@@ -15,7 +15,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $guiaRemision = (new Document())
-    ->setTipoDoc('09') // Tipo de comprobante, guia remision: 09
+    ->setTipoDoc('07') // Codigo de doc. relacionado, Catalogo 12, Guia de Remision remitente: 07
     ->setNroDoc('T001-2'); // Serie y correlativo de la guia de remision
 
 $invoice = new Invoice();
