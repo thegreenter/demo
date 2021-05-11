@@ -172,29 +172,29 @@ $result = process($_POST);
                                 <div class="row">
                                     <div class="col-md-6">
                                         <strong>Credenciales</strong>
-                                        <div class="form-group">
-                                            <label for="rucSol">Ruc:</label>
+                                        <div class="mb-3">
+                                            <label for="rucSol" class="form-label">Ruc:</label>
                                             <input type="text" class="form-control" name="rucSol" id="rucSol" maxlength="11" value="<?=filter_input(INPUT_POST, 'rucSol') ?? ""?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="userSol">Usuario:</label>
+                                        <div class="mb-3">
+                                            <label for="userSol" class="form-label">Usuario:</label>
                                             <input type="text" class="form-control" name="userSol" id="userSol" value="<?=filter_input(INPUT_POST, 'userSol') ?? ""?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="passSol">Contraseña:</label>
+                                        <div class="mb-3">
+                                            <label for="passSol" class="form-label">Contraseña:</label>
                                             <input type="password" class="form-control" name="passSol" id="passSol" value="">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <strong>Datos del Comprobante</strong>
-                                        <div class="form-group">
-                                            <label for="ruc">Ruc Emisor:</label>
+                                        <div class="mb-3">
+                                            <label for="ruc" class="form-label">Ruc Emisor:</label>
                                             <input type="text" class="form-control" name="ruc" id="ruc"
                                                    maxlength="11"
                                                    value="<?= filter_input(INPUT_POST, 'ruc') ?? '20000000001'?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="tipo">Tipo:</label>
+                                        <div class="mb-3">
+                                            <label for="tipo" class="form-label">Tipo:</label>
                                             <input  type="text"
                                                     class="form-control"
                                                     name="tipo"
@@ -202,8 +202,8 @@ $result = process($_POST);
                                                     maxlength="2"
                                                     value="<?= filter_input(INPUT_POST, 'tipo') ?? '01'?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="serie">Serie:</label>
+                                        <div class="mb-3">
+                                            <label for="serie" class="form-label">Serie:</label>
                                             <input  type="text"
                                                     class="form-control"
                                                     name="serie"
@@ -211,8 +211,8 @@ $result = process($_POST);
                                                     maxlength="4"
                                                     value="<?= filter_input(INPUT_POST, 'serie') ?? 'F001'?>">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="numero">Correlativo:</label>
+                                        <div class="mb-3">
+                                            <label for="numero" class="form-label">Correlativo:</label>
                                             <input  type="number"
                                                     class="form-control"
                                                     name="numero"

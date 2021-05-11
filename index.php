@@ -23,7 +23,7 @@ set_time_limit(0);
                         <template x-for="item in examples.invoices" :key="item.file">
                             <li @click="loadUrl($event.currentTarget, item.file)" class="list-group-item">
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-html="item.title"></span>
-                                <span class="badge badge-secondary" x-text="item.tag"></span>
+                                <span class="badge bg-secondary" x-text="item.tag"></span>
                                 <br>
                                 <sub x-html="item.description" x-show="item.description"></sub>
                             </li>
