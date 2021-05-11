@@ -41,10 +41,6 @@ $items = [
         'description' => 'Factura física emitida en situación de contingencia',
     ],
     [
-        'file' => 'examples/boleta.php',
-        'title' => 'Boleta de Venta',
-    ],
-    [
         'file' => 'examples/factura-inafecta.php',
         'title' => 'Factura Inafecta',
     ],
@@ -82,6 +78,10 @@ $items = [
         'file' => 'examples/factura-rel-guia-remision.php',
         'title' => 'Factura con guía remisión',
         'description' => 'Factura relacionada a una guía de remisión',
+    ],
+    [
+        'file' => 'examples/boleta.php',
+        'title' => 'Boleta de Venta',
     ],
     [
         'file' => 'examples/boleta-icbper.php',

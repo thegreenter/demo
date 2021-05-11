@@ -5,13 +5,8 @@ set_time_limit(0);
 <html lang="es">
 <head>
     <?php include 'views/head.php'; ?>
-    <style>
-        ul.list-group li {
-            cursor: pointer;
-        }
-    </style>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
-    <link rel="stylesheet" href="assets/style.css?v=1">
+    <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
 <?php include 'views/top.php'; ?>
@@ -28,7 +23,7 @@ set_time_limit(0);
                         <template x-for="item in examples.invoices" :key="item.file">
                             <li @click="loadUrl($event.currentTarget, item.file)" class="list-group-item">
                                 <i class="fa fa-angle-right"></i>&nbsp;<span x-html="item.title"></span>
-                                <span class="badge badge-secondary" x-text="item.tag"></span>
+                                <span class="badge bg-secondary" x-text="item.tag"></span>
                                 <br>
                                 <sub x-html="item.description" x-show="item.description"></sub>
                             </li>
