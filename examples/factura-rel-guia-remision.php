@@ -15,7 +15,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $guiaRemision = (new Document())
-    ->setTipoDoc('07') // Codigo de doc. relacionado, Catalogo 12, Guia de Remision remitente: 07
+    ->setTipoDoc('09') // Guia de Remision remitente: 09, catalogo 01
     ->setNroDoc('T001-2'); // Serie y correlativo de la guia de remision
 
 $invoice = new Invoice();
@@ -29,8 +29,8 @@ $invoice
     ->setFechaEmision(new DateTime())
     ->setFormaPago(new FormaPagoContado())
     ->setTipoMoneda('PEN')
-    ->setRelDocs([
-        $guiaRemision // Incluir guia remision como documento relacionado.
+    ->setGuias([
+        $guiaRemision // Incluir guia remision.
     ])
     ->setCompany($util->shared->getCompany())
     ->setClient($util->shared->getClient())
