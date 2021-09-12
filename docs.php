@@ -107,12 +107,6 @@ $items = [
         'description' => 'Nota de crédito de una Factura'
     ],
     [
-        'file' => 'examples/nota-credito-forma-pago.php',
-        'title' => 'Nota de Crédito',
-        'description' => 'Nota de crédito con forma de pago Crédito',
-        'tag' => 'Nuevo'
-    ],
-    [
         'file' => 'examples/nota-credito-boleta.php',
         'title' => 'Nota de Crédito',
         'description' => 'Nota de crédito de una Boleta de venta'
