@@ -57,6 +57,10 @@ $items = [
         'title' => 'Factura con Percepción',
     ],
     [
+        'file' => 'examples/factura-retencion.php',
+        'title' => 'Factura con Retencion',
+    ],
+    [
         'file' => 'examples/factura-exportacion.php',
         'title' => 'Factura Exportación',
     ],
