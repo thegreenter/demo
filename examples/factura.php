@@ -35,9 +35,11 @@ $invoice
     ->setMtoImpVenta(336)
     ;
 
+$items = [];
+
 // Detalle gravado
-$item1 = new SaleDetail();
-$item1->setCodProducto('P001')
+$items[] = (new SaleDetail())
+    ->setCodProducto('P001')
     ->setUnidad('NIU')
     ->setDescripcion('PROD 1')
     ->setCantidad(2)
@@ -52,8 +54,8 @@ $item1->setCodProducto('P001')
 ;
 
 // Detalle Exonerado
-$item2 = new SaleDetail();
-$item2->setCodProducto('P002')
+$items[] = (new SaleDetail())
+    ->setCodProducto('P002')
     ->setUnidad('KG')
     ->setDescripcion('PROD 2')
     ->setCantidad(2)
@@ -67,7 +69,7 @@ $item2->setCodProducto('P002')
     ->setMtoPrecioUnitario(50)
 ;
 
-$invoice->setDetails([$item1, $item2])
+$invoice->setDetails($items)
     ->setLegends([
         (new Legend())
             ->setCode('1000')
