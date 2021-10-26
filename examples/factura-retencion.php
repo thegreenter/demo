@@ -32,7 +32,7 @@ $invoice
         (new Charge())
             ->setCodTipo('62') // Catalog. 53
             ->setMontoBase(236)
-            ->setFactor(0.03)
+            ->setFactor(0.03) // 3%
             ->setMonto(7.08)
     ])
     ->setMtoOperGravadas(200)
