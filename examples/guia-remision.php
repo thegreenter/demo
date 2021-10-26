@@ -17,7 +17,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $util = Util::getInstance();
 
 $rel = new Document();
-$rel->setTipoDoc('02') // Tipo: Numero de Orden de Entrega
+$rel->setTipoDoc('02') // Cat. 21 - Numero de Orden de Entrega
 ->setNroDoc('213123');
 
 $transp = new Transportist();
