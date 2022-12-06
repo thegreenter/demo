@@ -16,6 +16,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
+// baja por cambio de destinatario
 $baja = new Document();
 $baja->setTipoDoc('09')
     ->setNroDoc('T001-00001');
