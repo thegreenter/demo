@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 use Greenter\Model\Client\Client;
-use Greenter\Model\Despatch\AdditionalDoc;
 use Greenter\Model\Despatch\Despatch;
 use Greenter\Model\Despatch\DespatchDetail;
 use Greenter\Model\Despatch\Direction;
+use Greenter\Model\Despatch\Driver;
 use Greenter\Model\Despatch\Shipment;
-use Greenter\Model\Despatch\Transportist;
+use Greenter\Model\Despatch\Vehicle;
 use Greenter\Model\Response\CdrResponse;
 use Greenter\Ws\Services\SunatEndpoints;
 
@@ -16,30 +16,35 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$rel = new AdditionalDoc();
-$rel->setTipoDesc('Factura')
-    ->setTipo('01') // Cat. 61 - Factura
-    ->setNro('F001-222')
-    ->setEmisor('20123456789');
+$vehiculoSecundario = (new Vehicle())
+    ->setPlaca('ABI456');
 
-$transp = new Transportist();
-$transp->setTipoDoc('6')
-    ->setNumDoc('20000000002')
-    ->setRznSocial('TRANSPORTES S.A.C')
-    ->setNroMtc('0001');
+$vehiculoPrincipal = (new Vehicle())
+    ->setPlaca('ABC123')
+    ->setNroCirculacion('111111')
+    ->setCodEmisor('01')
+    ->setNroAutorizacion('AAA')
+    ->setSecundarios([$vehiculoSecundario]); // opcional
+
+$chofer = (new Driver())
+    ->setTipo('Principal')
+    ->setTipoDoc('1')
+    ->setNroDoc('44004400')
+    ->setLicencia('0001122020')
+    ->setNombres('ROBERTO')
+    ->setApellidos('RODRIGUEZ VALENCIA');
 
 $envio = new Shipment();
 $envio
     ->setCodTraslado('01') // Cat.20 - Venta
-    ->setDesTraslado('VENTA')
-    ->setModTraslado('01') // Cat.18 - Transp. Publico
+    ->setModTraslado('02') // Cat.18 - Transp. Privado
     ->setFecTraslado(new DateTime())
     ->setPesoTotal(12.5)
     ->setUndPesoTotal('KGM')
-//    ->setNumBultos(2) // Solo válido para importaciones
+    ->setVehiculo($vehiculoPrincipal)
+    ->setChoferes([$chofer])
     ->setLlegada(new Direction('150101', 'AV LIMA'))
-    ->setPartida(new Direction('150203', 'AV ITALIA'))
-    ->setTransportista($transp);
+    ->setPartida(new Direction('150203', 'AV ITALIA'));
 
 $despatch = new Despatch();
 $despatch->setVersion('2022')
@@ -52,8 +57,6 @@ $despatch->setVersion('2022')
         ->setTipoDoc('6')
         ->setNumDoc('20000000002')
         ->setRznSocial('EMPRESA DEST 1'))
-    ->setObservacion('NOTA GUIA')
-    ->setAddDocs([$rel])
     ->setEnvio($envio);
 
 $detail = new DespatchDetail();
@@ -76,5 +79,3 @@ $cdr = (new CdrResponse())
     ->setDescription('XML valido')
     ->setNotes([]);
 $util->showResponse($despatch, $cdr);
-
-
