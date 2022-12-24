@@ -21,9 +21,6 @@ $vehiculoSecundario = (new Vehicle())
 
 $vehiculoPrincipal = (new Vehicle())
     ->setPlaca('ABC123')
-    ->setNroCirculacion('111111')
-    ->setCodEmisor('01')
-    ->setNroAutorizacion('AAA')
     ->setSecundarios([$vehiculoSecundario]); // opcional
 
 $chofer = (new Driver())
