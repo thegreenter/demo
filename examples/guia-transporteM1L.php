@@ -16,20 +16,6 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $util = Util::getInstance();
 
-$vehiculoPrincipal = (new Vehicle())
-    ->setPlaca('ABC123')
-    ->setNroCirculacion('111111')
-    ->setCodEmisor('01')
-    ->setNroAutorizacion('AAA');
-
-$chofer = (new Driver())
-    ->setTipo('Principal')
-    ->setTipoDoc('1')
-    ->setNroDoc('44004400')
-    ->setLicencia('0001122020')
-    ->setNombres('ROBERTO')
-    ->setApellidos('RODRIGUEZ VALENCIA');
-
 $envio = new Shipment();
 $envio
     ->setCodTraslado('01') // Cat.20 - Venta
