@@ -52,7 +52,7 @@ $detail->setCantidad(2)
 $despatch->setDetails([$detail]);
 
 // Envio a SUNAT.
-$see = $util->getSee(SunatEndpoints::GUIA_BETA);
+$see = $util->getSee('');
 
 $xml = $see->getXmlSigned($despatch);
 $util->writeXml($despatch, $xml);
