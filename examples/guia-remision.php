@@ -45,7 +45,7 @@ $despatch = new Despatch();
 $despatch->setVersion('2022')
     ->setTipoDoc('09')
     ->setSerie('T001')
-    ->setCorrelativo('123')
+    ->setCorrelativo('121')
     ->setFechaEmision(new DateTime())
     ->setCompany($util->shared->getCompany())
     ->setDestinatario((new Client())
