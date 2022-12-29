@@ -138,7 +138,15 @@ $items = [
     ],
     [
         'file' => 'examples/guia-remision.php',
-        'title' => 'Guía de Remisión',
+        'title' => 'Guía de Remisión (v2)',
+    ],
+    [
+        'file' => 'examples/guia-transportePrivado.php',
+        'title' => 'Guía con transporte privado (v2)',
+    ],
+    [
+        'file' => 'examples/guia-transporteM1L.php',
+        'title' => 'Guía con transporte M1 y L (v2)',
     ],
     [
         'file' => 'examples/percepcion.php',
