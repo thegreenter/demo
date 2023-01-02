@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Greenter\Model\Client\Client;
-use Greenter\Model\Despatch\AdditionalDoc;
 use Greenter\Model\Despatch\Despatch;
 use Greenter\Model\Despatch\DespatchDetail;
 use Greenter\Model\Despatch\Direction;
@@ -14,13 +13,7 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$util = Util::getInstance();
-
-$rel = new AdditionalDoc();
-$rel->setTipoDesc('Factura')
-    ->setTipo('01') // Cat. 61 - Factura
-    ->setNro('F001-222')
-    ->setEmisor('20123456789');
+$util = Util::getInstance();;
 
 $transp = new Transportist();
 $transp->setTipoDoc('6')
@@ -31,7 +24,6 @@ $transp->setTipoDoc('6')
 $envio = new Shipment();
 $envio
     ->setCodTraslado('01') // Cat.20 - Venta
-    ->setDesTraslado('VENTA')
     ->setModTraslado('01') // Cat.18 - Transp. Publico
     ->setFecTraslado(new DateTime())
     ->setPesoTotal(12.5)
@@ -52,8 +44,6 @@ $despatch->setVersion('2022')
         ->setTipoDoc('6')
         ->setNumDoc('20000000002')
         ->setRznSocial('EMPRESA DEST 1'))
-    ->setObservacion('NOTA GUIA')
-    ->setAddDocs([$rel])
     ->setEnvio($envio);
 
 $detail = new DespatchDetail();
