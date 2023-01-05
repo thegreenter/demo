@@ -149,6 +149,10 @@ $items = [
         'title' => 'Guía con transporte M1 y L (v2)',
     ],
     [
+        'file' => 'examples/guia-extra-atributos.php',
+        'title' => 'Guía con atributos (v2)',
+    ],
+    [
         'file' => 'examples/percepcion.php',
         'title' => 'Comprobante de Percepción',
     ],
