@@ -57,12 +57,12 @@ $detail->setCantidad(2)
     ->setUnidad('ZZ')
     ->setDescripcion('PROD 1')
     ->setCodigo('PROD1')
-    ->setCodProdSunat('44121618')
+    ->setCodProdSunat('50161509')
     ->setAtributos([
         (new DetailAttribute())
             ->setCode('7020')
             ->setName('Partida arancelaria')
-            ->setValue('1000001'),
+            ->setValue('1701130000'),
         (new DetailAttribute())
         ->setCode('7022')
         ->setName('Indicador de bien normalizado')
