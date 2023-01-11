@@ -8,6 +8,7 @@ Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/t
 
 ### Topics
 - Generación de XML en el estándar UBL 2.0, 2.1
+- Guia de Remisión Remitente (2022).
 - Generación comprobantes de contingencia.
 - Firma digital de XML
 - Envío a servicio de SUNAT
@@ -18,8 +19,8 @@ Ejemplos de comprobantes electrónicos empleando [Greenter](https://github.com/t
 ### Pasos
 
 **Requerimientos**
-- `PHP 7.2` o superior
-- Activar extensiones: `openssl`, `soap`
+- `PHP 7.4` o superior
+- Activar extensiones: `openssl`, `soap`, `curl`
 
 Clonar el repositorio e instalar las dependencias.
 
