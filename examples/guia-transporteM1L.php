@@ -42,8 +42,8 @@ $despatch->setVersion('2022')
     ->setEnvio($envio);
 
 $detail = new DespatchDetail();
-$detail->setCantidad(2)
-    ->setUnidad('ZZ')
+$detail->setCantidad(0.5)
+    ->setUnidad('KGM')
     ->setDescripcion('PROD 1')
     ->setCodigo('PROD1');
 
