@@ -4,4 +4,5 @@ parameters:
         - src
         - examples
     ignoreErrors:
-        - '#Method Util::getSee\(\) has no return typehint specified.#'
+        - '#Method Util::getSee\(\) has no return type specified.#'
+        - '#Method Util::getSeeApi\(\) has no return type specified.#'

@@ -61,7 +61,7 @@ final class Util
         return $see;
     }
 
-    public function getSeeApi(): \Greenter\Api
+    public function getSeeApi()
     {
         $api = new \Greenter\Api([
             'auth' => 'https://gre-test.nubefact.com/v1',
@@ -233,7 +233,7 @@ HTML;
     }
 
     /**
-     * @return array<string, array>
+     * @return array<string, array<string, array<int, array<string, string>>|bool|string>>
      */
     private static function getParametersPdf(): array
     {

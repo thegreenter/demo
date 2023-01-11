@@ -25,7 +25,7 @@
         "greenter/data": "^5.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12.33"
+        "phpstan/phpstan": "^1.9"
     },
     "scripts": {
         "post-install-cmd": "@php composer/PostInstall.php",
