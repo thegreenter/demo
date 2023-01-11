@@ -61,6 +61,34 @@ final class Util
         return $see;
     }
 
+    public function getSeeApi(): \Greenter\Api
+    {
+        $api = new \Greenter\Api([
+            'auth' => 'https://gre-test.nubefact.com/v1',
+            'cpe' => 'https://gre-test.nubefact.com/v1',
+        ]);
+        $certificate = file_get_contents(__DIR__ . '/../resources/cert.pem');
+        if ($certificate === false) {
+            throw new Exception('No se pudo cargar el certificado');
+        }
+        return $api->setBuilderOptions([
+                'strict_variables' => true,
+                'optimizations' => 0,
+                'debug' => true,
+                'cache' => false,
+            ])
+            ->setApiCredentials('test-85e5b0ae-255c-4891-a595-0b98c65c9854', 'test-Hty/M6QshYvPgItX2P0+Kw==')
+            ->setClaveSOL('20161515648', 'MODDATOS', 'MODDATOS')
+            ->setCertificate($certificate);
+    }
+
+    public function getGRECompany(): \Greenter\Model\Company\Company
+    {
+        return (new \Greenter\Model\Company\Company())
+            ->setRuc('20161515648')
+            ->setRazonSocial('GREENTER S.A.C.');
+    }
+
     public function showResponse(DocumentInterface $document, CdrResponse $cdr): void
     {
         $filename = $document->getName();
