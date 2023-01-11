@@ -19,7 +19,7 @@ $util = Util::getInstance();
 $envio = new Shipment();
 $envio
     ->setCodTraslado('01') // Cat.20 - Venta
-    ->setIndicador(['SUNAT_Envio_IndicadorTrasladoVehiculoM1L'])
+    ->setIndicadores(['SUNAT_Envio_IndicadorTrasladoVehiculoM1L'])
     ->setModTraslado('02') // Cat.18 - Transp. Privado
     ->setFecTraslado(new DateTime())
     ->setPesoTotal(12.5)

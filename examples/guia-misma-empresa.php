@@ -18,7 +18,7 @@ $envio = new Shipment();
 $envio
     ->setCodTraslado('04') // Cat.20 - Traslado entre establecimientos de la misma empresa
     ->setModTraslado('02') // Cat.18 - Transp. Privado
-    ->setIndicador(['SUNAT_Envio_IndicadorTrasladoVehiculoM1L']) // Transp M1 y L
+    ->setIndicadores(['SUNAT_Envio_IndicadorTrasladoVehiculoM1L']) // Transp M1 y L
     ->setFecTraslado(new DateTime())
     ->setPesoTotal(12.5)
     ->setUndPesoTotal('KGM')
