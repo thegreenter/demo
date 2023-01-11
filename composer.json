@@ -17,12 +17,12 @@
         }
     },
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "ext-json": "*",
-        "greenter/lite": "^4.4",
-        "greenter/report": "^4.4",
-        "greenter/htmltopdf": "^4.4",
-        "greenter/data": "^4.4"
+        "greenter/lite": "^5.0",
+        "greenter/report": "^5.0",
+        "greenter/htmltopdf": "^5.0",
+        "greenter/data": "^5.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.33"
