@@ -9,6 +9,7 @@ use Greenter\Model\Despatch\Direction;
 use Greenter\Model\Despatch\Shipment;
 use Greenter\Model\Despatch\Transportist;
 use Greenter\Model\Response\CdrResponse;
+use Greenter\Model\Response\SummaryResult;
 use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -56,14 +57,28 @@ $despatch->setDetails([$detail]);
 
 // Envio a SUNAT.
 $see = $util->getSee('');
-
 $xml = $see->getXmlSigned($despatch);
 $util->writeXml($despatch, $xml);
 
-$cdr = (new CdrResponse())
-    ->setCode('-')
-    ->setDescription('XML valido')
-    ->setNotes([]);
-$util->showResponse($despatch, $cdr);
+$api = $util->getSeeApi();
+$res = $api->send($despatch);
+if (!$res->isSuccess()) {
+    echo $util->getErrorResponse($res->getError());
+    return;
+}
 
+/**@var $res SummaryResult*/
+$ticket = $res->getTicket();
+echo 'Ticket :<strong>' . $ticket .'</strong>';
+
+$res = $api->getStatus($ticket);
+if (!$res->isSuccess()) {
+    echo $util->getErrorResponse($res->getError());
+    return;
+}
+
+$cdr = $res->getCdrResponse();
+$util->writeCdr($despatch, $res->getCdrZip());
+
+$util->showResponse($despatch, $cdr);
 
