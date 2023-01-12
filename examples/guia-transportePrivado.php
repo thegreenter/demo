@@ -66,12 +66,9 @@ $detail->setCantidad(2)
 $despatch->setDetails([$detail]);
 
 // Envio a SUNAT.
-$see = $util->getSee('');
-$xml = $see->getXmlSigned($despatch);
-$util->writeXml($despatch, $xml);
-
 $api = $util->getSeeApi();
 $res = $api->send($despatch);
+$util->writeXml($despatch, $api->getLastXml());
 if (!$res->isSuccess()) {
     echo $util->getErrorResponse($res->getError());
     return;

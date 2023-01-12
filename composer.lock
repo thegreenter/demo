@@ -109,7 +109,7 @@
         },
         {
             "name": "greenter/core",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/core.git",
@@ -154,22 +154,22 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/core/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/core/tree/v5.0.0-beta.3"
             },
             "time": "2023-01-11T17:16:15+00:00"
         },
         {
             "name": "greenter/data",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/data.git",
-                "reference": "ceaa2a787728ee77739562e5285385556ecba3e4"
+                "reference": "1448ac0e1824581f60f221d0cf0839d17aa5e467"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/data/zipball/ceaa2a787728ee77739562e5285385556ecba3e4",
-                "reference": "ceaa2a787728ee77739562e5285385556ecba3e4",
+                "url": "https://api.github.com/repos/thegreenter/data/zipball/1448ac0e1824581f60f221d0cf0839d17aa5e467",
+                "reference": "1448ac0e1824581f60f221d0cf0839d17aa5e467",
                 "shasum": ""
             },
             "require": {
@@ -206,9 +206,9 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/data/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/data/tree/v5.0.0-beta.3"
             },
-            "time": "2023-01-11T17:16:13+00:00"
+            "time": "2023-01-12T03:02:11+00:00"
         },
         {
             "name": "greenter/gre-api",
@@ -268,7 +268,7 @@
         },
         {
             "name": "greenter/htmltopdf",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/htmltopdf.git",
@@ -321,22 +321,22 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/htmltopdf/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/htmltopdf/tree/v5.0.0-beta.3"
             },
             "time": "2023-01-11T17:16:13+00:00"
         },
         {
             "name": "greenter/lite",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/lite.git",
-                "reference": "40d0e8554c42962af6fa1899117119f558761f1a"
+                "reference": "40f6c2d0ea1327938faf76e5c405ad44b5e6fc8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/lite/zipball/40d0e8554c42962af6fa1899117119f558761f1a",
-                "reference": "40d0e8554c42962af6fa1899117119f558761f1a",
+                "url": "https://api.github.com/repos/thegreenter/lite/zipball/40f6c2d0ea1327938faf76e5c405ad44b5e6fc8f",
+                "reference": "40f6c2d0ea1327938faf76e5c405ad44b5e6fc8f",
                 "shasum": ""
             },
             "require": {
@@ -382,13 +382,13 @@
             "support": {
                 "forum": "https://community.greenter.dev/",
                 "issues": "https://github.com/thegreenter/lite/issues",
-                "source": "https://github.com/thegreenter/lite/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/lite/tree/v5.0.0-beta.3"
             },
-            "time": "2023-01-11T17:16:12+00:00"
+            "time": "2023-01-12T03:02:14+00:00"
         },
         {
             "name": "greenter/report",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/report.git",
@@ -441,13 +441,13 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/report/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/report/tree/v5.0.0-beta.3"
             },
             "time": "2023-01-11T17:16:18+00:00"
         },
         {
             "name": "greenter/ws",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/ws.git",
@@ -506,22 +506,22 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/ws/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/ws/tree/v5.0.0-beta.3"
             },
             "time": "2023-01-11T17:16:17+00:00"
         },
         {
             "name": "greenter/xml",
-            "version": "v5.0.0-beta.2",
+            "version": "v5.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thegreenter/xml.git",
-                "reference": "bc5d77327967e1df67fc83d88735712cefb5b00b"
+                "reference": "28b2d389cc1f3fb31cef2880084219899b15e9da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thegreenter/xml/zipball/bc5d77327967e1df67fc83d88735712cefb5b00b",
-                "reference": "bc5d77327967e1df67fc83d88735712cefb5b00b",
+                "url": "https://api.github.com/repos/thegreenter/xml/zipball/28b2d389cc1f3fb31cef2880084219899b15e9da",
+                "reference": "28b2d389cc1f3fb31cef2880084219899b15e9da",
                 "shasum": ""
             },
             "require": {
@@ -565,9 +565,9 @@
             ],
             "support": {
                 "forum": "https://community.greenter.dev/",
-                "source": "https://github.com/thegreenter/xml/tree/v5.0.0-beta.2"
+                "source": "https://github.com/thegreenter/xml/tree/v5.0.0-beta.3"
             },
-            "time": "2023-01-11T17:16:14+00:00"
+            "time": "2023-01-12T03:02:14+00:00"
         },
         {
             "name": "greenter/xmldsig",
